@@ -14,16 +14,10 @@ namespace Gara_Manage
         [STAThread]
         static void Main()
         {
-            try
-            {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 MAIN main = new MAIN();
                 Application.Run(main);
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.StackTrace,ex.Message);
-            }
         }
     }
 }
