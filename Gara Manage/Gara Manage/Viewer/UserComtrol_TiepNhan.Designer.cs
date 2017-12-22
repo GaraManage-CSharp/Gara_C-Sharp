@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnOk = new System.Windows.Forms.Button();
             this.txtNgay = new System.Windows.Forms.TextBox();
             this.txtBSXe = new System.Windows.Forms.TextBox();
             this.cbxHXe = new System.Windows.Forms.ComboBox();
@@ -47,38 +45,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.rbtnBTri = new System.Windows.Forms.RadioButton();
             this.rbtnSua = new System.Windows.Forms.RadioButton();
+            this.btnTNhan = new System.Windows.Forms.Button();
+            this.btnLMoi = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(422, 207);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(96, 96);
-            this.btnXoa.TabIndex = 37;
-            this.btnXoa.Text = "button2";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            // 
-            // btnOk
-            // 
-            this.btnOk.Location = new System.Drawing.Point(422, 78);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(96, 96);
-            this.btnOk.TabIndex = 36;
-            this.btnOk.Text = "button1";
-            this.btnOk.UseVisualStyleBackColor = true;
             // 
             // txtNgay
             // 
             this.txtNgay.Location = new System.Drawing.Point(109, 345);
             this.txtNgay.Name = "txtNgay";
-            this.txtNgay.Size = new System.Drawing.Size(206, 20);
+            this.txtNgay.Size = new System.Drawing.Size(282, 20);
             this.txtNgay.TabIndex = 35;
             // 
             // txtBSXe
             // 
             this.txtBSXe.Location = new System.Drawing.Point(109, 296);
             this.txtBSXe.Name = "txtBSXe";
-            this.txtBSXe.Size = new System.Drawing.Size(206, 20);
+            this.txtBSXe.Size = new System.Drawing.Size(282, 20);
             this.txtBSXe.TabIndex = 34;
             // 
             // cbxHXe
@@ -86,35 +68,35 @@
             this.cbxHXe.FormattingEnabled = true;
             this.cbxHXe.Location = new System.Drawing.Point(109, 246);
             this.cbxHXe.Name = "cbxHXe";
-            this.cbxHXe.Size = new System.Drawing.Size(206, 21);
+            this.cbxHXe.Size = new System.Drawing.Size(282, 21);
             this.cbxHXe.TabIndex = 33;
             // 
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(109, 191);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(206, 20);
+            this.txtSDT.Size = new System.Drawing.Size(282, 20);
             this.txtSDT.TabIndex = 32;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(109, 141);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(206, 20);
+            this.txtEmail.Size = new System.Drawing.Size(282, 20);
             this.txtEmail.TabIndex = 31;
             // 
             // txtDC
             // 
             this.txtDC.Location = new System.Drawing.Point(109, 97);
             this.txtDC.Name = "txtDC";
-            this.txtDC.Size = new System.Drawing.Size(206, 20);
+            this.txtDC.Size = new System.Drawing.Size(282, 20);
             this.txtDC.TabIndex = 30;
             // 
             // txtTen
             // 
             this.txtTen.Location = new System.Drawing.Point(109, 54);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(206, 20);
+            this.txtTen.Size = new System.Drawing.Size(282, 20);
             this.txtTen.TabIndex = 29;
             // 
             // label8
@@ -211,12 +193,33 @@
             this.rbtnSua.Text = "Sữa chữa";
             this.rbtnSua.UseVisualStyleBackColor = true;
             // 
-            // UserControl1
+            // btnTNhan
+            // 
+            this.btnTNhan.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnTNhan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnTNhan.Location = new System.Drawing.Point(444, 85);
+            this.btnTNhan.Name = "btnTNhan";
+            this.btnTNhan.Size = new System.Drawing.Size(96, 96);
+            this.btnTNhan.TabIndex = 36;
+            this.btnTNhan.Text = "Tiếp nhận";
+            this.btnTNhan.UseVisualStyleBackColor = true;
+            // 
+            // btnLMoi
+            // 
+            this.btnLMoi.Location = new System.Drawing.Point(444, 221);
+            this.btnLMoi.Name = "btnLMoi";
+            this.btnLMoi.Size = new System.Drawing.Size(96, 96);
+            this.btnLMoi.TabIndex = 37;
+            this.btnLMoi.Text = "Làm mới";
+            this.btnLMoi.UseVisualStyleBackColor = true;
+            // 
+            // UserComtrol_TiepNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnOk);
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnLMoi);
+            this.Controls.Add(this.btnTNhan);
             this.Controls.Add(this.txtNgay);
             this.Controls.Add(this.txtBSXe);
             this.Controls.Add(this.cbxHXe);
@@ -234,17 +237,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rbtnBTri);
             this.Controls.Add(this.rbtnSua);
-            this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(528, 376);
+            this.Name = "UserComtrol_TiepNhan";
+            this.Size = new System.Drawing.Size(596, 413);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.TextBox txtNgay;
         private System.Windows.Forms.TextBox txtBSXe;
         private System.Windows.Forms.ComboBox cbxHXe;
@@ -262,5 +262,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rbtnBTri;
         private System.Windows.Forms.RadioButton rbtnSua;
+        private System.Windows.Forms.Button btnTNhan;
+        private System.Windows.Forms.Button btnLMoi;
     }
 }

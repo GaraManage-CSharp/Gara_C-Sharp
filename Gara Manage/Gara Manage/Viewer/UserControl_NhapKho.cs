@@ -5,14 +5,13 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Gara_Manage
 {
-    public partial class UserControl_SuaChua : UserControl
+    public partial class UserControl_NhapKho : UserControl
     {
-        public UserControl_SuaChua()
+        public UserControl_NhapKho()
         {
             InitializeComponent();
         }

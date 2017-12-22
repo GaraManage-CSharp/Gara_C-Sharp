@@ -32,16 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MAIN));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabTNhan = new System.Windows.Forms.TabPage();
+            this.tabSChua = new System.Windows.Forms.TabPage();
             this.tabHDon = new System.Windows.Forms.TabPage();
+            this.tabNKho = new System.Windows.Forms.TabPage();
             this.tabTKe = new System.Windows.Forms.TabPage();
             this.tabQLy = new System.Windows.Forms.TabPage();
-            this.tabQL_TN = new System.Windows.Forms.TabPage();
-            this.tabQL_PT = new System.Windows.Forms.TabPage();
-            this.tabQL_TC = new System.Windows.Forms.TabPage();
             this.tabControl1_Control2 = new System.Windows.Forms.TabControl();
+            this.tabQL_TC = new System.Windows.Forms.TabPage();
+            this.tabQL_PT = new System.Windows.Forms.TabPage();
+            this.tabQL_TN = new System.Windows.Forms.TabPage();
             this.tabQL_HX = new System.Windows.Forms.TabPage();
-            this.tabSChua = new System.Windows.Forms.TabPage();
-            this.tabNKho = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabQLy.SuspendLayout();
             this.tabControl1_Control2.SuspendLayout();
@@ -76,6 +76,16 @@
             this.tabTNhan.TabIndex = 0;
             this.tabTNhan.Text = "Tiếp nhận";
             // 
+            // tabSChua
+            // 
+            this.tabSChua.Location = new System.Drawing.Point(4, 22);
+            this.tabSChua.Name = "tabSChua";
+            this.tabSChua.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSChua.Size = new System.Drawing.Size(596, 413);
+            this.tabSChua.TabIndex = 5;
+            this.tabSChua.Text = "Sửa chữa";
+            this.tabSChua.UseVisualStyleBackColor = true;
+            // 
             // tabHDon
             // 
             this.tabHDon.BackColor = System.Drawing.Color.Transparent;
@@ -88,6 +98,15 @@
             this.tabHDon.Size = new System.Drawing.Size(596, 413);
             this.tabHDon.TabIndex = 2;
             this.tabHDon.Text = "Hoá đơn";
+            // 
+            // tabNKho
+            // 
+            this.tabNKho.Location = new System.Drawing.Point(4, 22);
+            this.tabNKho.Name = "tabNKho";
+            this.tabNKho.Size = new System.Drawing.Size(596, 413);
+            this.tabNKho.TabIndex = 6;
+            this.tabNKho.Text = "Nhập kho";
+            this.tabNKho.UseVisualStyleBackColor = true;
             // 
             // tabTKe
             // 
@@ -113,37 +132,6 @@
             this.tabQLy.TabIndex = 4;
             this.tabQLy.Text = "Quản lý";
             // 
-            // tabQL_TN
-            // 
-            this.tabQL_TN.BackColor = System.Drawing.Color.Transparent;
-            this.tabQL_TN.ForeColor = System.Drawing.Color.Black;
-            this.tabQL_TN.Location = new System.Drawing.Point(4, 4);
-            this.tabQL_TN.Name = "tabQL_TN";
-            this.tabQL_TN.Padding = new System.Windows.Forms.Padding(3);
-            this.tabQL_TN.Size = new System.Drawing.Size(730, 608);
-            this.tabQL_TN.TabIndex = 2;
-            this.tabQL_TN.Text = "Tiếp nhận";
-            // 
-            // tabQL_PT
-            // 
-            this.tabQL_PT.BackColor = System.Drawing.Color.Transparent;
-            this.tabQL_PT.Location = new System.Drawing.Point(4, 4);
-            this.tabQL_PT.Name = "tabQL_PT";
-            this.tabQL_PT.Padding = new System.Windows.Forms.Padding(3);
-            this.tabQL_PT.Size = new System.Drawing.Size(730, 608);
-            this.tabQL_PT.TabIndex = 1;
-            this.tabQL_PT.Text = "Phụ tùng";
-            // 
-            // tabQL_TC
-            // 
-            this.tabQL_TC.BackColor = System.Drawing.Color.Transparent;
-            this.tabQL_TC.Location = new System.Drawing.Point(4, 4);
-            this.tabQL_TC.Name = "tabQL_TC";
-            this.tabQL_TC.Padding = new System.Windows.Forms.Padding(3);
-            this.tabQL_TC.Size = new System.Drawing.Size(730, 608);
-            this.tabQL_TC.TabIndex = 0;
-            this.tabQL_TC.Text = "Tiền công";
-            // 
             // tabControl1_Control2
             // 
             this.tabControl1_Control2.Alignment = System.Windows.Forms.TabAlignment.Bottom;
@@ -160,6 +148,37 @@
             this.tabControl1_Control2.Size = new System.Drawing.Size(590, 407);
             this.tabControl1_Control2.TabIndex = 0;
             // 
+            // tabQL_TC
+            // 
+            this.tabQL_TC.BackColor = System.Drawing.Color.Transparent;
+            this.tabQL_TC.Location = new System.Drawing.Point(4, 4);
+            this.tabQL_TC.Name = "tabQL_TC";
+            this.tabQL_TC.Padding = new System.Windows.Forms.Padding(3);
+            this.tabQL_TC.Size = new System.Drawing.Size(582, 380);
+            this.tabQL_TC.TabIndex = 0;
+            this.tabQL_TC.Text = "Tiền công";
+            // 
+            // tabQL_PT
+            // 
+            this.tabQL_PT.BackColor = System.Drawing.Color.Transparent;
+            this.tabQL_PT.Location = new System.Drawing.Point(4, 4);
+            this.tabQL_PT.Name = "tabQL_PT";
+            this.tabQL_PT.Padding = new System.Windows.Forms.Padding(3);
+            this.tabQL_PT.Size = new System.Drawing.Size(582, 380);
+            this.tabQL_PT.TabIndex = 1;
+            this.tabQL_PT.Text = "Phụ tùng";
+            // 
+            // tabQL_TN
+            // 
+            this.tabQL_TN.BackColor = System.Drawing.Color.Transparent;
+            this.tabQL_TN.ForeColor = System.Drawing.Color.Black;
+            this.tabQL_TN.Location = new System.Drawing.Point(4, 4);
+            this.tabQL_TN.Name = "tabQL_TN";
+            this.tabQL_TN.Padding = new System.Windows.Forms.Padding(3);
+            this.tabQL_TN.Size = new System.Drawing.Size(582, 380);
+            this.tabQL_TN.TabIndex = 2;
+            this.tabQL_TN.Text = "Tiếp nhận";
+            // 
             // tabQL_HX
             // 
             this.tabQL_HX.BackColor = System.Drawing.Color.Transparent;
@@ -170,36 +189,21 @@
             this.tabQL_HX.TabIndex = 3;
             this.tabQL_HX.Text = "Hiệu xe";
             // 
-            // tabSChua
-            // 
-            this.tabSChua.Location = new System.Drawing.Point(4, 22);
-            this.tabSChua.Name = "tabSChua";
-            this.tabSChua.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSChua.Size = new System.Drawing.Size(596, 413);
-            this.tabSChua.TabIndex = 5;
-            this.tabSChua.Text = "Sửa chữa";
-            this.tabSChua.UseVisualStyleBackColor = true;
-            // 
-            // tabNKho
-            // 
-            this.tabNKho.Location = new System.Drawing.Point(4, 22);
-            this.tabNKho.Name = "tabNKho";
-            this.tabNKho.Size = new System.Drawing.Size(596, 413);
-            this.tabNKho.TabIndex = 6;
-            this.tabNKho.Text = "Nhập kho";
-            this.tabNKho.UseVisualStyleBackColor = true;
-            // 
             // MAIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(604, 439);
             this.Controls.Add(this.tabControl1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MAIN";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý gara";
             this.tabControl1.ResumeLayout(false);
             this.tabQLy.ResumeLayout(false);
