@@ -1,4 +1,4 @@
-﻿namespace Gara_Manage
+﻿namespace Gara_Manage.Viewer
 {
     partial class UserComtrol_TiepNhan
     {
@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtNgay = new System.Windows.Forms.TextBox();
+            this.txtNNhan = new System.Windows.Forms.TextBox();
             this.txtBSXe = new System.Windows.Forms.TextBox();
             this.cbxHXe = new System.Windows.Forms.ComboBox();
-            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtSDThoai = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtDC = new System.Windows.Forms.TextBox();
-            this.txtTen = new System.Windows.Forms.TextBox();
+            this.txtDChi = new System.Windows.Forms.TextBox();
+            this.txtTKHang = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,18 +43,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rbtnBTri = new System.Windows.Forms.RadioButton();
-            this.rbtnSua = new System.Windows.Forms.RadioButton();
             this.btnTNhan = new System.Windows.Forms.Button();
             this.btnLMoi = new System.Windows.Forms.Button();
+            this.cmbLTNhan = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // txtNgay
+            // txtNNhan
             // 
-            this.txtNgay.Location = new System.Drawing.Point(109, 345);
-            this.txtNgay.Name = "txtNgay";
-            this.txtNgay.Size = new System.Drawing.Size(282, 20);
-            this.txtNgay.TabIndex = 35;
+            this.txtNNhan.Location = new System.Drawing.Point(109, 345);
+            this.txtNNhan.Name = "txtNNhan";
+            this.txtNNhan.Size = new System.Drawing.Size(282, 20);
+            this.txtNNhan.TabIndex = 35;
             // 
             // txtBSXe
             // 
@@ -71,12 +70,12 @@
             this.cbxHXe.Size = new System.Drawing.Size(282, 21);
             this.cbxHXe.TabIndex = 33;
             // 
-            // txtSDT
+            // txtSDThoai
             // 
-            this.txtSDT.Location = new System.Drawing.Point(109, 191);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(282, 20);
-            this.txtSDT.TabIndex = 32;
+            this.txtSDThoai.Location = new System.Drawing.Point(109, 191);
+            this.txtSDThoai.Name = "txtSDThoai";
+            this.txtSDThoai.Size = new System.Drawing.Size(282, 20);
+            this.txtSDThoai.TabIndex = 32;
             // 
             // txtEmail
             // 
@@ -85,19 +84,19 @@
             this.txtEmail.Size = new System.Drawing.Size(282, 20);
             this.txtEmail.TabIndex = 31;
             // 
-            // txtDC
+            // txtDChi
             // 
-            this.txtDC.Location = new System.Drawing.Point(109, 97);
-            this.txtDC.Name = "txtDC";
-            this.txtDC.Size = new System.Drawing.Size(282, 20);
-            this.txtDC.TabIndex = 30;
+            this.txtDChi.Location = new System.Drawing.Point(109, 97);
+            this.txtDChi.Name = "txtDChi";
+            this.txtDChi.Size = new System.Drawing.Size(282, 20);
+            this.txtDChi.TabIndex = 30;
             // 
-            // txtTen
+            // txtTKHang
             // 
-            this.txtTen.Location = new System.Drawing.Point(109, 54);
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(282, 20);
-            this.txtTen.TabIndex = 29;
+            this.txtTKHang.Location = new System.Drawing.Point(109, 54);
+            this.txtTKHang.Name = "txtTKHang";
+            this.txtTKHang.Size = new System.Drawing.Size(282, 20);
+            this.txtTKHang.TabIndex = 29;
             // 
             // label8
             // 
@@ -165,33 +164,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 6);
+            this.label1.Location = new System.Drawing.Point(16, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 21;
             this.label1.Text = "Loại tiếp nhận";
-            // 
-            // rbtnBTri
-            // 
-            this.rbtnBTri.AutoSize = true;
-            this.rbtnBTri.Location = new System.Drawing.Point(260, 6);
-            this.rbtnBTri.Name = "rbtnBTri";
-            this.rbtnBTri.Size = new System.Drawing.Size(55, 17);
-            this.rbtnBTri.TabIndex = 20;
-            this.rbtnBTri.Text = "Bảo trì";
-            this.rbtnBTri.UseVisualStyleBackColor = true;
-            // 
-            // rbtnSua
-            // 
-            this.rbtnSua.AutoSize = true;
-            this.rbtnSua.Checked = true;
-            this.rbtnSua.Location = new System.Drawing.Point(109, 6);
-            this.rbtnSua.Name = "rbtnSua";
-            this.rbtnSua.Size = new System.Drawing.Size(71, 17);
-            this.rbtnSua.TabIndex = 19;
-            this.rbtnSua.TabStop = true;
-            this.rbtnSua.Text = "Sữa chữa";
-            this.rbtnSua.UseVisualStyleBackColor = true;
             // 
             // btnTNhan
             // 
@@ -213,20 +190,29 @@
             this.btnLMoi.Text = "Làm mới";
             this.btnLMoi.UseVisualStyleBackColor = true;
             // 
+            // cmbLTNhan
+            // 
+            this.cmbLTNhan.FormattingEnabled = true;
+            this.cmbLTNhan.Location = new System.Drawing.Point(109, 23);
+            this.cmbLTNhan.Name = "cmbLTNhan";
+            this.cmbLTNhan.Size = new System.Drawing.Size(282, 21);
+            this.cmbLTNhan.TabIndex = 38;
+            // 
             // UserComtrol_TiepNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.cmbLTNhan);
             this.Controls.Add(this.btnLMoi);
             this.Controls.Add(this.btnTNhan);
-            this.Controls.Add(this.txtNgay);
+            this.Controls.Add(this.txtNNhan);
             this.Controls.Add(this.txtBSXe);
             this.Controls.Add(this.cbxHXe);
-            this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.txtSDThoai);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtDC);
-            this.Controls.Add(this.txtTen);
+            this.Controls.Add(this.txtDChi);
+            this.Controls.Add(this.txtTKHang);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -235,8 +221,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.rbtnBTri);
-            this.Controls.Add(this.rbtnSua);
             this.Name = "UserComtrol_TiepNhan";
             this.Size = new System.Drawing.Size(596, 413);
             this.ResumeLayout(false);
@@ -245,13 +229,13 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtNgay;
+        private System.Windows.Forms.TextBox txtNNhan;
         private System.Windows.Forms.TextBox txtBSXe;
         private System.Windows.Forms.ComboBox cbxHXe;
-        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtSDThoai;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtDC;
-        private System.Windows.Forms.TextBox txtTen;
+        private System.Windows.Forms.TextBox txtDChi;
+        private System.Windows.Forms.TextBox txtTKHang;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -260,9 +244,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton rbtnBTri;
-        private System.Windows.Forms.RadioButton rbtnSua;
         private System.Windows.Forms.Button btnTNhan;
         private System.Windows.Forms.Button btnLMoi;
+        private System.Windows.Forms.ComboBox cmbLTNhan;
     }
 }

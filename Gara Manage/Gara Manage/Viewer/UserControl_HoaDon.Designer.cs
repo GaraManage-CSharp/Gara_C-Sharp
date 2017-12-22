@@ -1,4 +1,4 @@
-﻿namespace Gara_Manage
+﻿namespace Gara_Manage.Viewer
 {
     partial class UserControl_HoaDon
     {
@@ -155,12 +155,15 @@
             // 
             // lstvPTung
             // 
+            this.lstvPTung.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.lstvPTung.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colMPTung,
             this.colTPTung,
             this.colNSXuat,
             this.colSLuong,
             this.colDGia});
+            this.lstvPTung.FullRowSelect = true;
+            this.lstvPTung.GridLines = true;
             this.lstvPTung.Location = new System.Drawing.Point(17, 107);
             this.lstvPTung.Name = "lstvPTung";
             this.lstvPTung.Size = new System.Drawing.Size(545, 244);

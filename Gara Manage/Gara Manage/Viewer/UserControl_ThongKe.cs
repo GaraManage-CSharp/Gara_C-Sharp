@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Gara_Manage.Viewer
 {
-    public partial class UserControl_NhapKho : UserControl
+    public partial class UserControl_ThongKe : UserControl
     {
-        public UserControl_NhapKho()
+        public UserControl_ThongKe()
         {
             InitializeComponent();
         }

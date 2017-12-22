@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Gara_Manage
+namespace Gara_Manage.Viewer
 {
     public partial class UserControl_SuaChua : UserControl
     {

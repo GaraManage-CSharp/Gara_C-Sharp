@@ -1,4 +1,4 @@
-﻿namespace Gara_Manage
+﻿namespace Gara_Manage.Viewer
 {
     partial class UserControl_SuaChua
     {
@@ -46,6 +46,8 @@
             this.colNSXuat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colSLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colDGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNSua = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,7 +145,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 357);
+            this.label3.Location = new System.Drawing.Point(25, 368);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 15;
@@ -152,7 +154,7 @@
             // txtTTien
             // 
             this.txtTTien.Enabled = false;
-            this.txtTTien.Location = new System.Drawing.Point(98, 354);
+            this.txtTTien.Location = new System.Drawing.Point(108, 365);
             this.txtTTien.Name = "txtTTien";
             this.txtTTien.Size = new System.Drawing.Size(177, 20);
             this.txtTTien.TabIndex = 9;
@@ -166,10 +168,12 @@
             this.colNSXuat,
             this.colSLuong,
             this.colDGia});
+            this.lstvPTung.FullRowSelect = true;
+            this.lstvPTung.GridLines = true;
             this.lstvPTung.Location = new System.Drawing.Point(17, 83);
             this.lstvPTung.Name = "lstvPTung";
             this.lstvPTung.Size = new System.Drawing.Size(489, 244);
-            this.lstvPTung.TabIndex = 16;
+            this.lstvPTung.TabIndex = 5;
             this.lstvPTung.UseCompatibleStateImageBehavior = false;
             this.lstvPTung.View = System.Windows.Forms.View.Details;
             // 
@@ -198,11 +202,31 @@
             this.colDGia.Text = "Đơn giá";
             this.colDGia.Width = 70;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(28, 339);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Ngày sữa";
+            // 
+            // txtNSua
+            // 
+            this.txtNSua.Enabled = false;
+            this.txtNSua.Location = new System.Drawing.Point(108, 336);
+            this.txtNSua.Name = "txtNSua";
+            this.txtNSua.Size = new System.Drawing.Size(177, 20);
+            this.txtNSua.TabIndex = 8;
+            this.txtNSua.TabStop = false;
+            // 
             // UserControl_SuaChua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtNSua);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lstvPTung);
             this.Controls.Add(this.txtTTien);
             this.Controls.Add(this.label3);
@@ -244,5 +268,7 @@
         private System.Windows.Forms.ColumnHeader colNSXuat;
         private System.Windows.Forms.ColumnHeader colSLuong;
         private System.Windows.Forms.ColumnHeader colDGia;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtNSua;
     }
 }

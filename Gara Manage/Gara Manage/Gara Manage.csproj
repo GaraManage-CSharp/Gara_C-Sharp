@@ -59,6 +59,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -72,10 +73,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Viewer\MAIN.cs">
+    <Compile Include="MAIN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Viewer\MAIN.Designer.cs">
+    <Compile Include="MAIN.Designer.cs">
       <DependentUpon>MAIN.cs</DependentUpon>
     </Compile>
     <Compile Include="Gara_Manage.cs" />
@@ -99,13 +100,43 @@
     <Compile Include="Viewer\UserControl_NhapKho.Designer.cs">
       <DependentUpon>UserControl_NhapKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Viewer\UserControl_QuanLy_HieuXe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Viewer\UserControl_QuanLy_HieuXe.Designer.cs">
+      <DependentUpon>UserControl_QuanLy_HieuXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viewer\UserControl_QuanLy_PhuTung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Viewer\UserControl_QuanLy_PhuTung.Designer.cs">
+      <DependentUpon>UserControl_QuanLy_PhuTung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viewer\UserControl_QuanLy_TienCong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Viewer\UserControl_QuanLy_TienCong.Designer.cs">
+      <DependentUpon>UserControl_QuanLy_TienCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viewer\UserControl_QuanLy_TiepNhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Viewer\UserControl_QuanLy_TiepNhan.Designer.cs">
+      <DependentUpon>UserControl_QuanLy_TiepNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viewer\UserControl_SuaChua.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Viewer\UserControl_SuaChua.Designer.cs">
       <DependentUpon>UserControl_SuaChua.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Viewer\MAIN.resx">
+    <Compile Include="Viewer\UserControl_ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Viewer\UserControl_ThongKe.Designer.cs">
+      <DependentUpon>UserControl_ThongKe.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MAIN.resx">
       <DependentUpon>MAIN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -127,8 +158,23 @@
     <EmbeddedResource Include="Viewer\UserControl_NhapKho.resx">
       <DependentUpon>UserControl_NhapKho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Viewer\UserControl_QuanLy_HieuXe.resx">
+      <DependentUpon>UserControl_QuanLy_HieuXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viewer\UserControl_QuanLy_PhuTung.resx">
+      <DependentUpon>UserControl_QuanLy_PhuTung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viewer\UserControl_QuanLy_TienCong.resx">
+      <DependentUpon>UserControl_QuanLy_TienCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viewer\UserControl_QuanLy_TiepNhan.resx">
+      <DependentUpon>UserControl_QuanLy_TiepNhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Viewer\UserControl_SuaChua.resx">
       <DependentUpon>UserControl_SuaChua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viewer\UserControl_ThongKe.resx">
+      <DependentUpon>UserControl_ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
