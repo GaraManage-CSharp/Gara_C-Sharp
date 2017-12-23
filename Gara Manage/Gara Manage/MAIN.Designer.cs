@@ -122,7 +122,7 @@
             // 
             // tabQLy
             // 
-            this.tabQLy.BackColor = System.Drawing.Color.Transparent;
+            this.tabQLy.BackColor = System.Drawing.Color.White;
             this.tabQLy.Controls.Add(this.tabControl1_Control2);
             this.tabQLy.ForeColor = System.Drawing.Color.Black;
             this.tabQLy.Location = new System.Drawing.Point(4, 22);
@@ -150,7 +150,7 @@
             // 
             // tabQL_TC
             // 
-            this.tabQL_TC.BackColor = System.Drawing.Color.Transparent;
+            this.tabQL_TC.BackColor = System.Drawing.Color.White;
             this.tabQL_TC.Location = new System.Drawing.Point(4, 4);
             this.tabQL_TC.Name = "tabQL_TC";
             this.tabQL_TC.Padding = new System.Windows.Forms.Padding(3);
@@ -160,7 +160,7 @@
             // 
             // tabQL_PT
             // 
-            this.tabQL_PT.BackColor = System.Drawing.Color.Transparent;
+            this.tabQL_PT.BackColor = System.Drawing.Color.White;
             this.tabQL_PT.Location = new System.Drawing.Point(4, 4);
             this.tabQL_PT.Name = "tabQL_PT";
             this.tabQL_PT.Padding = new System.Windows.Forms.Padding(3);
@@ -170,7 +170,7 @@
             // 
             // tabQL_TN
             // 
-            this.tabQL_TN.BackColor = System.Drawing.Color.Transparent;
+            this.tabQL_TN.BackColor = System.Drawing.Color.White;
             this.tabQL_TN.ForeColor = System.Drawing.Color.Black;
             this.tabQL_TN.Location = new System.Drawing.Point(4, 4);
             this.tabQL_TN.Name = "tabQL_TN";
@@ -181,7 +181,7 @@
             // 
             // tabQL_HX
             // 
-            this.tabQL_HX.BackColor = System.Drawing.Color.Transparent;
+            this.tabQL_HX.BackColor = System.Drawing.Color.White;
             this.tabQL_HX.Location = new System.Drawing.Point(4, 4);
             this.tabQL_HX.Name = "tabQL_HX";
             this.tabQL_HX.Padding = new System.Windows.Forms.Padding(3);
