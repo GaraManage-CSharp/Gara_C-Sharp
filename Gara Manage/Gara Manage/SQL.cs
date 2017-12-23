@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace Gara_Manage
 {
@@ -17,7 +13,7 @@ namespace Gara_Manage
                 {
                     return conn;
                 }
-                conn = new SqlConnection("Data Source=127.0.0.1;Initial Catalog=GARAOTO;Persist Security Info=True;User ID=sa;Password=1");
+                conn = new SqlConnection("Data Source=127.0.0.1;Initial Catalog=GARAOTO;Persist Security Info=True;User ID=sa");
                 conn.Open();
                 return conn;
             }
