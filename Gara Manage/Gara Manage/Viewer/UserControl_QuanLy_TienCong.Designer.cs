@@ -45,6 +45,7 @@
             this.btnLoc = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnLMoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numGTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLoc)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +85,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(466, 38);
+            this.btnThem.Location = new System.Drawing.Point(479, 38);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 3;
@@ -125,10 +126,10 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(479, 241);
+            this.btnSua.Location = new System.Drawing.Point(479, 293);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 75);
-            this.btnSua.TabIndex = 9;
+            this.btnSua.TabIndex = 10;
             this.btnSua.Text = "Sữa";
             this.btnSua.UseVisualStyleBackColor = true;
             // 
@@ -198,11 +199,21 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Tra cứu và chỉnh sữa tiền công";
             // 
+            // btnLMoi
+            // 
+            this.btnLMoi.Location = new System.Drawing.Point(479, 189);
+            this.btnLMoi.Name = "btnLMoi";
+            this.btnLMoi.Size = new System.Drawing.Size(75, 75);
+            this.btnLMoi.TabIndex = 9;
+            this.btnLMoi.Text = "Làm mới";
+            this.btnLMoi.UseVisualStyleBackColor = true;
+            // 
             // UserControl_QuanLy_TienCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnLMoi);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnLoc);
@@ -245,5 +256,6 @@
         private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnLMoi;
     }
 }

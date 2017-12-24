@@ -79,7 +79,7 @@
             0});
             this.numSLuong.Name = "numSLuong";
             this.numSLuong.Size = new System.Drawing.Size(120, 20);
-            this.numSLuong.TabIndex = 2;
+            this.numSLuong.TabIndex = 1;
             this.numSLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numSLuong.Value = new decimal(new int[] {
             30,

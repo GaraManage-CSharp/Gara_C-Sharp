@@ -48,6 +48,7 @@
             this.colDGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.txtNSua = new System.Windows.Forms.TextBox();
+            this.bttnLMoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,19 +110,19 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(522, 119);
+            this.btnXoa.Location = new System.Drawing.Point(522, 166);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 75);
-            this.btnXoa.TabIndex = 6;
+            this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xoá";
             this.btnXoa.UseVisualStyleBackColor = true;
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(522, 209);
+            this.btnSua.Location = new System.Drawing.Point(522, 252);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 75);
-            this.btnSua.TabIndex = 7;
+            this.btnSua.TabIndex = 8;
             this.btnSua.Text = "Sữa";
             this.btnSua.UseVisualStyleBackColor = true;
             // 
@@ -130,7 +131,7 @@
             this.btnXNhan.Location = new System.Drawing.Point(375, 351);
             this.btnXNhan.Name = "btnXNhan";
             this.btnXNhan.Size = new System.Drawing.Size(75, 23);
-            this.btnXNhan.TabIndex = 10;
+            this.btnXNhan.TabIndex = 11;
             this.btnXNhan.Text = "Xác nhận";
             this.btnXNhan.UseVisualStyleBackColor = true;
             // 
@@ -157,7 +158,7 @@
             this.txtTTien.Location = new System.Drawing.Point(108, 365);
             this.txtTTien.Name = "txtTTien";
             this.txtTTien.Size = new System.Drawing.Size(177, 20);
-            this.txtTTien.TabIndex = 9;
+            this.txtTTien.TabIndex = 10;
             this.txtTTien.TabStop = false;
             // 
             // lstvPTung
@@ -217,14 +218,24 @@
             this.txtNSua.Location = new System.Drawing.Point(108, 336);
             this.txtNSua.Name = "txtNSua";
             this.txtNSua.Size = new System.Drawing.Size(177, 20);
-            this.txtNSua.TabIndex = 8;
+            this.txtNSua.TabIndex = 9;
             this.txtNSua.TabStop = false;
+            // 
+            // bttnLMoi
+            // 
+            this.bttnLMoi.Location = new System.Drawing.Point(522, 81);
+            this.bttnLMoi.Name = "bttnLMoi";
+            this.bttnLMoi.Size = new System.Drawing.Size(75, 75);
+            this.bttnLMoi.TabIndex = 6;
+            this.bttnLMoi.Text = "Làm mới";
+            this.bttnLMoi.UseVisualStyleBackColor = true;
             // 
             // UserControl_SuaChua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.bttnLMoi);
             this.Controls.Add(this.txtNSua);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lstvPTung);
@@ -270,5 +281,6 @@
         private System.Windows.Forms.ColumnHeader colDGia;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNSua;
+        private System.Windows.Forms.Button bttnLMoi;
     }
 }

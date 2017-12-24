@@ -45,6 +45,7 @@
             this.lstvPTung = new System.Windows.Forms.ListView();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTTien = new System.Windows.Forms.TextBox();
+            this.btnLMoi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -124,7 +125,7 @@
             this.btnXHDon.Location = new System.Drawing.Point(422, 366);
             this.btnXHDon.Name = "btnXHDon";
             this.btnXHDon.Size = new System.Drawing.Size(94, 23);
-            this.btnXHDon.TabIndex = 6;
+            this.btnXHDon.TabIndex = 8;
             this.btnXHDon.Text = "Xuất hoá đơn";
             this.btnXHDon.UseVisualStyleBackColor = true;
             // 
@@ -167,7 +168,7 @@
             this.lstvPTung.Location = new System.Drawing.Point(17, 107);
             this.lstvPTung.Name = "lstvPTung";
             this.lstvPTung.Size = new System.Drawing.Size(545, 244);
-            this.lstvPTung.TabIndex = 5;
+            this.lstvPTung.TabIndex = 6;
             this.lstvPTung.UseCompatibleStateImageBehavior = false;
             this.lstvPTung.View = System.Windows.Forms.View.Details;
             // 
@@ -182,17 +183,28 @@
             // 
             // txtTTien
             // 
+            this.txtTTien.Enabled = false;
             this.txtTTien.Location = new System.Drawing.Point(121, 368);
             this.txtTTien.Name = "txtTTien";
             this.txtTTien.Size = new System.Drawing.Size(179, 20);
-            this.txtTTien.TabIndex = 8;
+            this.txtTTien.TabIndex = 7;
             this.txtTTien.TabStop = false;
+            // 
+            // btnLMoi
+            // 
+            this.btnLMoi.Location = new System.Drawing.Point(261, 78);
+            this.btnLMoi.Name = "btnLMoi";
+            this.btnLMoi.Size = new System.Drawing.Size(75, 23);
+            this.btnLMoi.TabIndex = 5;
+            this.btnLMoi.Text = "Làm mới";
+            this.btnLMoi.UseVisualStyleBackColor = true;
             // 
             // UserControl_HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnLMoi);
             this.Controls.Add(this.txtTTien);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnXHDon);
@@ -231,5 +243,6 @@
         private System.Windows.Forms.ListView lstvPTung;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTTien;
+        private System.Windows.Forms.Button btnLMoi;
     }
 }

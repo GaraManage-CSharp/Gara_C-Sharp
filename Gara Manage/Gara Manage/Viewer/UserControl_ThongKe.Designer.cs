@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btn_DThu_Tim = new System.Windows.Forms.Button();
             this.lstvDTThang = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,6 +50,7 @@
             this.cmbBCThang = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_BCao_Tim = new System.Windows.Forms.Button();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -64,6 +66,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btn_DThu_Tim);
             this.splitContainer1.Panel1.Controls.Add(this.lstvDTThang);
             this.splitContainer1.Panel1.Controls.Add(this.txtTDTThang);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
@@ -74,6 +77,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btn_BCao_Tim);
             this.splitContainer1.Panel2.Controls.Add(this.lstvBCThang);
             this.splitContainer1.Panel2.Controls.Add(this.cmbBCThang);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
@@ -82,6 +86,15 @@
             this.splitContainer1.Size = new System.Drawing.Size(596, 413);
             this.splitContainer1.SplitterDistance = 373;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // btn_DThu_Tim
+            // 
+            this.btn_DThu_Tim.Location = new System.Drawing.Point(389, 45);
+            this.btn_DThu_Tim.Name = "btn_DThu_Tim";
+            this.btn_DThu_Tim.Size = new System.Drawing.Size(75, 23);
+            this.btn_DThu_Tim.TabIndex = 6;
+            this.btn_DThu_Tim.Text = "Tìm";
+            this.btn_DThu_Tim.UseVisualStyleBackColor = true;
             // 
             // lstvDTThang
             // 
@@ -239,6 +252,15 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Báo cáo tồn";
             // 
+            // btn_BCao_Tim
+            // 
+            this.btn_BCao_Tim.Location = new System.Drawing.Point(389, 50);
+            this.btn_BCao_Tim.Name = "btn_BCao_Tim";
+            this.btn_BCao_Tim.Size = new System.Drawing.Size(75, 23);
+            this.btn_BCao_Tim.TabIndex = 7;
+            this.btn_BCao_Tim.Text = "Tìm";
+            this.btn_BCao_Tim.UseVisualStyleBackColor = true;
+            // 
             // UserControl_ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,5 +301,7 @@
         private System.Windows.Forms.ComboBox cmbBCThang;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn_DThu_Tim;
+        private System.Windows.Forms.Button btn_BCao_Tim;
     }
 }

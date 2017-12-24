@@ -41,6 +41,7 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.btnLMoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +84,7 @@
             0});
             this.numSLuong.Name = "numSLuong";
             this.numSLuong.Size = new System.Drawing.Size(66, 20);
-            this.numSLuong.TabIndex = 3;
+            this.numSLuong.TabIndex = 2;
             this.numSLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnThem
@@ -91,7 +92,7 @@
             this.btnThem.Location = new System.Drawing.Point(509, 20);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 4;
+            this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             // 
@@ -111,7 +112,7 @@
             this.listView1.Location = new System.Drawing.Point(23, 66);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(493, 318);
-            this.listView1.TabIndex = 5;
+            this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
@@ -145,7 +146,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(529, 123);
+            this.btnSua.Location = new System.Drawing.Point(529, 184);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(55, 55);
             this.btnSua.TabIndex = 6;
@@ -154,17 +155,27 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(529, 233);
+            this.btnXoa.Location = new System.Drawing.Point(529, 294);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(55, 55);
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             // 
+            // btnLMoi
+            // 
+            this.btnLMoi.Location = new System.Drawing.Point(529, 88);
+            this.btnLMoi.Name = "btnLMoi";
+            this.btnLMoi.Size = new System.Drawing.Size(55, 55);
+            this.btnLMoi.TabIndex = 5;
+            this.btnLMoi.Text = "Làm mới";
+            this.btnLMoi.UseVisualStyleBackColor = true;
+            // 
             // UserControl_NhapKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnLMoi);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.listView1);
@@ -196,5 +207,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnLMoi;
     }
 }

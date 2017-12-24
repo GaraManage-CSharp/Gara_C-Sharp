@@ -44,7 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnTNhan = new System.Windows.Forms.Button();
-            this.btnLMoi = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.cmbLTNhan = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -185,14 +185,14 @@
             this.btnTNhan.Text = "Tiếp nhận";
             this.btnTNhan.UseVisualStyleBackColor = true;
             // 
-            // btnLMoi
+            // btnXoa
             // 
-            this.btnLMoi.Location = new System.Drawing.Point(444, 221);
-            this.btnLMoi.Name = "btnLMoi";
-            this.btnLMoi.Size = new System.Drawing.Size(96, 96);
-            this.btnLMoi.TabIndex = 37;
-            this.btnLMoi.Text = "Làm mới";
-            this.btnLMoi.UseVisualStyleBackColor = true;
+            this.btnXoa.Location = new System.Drawing.Point(444, 221);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(96, 96);
+            this.btnXoa.TabIndex = 37;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
             // 
             // cmbLTNhan
             // 
@@ -240,7 +240,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.cmbLTNhan);
-            this.Controls.Add(this.btnLMoi);
+            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnTNhan);
             this.Controls.Add(this.txtNNhan);
             this.Controls.Add(this.textBox1);
@@ -285,7 +285,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnTNhan;
-        private System.Windows.Forms.Button btnLMoi;
+        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.ComboBox cmbLTNhan;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox1;

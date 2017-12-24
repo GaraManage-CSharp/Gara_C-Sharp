@@ -46,6 +46,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnLMoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numGTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLoc)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +72,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(466, 38);
+            this.btnThem.Location = new System.Drawing.Point(479, 40);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 3;
@@ -161,10 +162,10 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(479, 241);
+            this.btnSua.Location = new System.Drawing.Point(479, 293);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 75);
-            this.btnSua.TabIndex = 9;
+            this.btnSua.TabIndex = 10;
             this.btnSua.Text = "Sữa";
             this.btnSua.UseVisualStyleBackColor = true;
             // 
@@ -207,11 +208,21 @@
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader3.Width = 109;
             // 
+            // btnLMoi
+            // 
+            this.btnLMoi.Location = new System.Drawing.Point(479, 189);
+            this.btnLMoi.Name = "btnLMoi";
+            this.btnLMoi.Size = new System.Drawing.Size(75, 75);
+            this.btnLMoi.TabIndex = 9;
+            this.btnLMoi.Text = "Làm mới";
+            this.btnLMoi.UseVisualStyleBackColor = true;
+            // 
             // UserControl_QuanLy_PhuTung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnLMoi);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.lstvPTung);
             this.Controls.Add(this.label5);
@@ -255,5 +266,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ComboBox cmbLTheo;
+        private System.Windows.Forms.Button btnLMoi;
     }
 }
