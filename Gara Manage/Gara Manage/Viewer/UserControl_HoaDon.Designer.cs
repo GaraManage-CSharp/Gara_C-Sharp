@@ -196,7 +196,7 @@
             this.btnLMoi.Name = "btnLMoi";
             this.btnLMoi.Size = new System.Drawing.Size(75, 23);
             this.btnLMoi.TabIndex = 5;
-            this.btnLMoi.Text = "Tải lại";
+            this.btnLMoi.Text = "Làm mới";
             this.btnLMoi.UseVisualStyleBackColor = true;
             // 
             // UserControl_HoaDon
