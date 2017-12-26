@@ -205,6 +205,7 @@
             this.Name = "MAIN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý gara";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MAIN_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabQLy.ResumeLayout(false);
             this.tabControl1_Control2.ResumeLayout(false);

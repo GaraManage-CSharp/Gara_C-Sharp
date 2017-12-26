@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Gara_Manage
 {
@@ -23,6 +17,15 @@ namespace Gara_Manage
             tabQL_PT.Controls.Add(new Viewer.UserControl_QuanLy_PhuTung());
             tabQL_TN.Controls.Add(new Viewer.UserControl_QuanLy_TiepNhan());
             tabQL_HX.Controls.Add(new Viewer.UserControl_QuanLy_HieuXe());
+            SqlCommand comd = SQL.Connection.CreateCommand();
+            comd.CommandText = "set dateformat dmy";
+            comd.ExecuteNonQuery();
+
+        }
+
+        private void MAIN_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SQL.closeConnection();
         }
     }
 }

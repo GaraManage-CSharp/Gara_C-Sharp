@@ -33,21 +33,13 @@
             this.numSLuong = new System.Windows.Forms.NumericUpDown();
             this.btnXNhan = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.lstvPTung = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnLoc = new System.Windows.Forms.Button();
             this.txtLoc = new System.Windows.Forms.TextBox();
             this.cmbLTheo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbLoc = new System.Windows.Forms.ComboBox();
+            this.dgvDLTNhan = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDLTNhan)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -95,6 +87,7 @@
             this.btnXNhan.TabIndex = 2;
             this.btnXNhan.Text = "Xác nhận";
             this.btnXNhan.UseVisualStyleBackColor = true;
+            this.btnXNhan.Click += new System.EventHandler(this.btnXNhan_Click);
             // 
             // label3
             // 
@@ -106,84 +99,20 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Dữ liệu tiếp nhận";
             // 
-            // lstvPTung
-            // 
-            this.lstvPTung.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader4,
-            this.columnHeader3,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
-            this.lstvPTung.FullRowSelect = true;
-            this.lstvPTung.GridLines = true;
-            this.lstvPTung.Location = new System.Drawing.Point(3, 189);
-            this.lstvPTung.Name = "lstvPTung";
-            this.lstvPTung.Size = new System.Drawing.Size(574, 179);
-            this.lstvPTung.TabIndex = 7;
-            this.lstvPTung.UseCompatibleStateImageBehavior = false;
-            this.lstvPTung.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Mã tiếp nhận";
-            this.columnHeader1.Width = 0;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Khách hàng";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 107;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Loại sữa chữa";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 80;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Biển số xe";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 74;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Hiệu xe";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 57;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Nhân viên";
-            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader6.Width = 75;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Ngày nhận";
-            this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader7.Width = 67;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Ngày sữa";
-            this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // btnLoc
             // 
-            this.btnLoc.Location = new System.Drawing.Point(502, 131);
+            this.btnLoc.Location = new System.Drawing.Point(482, 115);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(75, 23);
             this.btnLoc.TabIndex = 6;
             this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // txtLoc
             // 
-            this.txtLoc.Location = new System.Drawing.Point(273, 118);
+            this.txtLoc.Enabled = false;
+            this.txtLoc.Location = new System.Drawing.Point(291, 117);
             this.txtLoc.Name = "txtLoc";
             this.txtLoc.Size = new System.Drawing.Size(166, 20);
             this.txtLoc.TabIndex = 4;
@@ -205,6 +134,7 @@
             this.cmbLTheo.Name = "cmbLTheo";
             this.cmbLTheo.Size = new System.Drawing.Size(181, 21);
             this.cmbLTheo.TabIndex = 3;
+            this.cmbLTheo.SelectedIndexChanged += new System.EventHandler(this.cmbLTheo_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -215,21 +145,23 @@
             this.label4.TabIndex = 22;
             this.label4.Text = "Lọc theo";
             // 
-            // cmbLoc
+            // dgvDLTNhan
             // 
-            this.cmbLoc.FormattingEnabled = true;
-            this.cmbLoc.Location = new System.Drawing.Point(273, 156);
-            this.cmbLoc.Name = "cmbLoc";
-            this.cmbLoc.Size = new System.Drawing.Size(166, 21);
-            this.cmbLoc.TabIndex = 5;
+            this.dgvDLTNhan.AllowUserToAddRows = false;
+            this.dgvDLTNhan.AllowUserToDeleteRows = false;
+            this.dgvDLTNhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDLTNhan.Location = new System.Drawing.Point(20, 145);
+            this.dgvDLTNhan.Name = "dgvDLTNhan";
+            this.dgvDLTNhan.ReadOnly = true;
+            this.dgvDLTNhan.Size = new System.Drawing.Size(537, 217);
+            this.dgvDLTNhan.TabIndex = 23;
             // 
             // UserControl_QuanLy_TiepNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.cmbLoc);
-            this.Controls.Add(this.lstvPTung);
+            this.Controls.Add(this.dgvDLTNhan);
             this.Controls.Add(this.btnLoc);
             this.Controls.Add(this.txtLoc);
             this.Controls.Add(this.cmbLTheo);
@@ -242,6 +174,7 @@
             this.Name = "UserControl_QuanLy_TiepNhan";
             this.Size = new System.Drawing.Size(582, 380);
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDLTNhan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,19 +186,10 @@
         private System.Windows.Forms.NumericUpDown numSLuong;
         private System.Windows.Forms.Button btnXNhan;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListView lstvPTung;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.TextBox txtLoc;
         private System.Windows.Forms.ComboBox cmbLTheo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ComboBox cmbLoc;
+        private System.Windows.Forms.DataGridView dgvDLTNhan;
     }
 }
