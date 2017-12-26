@@ -149,12 +149,14 @@
             // 
             this.dgvDLTNhan.AllowUserToAddRows = false;
             this.dgvDLTNhan.AllowUserToDeleteRows = false;
+            this.dgvDLTNhan.BackgroundColor = System.Drawing.Color.White;
             this.dgvDLTNhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDLTNhan.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvDLTNhan.Location = new System.Drawing.Point(20, 145);
             this.dgvDLTNhan.Name = "dgvDLTNhan";
             this.dgvDLTNhan.ReadOnly = true;
             this.dgvDLTNhan.Size = new System.Drawing.Size(537, 217);
-            this.dgvDLTNhan.TabIndex = 23;
+            this.dgvDLTNhan.TabIndex = 7;
             // 
             // UserControl_QuanLy_TiepNhan
             // 

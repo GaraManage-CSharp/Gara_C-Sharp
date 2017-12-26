@@ -7,7 +7,7 @@ namespace Gara_Manage.Viewer
 {
     public partial class UserControl_QuanLy_TiepNhan : UserControl
     {
-        
+
         public UserControl_QuanLy_TiepNhan()
         {
             InitializeComponent();
@@ -16,27 +16,27 @@ namespace Gara_Manage.Viewer
 
         private void btnXNhan_Click(object sender, EventArgs e)
         {
-            SqlCommand sqlcomd= SQL.Connection.CreateCommand();
+            SqlCommand sqlcomd = SQL.Connection.CreateCommand();
             sqlcomd.CommandText = setTextUpdate((int)numSLuong.Value);
             sqlcomd.ExecuteNonQuery();
-            MessageBox.Show("Cập nhật thành công.","Thông báo",MessageBoxButtons.OK);
+            MessageBox.Show("Cập nhật thành công.", "Thông báo", MessageBoxButtons.OK);
         }
         private string setTextUpdate(int value)
         {
-            return "ALTER trigger [dbo].[update_SLTTTNhan] "+
-                    "on[dbo].[TIEPNHAN] "+
-                    "for insert "+
-                    "as "+
-                    "begin "+
-                        "declare @quantity int "+
-                        "select @quantity = count(t.idTN) "+
-                        "from TIEPNHAN t, INSERTED i "+
-                        "where convert(date, t.NGAYNHAN, 103) = convert(date, getdate(), 103) "+
-                        "if @quantity = "+value+" "+
-                        "begin "+
-                            "rollback tran "+
-                            "raiserror(N'Lỗi', 16, 1) "+
-                        "end "+
+            return "ALTER trigger [dbo].[update_SLTTTNhan] " +
+                    "on[dbo].[TIEPNHAN] " +
+                    "for insert " +
+                    "as " +
+                    "begin " +
+                        "declare @quantity int " +
+                        "select @quantity = count(t.idTN) " +
+                        "from TIEPNHAN t, INSERTED i " +
+                        "where convert(date, t.NGAYNHAN, 103) = convert(date, getdate(), 103) " +
+                        "if @quantity = " + value + " " +
+                        "begin " +
+                            "rollback tran " +
+                            "raiserror(N'Lỗi', 16, 1) " +
+                        "end " +
                     "end";
         }
 
@@ -85,10 +85,11 @@ namespace Gara_Manage.Viewer
 
         private void cmbLTheo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbLTheo.SelectedIndex==0)
+            if (cmbLTheo.SelectedIndex == 0)
             {
                 txtLoc.Enabled = false;
-            } else
+            }
+            else
             {
                 txtLoc.Enabled = true;
             }

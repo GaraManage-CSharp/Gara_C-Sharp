@@ -11,9 +11,15 @@ namespace Gara_Manage.Viewer
 {
     public partial class UserControl_NhapKho : UserControl
     {
+        int i = 0;
         public UserControl_NhapKho()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            dgvPTung.Rows[dgvPTung.CurrentRow.Index].Cells[0].Value=i++;
         }
     }
 }

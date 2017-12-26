@@ -33,21 +33,17 @@
             this.txtTCong = new System.Windows.Forms.TextBox();
             this.numGTien = new System.Windows.Forms.NumericUpDown();
             this.btnThem = new System.Windows.Forms.Button();
-            this.lsttvLoc = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSua = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbLTheo = new System.Windows.Forms.ComboBox();
             this.txtLoc = new System.Windows.Forms.TextBox();
-            this.numLoc = new System.Windows.Forms.NumericUpDown();
             this.btnLoc = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnLMoi = new System.Windows.Forms.Button();
+            this.dgvTCong = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.numGTien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numLoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTCong)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -92,38 +88,6 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             // 
-            // lsttvLoc
-            // 
-            this.lsttvLoc.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.lsttvLoc.FullRowSelect = true;
-            this.lsttvLoc.GridLines = true;
-            this.lsttvLoc.Location = new System.Drawing.Point(83, 189);
-            this.lsttvLoc.Name = "lsttvLoc";
-            this.lsttvLoc.Size = new System.Drawing.Size(356, 179);
-            this.lsttvLoc.TabIndex = 8;
-            this.lsttvLoc.UseCompatibleStateImageBehavior = false;
-            this.lsttvLoc.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Mã tiền công";
-            this.columnHeader1.Width = 0;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tiền công";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 243;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Giá tiền";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 109;
-            // 
             // btnSua
             // 
             this.btnSua.Location = new System.Drawing.Point(479, 293);
@@ -162,17 +126,9 @@
             this.txtLoc.Size = new System.Drawing.Size(166, 20);
             this.txtLoc.TabIndex = 5;
             // 
-            // numLoc
-            // 
-            this.numLoc.Location = new System.Drawing.Point(273, 155);
-            this.numLoc.Name = "numLoc";
-            this.numLoc.Size = new System.Drawing.Size(166, 20);
-            this.numLoc.TabIndex = 6;
-            this.numLoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // btnLoc
             // 
-            this.btnLoc.Location = new System.Drawing.Point(479, 132);
+            this.btnLoc.Location = new System.Drawing.Point(479, 116);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(75, 23);
             this.btnLoc.TabIndex = 7;
@@ -208,21 +164,29 @@
             this.btnLMoi.Text = "Làm mới";
             this.btnLMoi.UseVisualStyleBackColor = true;
             // 
+            // dgvTCong
+            // 
+            this.dgvTCong.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTCong.Location = new System.Drawing.Point(49, 159);
+            this.dgvTCong.Name = "dgvTCong";
+            this.dgvTCong.Size = new System.Drawing.Size(386, 209);
+            this.dgvTCong.TabIndex = 8;
+            // 
             // UserControl_QuanLy_TienCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dgvTCong);
             this.Controls.Add(this.btnLMoi);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnLoc);
-            this.Controls.Add(this.numLoc);
             this.Controls.Add(this.txtLoc);
             this.Controls.Add(this.cmbLTheo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.lsttvLoc);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.numGTien);
             this.Controls.Add(this.txtTCong);
@@ -231,7 +195,7 @@
             this.Name = "UserControl_QuanLy_TienCong";
             this.Size = new System.Drawing.Size(582, 380);
             ((System.ComponentModel.ISupportInitialize)(this.numGTien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numLoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTCong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,18 +208,14 @@
         private System.Windows.Forms.TextBox txtTCong;
         private System.Windows.Forms.NumericUpDown numGTien;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.ListView lsttvLoc;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbLTheo;
         private System.Windows.Forms.TextBox txtLoc;
-        private System.Windows.Forms.NumericUpDown numLoc;
         private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnLMoi;
+        private System.Windows.Forms.DataGridView dgvTCong;
     }
 }

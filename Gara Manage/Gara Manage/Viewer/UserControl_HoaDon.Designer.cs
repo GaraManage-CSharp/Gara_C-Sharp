@@ -37,15 +37,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtBSXe = new System.Windows.Forms.TextBox();
             this.btnXHDon = new System.Windows.Forms.Button();
-            this.colMPTung = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTPTung = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNSXuat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colDGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lstvPTung = new System.Windows.Forms.ListView();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTTien = new System.Windows.Forms.TextBox();
             this.btnLMoi = new System.Windows.Forms.Button();
+            this.dgvPTung = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPTung)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -129,49 +125,6 @@
             this.btnXHDon.Text = "Xuất hoá đơn";
             this.btnXHDon.UseVisualStyleBackColor = true;
             // 
-            // colMPTung
-            // 
-            this.colMPTung.Text = "Mã phụ tùng";
-            this.colMPTung.Width = 80;
-            // 
-            // colTPTung
-            // 
-            this.colTPTung.Text = "Tên phụ tùng";
-            this.colTPTung.Width = 180;
-            // 
-            // colNSXuat
-            // 
-            this.colNSXuat.Text = "Nhà sản xuất";
-            this.colNSXuat.Width = 120;
-            // 
-            // colSLuong
-            // 
-            this.colSLuong.Text = "Số lượng";
-            this.colSLuong.Width = 80;
-            // 
-            // colDGia
-            // 
-            this.colDGia.Text = "Đơn giá";
-            this.colDGia.Width = 80;
-            // 
-            // lstvPTung
-            // 
-            this.lstvPTung.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.lstvPTung.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMPTung,
-            this.colTPTung,
-            this.colNSXuat,
-            this.colSLuong,
-            this.colDGia});
-            this.lstvPTung.FullRowSelect = true;
-            this.lstvPTung.GridLines = true;
-            this.lstvPTung.Location = new System.Drawing.Point(17, 107);
-            this.lstvPTung.Name = "lstvPTung";
-            this.lstvPTung.Size = new System.Drawing.Size(545, 244);
-            this.lstvPTung.TabIndex = 6;
-            this.lstvPTung.UseCompatibleStateImageBehavior = false;
-            this.lstvPTung.View = System.Windows.Forms.View.Details;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -199,16 +152,27 @@
             this.btnLMoi.Text = "Làm mới";
             this.btnLMoi.UseVisualStyleBackColor = true;
             // 
+            // dgvPTung
+            // 
+            this.dgvPTung.AllowUserToAddRows = false;
+            this.dgvPTung.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPTung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPTung.Location = new System.Drawing.Point(17, 109);
+            this.dgvPTung.Name = "dgvPTung";
+            this.dgvPTung.ReadOnly = true;
+            this.dgvPTung.Size = new System.Drawing.Size(564, 251);
+            this.dgvPTung.TabIndex = 6;
+            // 
             // UserControl_HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dgvPTung);
             this.Controls.Add(this.btnLMoi);
             this.Controls.Add(this.txtTTien);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnXHDon);
-            this.Controls.Add(this.lstvPTung);
             this.Controls.Add(this.txtBSXe);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTKHang);
@@ -219,6 +183,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UserControl_HoaDon";
             this.Size = new System.Drawing.Size(596, 413);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPTung)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,14 +200,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtBSXe;
         private System.Windows.Forms.Button btnXHDon;
-        private System.Windows.Forms.ColumnHeader colMPTung;
-        private System.Windows.Forms.ColumnHeader colTPTung;
-        private System.Windows.Forms.ColumnHeader colNSXuat;
-        private System.Windows.Forms.ColumnHeader colSLuong;
-        private System.Windows.Forms.ColumnHeader colDGia;
-        private System.Windows.Forms.ListView lstvPTung;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTTien;
         private System.Windows.Forms.Button btnLMoi;
+        private System.Windows.Forms.DataGridView dgvPTung;
     }
 }

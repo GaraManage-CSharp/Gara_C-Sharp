@@ -36,19 +36,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnLoc = new System.Windows.Forms.Button();
-            this.numLoc = new System.Windows.Forms.NumericUpDown();
             this.txtLoc = new System.Windows.Forms.TextBox();
             this.cmbLTheo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSua = new System.Windows.Forms.Button();
-            this.lstvPTung = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnLMoi = new System.Windows.Forms.Button();
+            this.dgvPTung = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.numGTien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numLoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPTung)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -115,20 +110,12 @@
             // 
             // btnLoc
             // 
-            this.btnLoc.Location = new System.Drawing.Point(479, 132);
+            this.btnLoc.Location = new System.Drawing.Point(479, 121);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(75, 23);
             this.btnLoc.TabIndex = 7;
             this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = true;
-            // 
-            // numLoc
-            // 
-            this.numLoc.Location = new System.Drawing.Point(273, 155);
-            this.numLoc.Name = "numLoc";
-            this.numLoc.Size = new System.Drawing.Size(166, 20);
-            this.numLoc.TabIndex = 6;
-            this.numLoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtLoc
             // 
@@ -169,45 +156,6 @@
             this.btnSua.Text = "Sữa";
             this.btnSua.UseVisualStyleBackColor = true;
             // 
-            // lstvPTung
-            // 
-            this.lstvPTung.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader4,
-            this.columnHeader3});
-            this.lstvPTung.FullRowSelect = true;
-            this.lstvPTung.GridLines = true;
-            this.lstvPTung.Location = new System.Drawing.Point(26, 189);
-            this.lstvPTung.Name = "lstvPTung";
-            this.lstvPTung.Size = new System.Drawing.Size(413, 179);
-            this.lstvPTung.TabIndex = 8;
-            this.lstvPTung.UseCompatibleStateImageBehavior = false;
-            this.lstvPTung.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Mã phụ tùng";
-            this.columnHeader1.Width = 0;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Phụ tùng";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 226;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Đơn vị tính";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 74;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Giá tiền";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 109;
-            // 
             // btnLMoi
             // 
             this.btnLMoi.Location = new System.Drawing.Point(479, 189);
@@ -217,17 +165,28 @@
             this.btnLMoi.Text = "Làm mới";
             this.btnLMoi.UseVisualStyleBackColor = true;
             // 
+            // dgvPTung
+            // 
+            this.dgvPTung.AllowUserToAddRows = false;
+            this.dgvPTung.AllowUserToDeleteRows = false;
+            this.dgvPTung.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPTung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPTung.Location = new System.Drawing.Point(26, 154);
+            this.dgvPTung.Name = "dgvPTung";
+            this.dgvPTung.ReadOnly = true;
+            this.dgvPTung.Size = new System.Drawing.Size(413, 223);
+            this.dgvPTung.TabIndex = 8;
+            // 
             // UserControl_QuanLy_PhuTung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dgvPTung);
             this.Controls.Add(this.btnLMoi);
             this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.lstvPTung);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnLoc);
-            this.Controls.Add(this.numLoc);
             this.Controls.Add(this.txtLoc);
             this.Controls.Add(this.cmbLTheo);
             this.Controls.Add(this.label4);
@@ -240,7 +199,7 @@
             this.Name = "UserControl_QuanLy_PhuTung";
             this.Size = new System.Drawing.Size(582, 380);
             ((System.ComponentModel.ISupportInitialize)(this.numGTien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numLoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPTung)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,16 +215,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnLoc;
-        private System.Windows.Forms.NumericUpDown numLoc;
         private System.Windows.Forms.TextBox txtLoc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.ListView lstvPTung;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ComboBox cmbLTheo;
         private System.Windows.Forms.Button btnLMoi;
+        private System.Windows.Forms.DataGridView dgvPTung;
     }
 }

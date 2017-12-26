@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.btnSua = new System.Windows.Forms.Button();
-            this.lstvPTung = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label5 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.txtHXe = new System.Windows.Forms.TextBox();
@@ -40,6 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnTim = new System.Windows.Forms.Button();
             this.txtTim = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSua
@@ -50,31 +49,6 @@
             this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sữa";
             this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // lstvPTung
-            // 
-            this.lstvPTung.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.lstvPTung.FullRowSelect = true;
-            this.lstvPTung.GridLines = true;
-            this.lstvPTung.Location = new System.Drawing.Point(49, 161);
-            this.lstvPTung.Name = "lstvPTung";
-            this.lstvPTung.Size = new System.Drawing.Size(368, 207);
-            this.lstvPTung.TabIndex = 5;
-            this.lstvPTung.UseCompatibleStateImageBehavior = false;
-            this.lstvPTung.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Mã hiệu xe";
-            this.columnHeader1.Width = 0;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Hiệu xe";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 364;
             // 
             // label5
             // 
@@ -146,16 +120,28 @@
             this.txtTim.Size = new System.Drawing.Size(181, 20);
             this.txtTim.TabIndex = 3;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(49, 158);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(368, 207);
+            this.dataGridView1.TabIndex = 5;
+            // 
             // UserControl_QuanLy_HieuXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtTim);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.lstvPTung);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtHXe);
@@ -163,6 +149,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UserControl_QuanLy_HieuXe";
             this.Size = new System.Drawing.Size(582, 380);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,9 +158,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.ListView lstvPTung;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.TextBox txtHXe;
@@ -182,5 +166,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.TextBox txtTim;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
