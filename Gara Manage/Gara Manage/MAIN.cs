@@ -25,7 +25,7 @@ namespace Gara_Manage
 
         private void MAIN_FormClosing(object sender, FormClosingEventArgs e)
         {
-            SQL.closeConnection();
+            SQL.Connection.Close();
         }
     }
 }

@@ -16,10 +16,10 @@ namespace Gara_Manage.Viewer
 
         private void btnXNhan_Click(object sender, EventArgs e)
         {
-            SqlCommand sqlcomd = SQL.Connection.CreateCommand();
-            sqlcomd.CommandText = setTextUpdate((int)numSLuong.Value);
-            sqlcomd.ExecuteNonQuery();
-            MessageBox.Show("Cập nhật thành công.", "Thông báo", MessageBoxButtons.OK);
+            SqlCommand sqlcomd = SQL.Connection.CreateCommand();                        //khởi tạo đối tượng truy vấn SQL
+            sqlcomd.CommandText = setTextUpdate((int)numSLuong.Value);                  //lấy câu lệnh truy vấn
+            sqlcomd.ExecuteNonQuery();                                                  //thực hiện truy vấn
+            MessageBox.Show("Cập nhật thành công.", "Thông báo", MessageBoxButtons.OK); //xuất thông báo
         }
         private string setTextUpdate(int value)
         {
@@ -46,11 +46,13 @@ namespace Gara_Manage.Viewer
         }
         private void Select()
         {
-            string comd;
+            string comd; //dùng để chứa câu truy vấn SQL
+
+            //đưa câu truy vấn vào comd
             switch (cmbLTheo.SelectedIndex)
             {
                 case 1:
-                    comd = getSelectSQL(" idtn = " + int.Parse(txtLoc.Text));
+                    comd = getSelectSQL(" idtn = " + int.Parse(txtLoc.Text)); 
                     break;
                 case 2:
                     comd = getSelectSQL(" tenkh like '" + txtLoc.Text + "%' ");
@@ -68,26 +70,27 @@ namespace Gara_Manage.Viewer
                     comd = getSelectSQL("");
                     break;
             }
-            SqlCommand sqlcomd = new SqlCommand(comd, SQL.Connection);
-            sqlcomd.CommandType = System.Data.CommandType.Text;
-            SqlDataAdapter sqlda = new SqlDataAdapter(sqlcomd);
-            DataTable dt = new DataTable();
-            sqlda.Fill(dt);
-            dgvDLTNhan.DataSource = dt;
+            SqlCommand sqlcomd = new SqlCommand(comd, SQL.Connection);  // khởi tạo đối tượng truy vấn SQL
+            SqlDataAdapter sqlda = new SqlDataAdapter(sqlcomd);         // 
+            DataTable dt = new DataTable();                             // tạo đối tượng Datatable
+            sqlda.Fill(dt);                                             // đổ dữ liệu vào Datatable
+            dgvDLTNhan.DataSource = dt;                                 // hiển thị dữ liệu lên bảng
         }
-        private string getSelectSQL(string item)
+        //hàm getSelectSQL dùng để lấy câu truy vấn SQL (chưa xài được)
+        private string getSelectSQL(string item) //item là chuỗi điều kiện truyền vào
         {
             string initem = "select idTN as [Mã tiếp nhận],TENKH as [Khách hàng],N'Loại tiếp nhận' as [Loại tiếp nhận],BIENSO as [Biển số],TENHX as [Hiệu xe],N'Nhân viên' as [Nhân viên],NGAYNHAN as [Ngày nhận],N'Ngày sữa' as [Ngày sữa] " +
                     "from tiepnhan t, HIEUXE h " +
                     "where t.idHX=h.idHX ";
-            return item.CompareTo("") == 0 ? initem : initem + " and " + item;
+            return item.CompareTo("") == 0 ? initem : initem + " and " + item; //nếu chuỗi truyền vào là trống thì không cần thêm điều kiện
+                                                                                //nếu chuỗi truyền vào không trống thì thêm điều kiện vào câu truy vấn
         }
-
+        // chọn điều kiện lọc
         private void cmbLTheo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbLTheo.SelectedIndex == 0)
+            if (cmbLTheo.SelectedIndex == 0) //nếu không có điều kiện lọc
             {
-                txtLoc.Enabled = false;
+                txtLoc.Enabled = false;     //tắt chế độ nhập liệu
             }
             else
             {
