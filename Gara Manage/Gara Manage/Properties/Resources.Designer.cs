@@ -59,15 +59,5 @@ namespace Gara_Manage.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MAIN_BG_1 {
-            get {
-                object obj = ResourceManager.GetObject("MAIN_BG-1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

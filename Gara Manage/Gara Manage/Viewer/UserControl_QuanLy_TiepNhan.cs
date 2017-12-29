@@ -11,7 +11,6 @@ namespace Gara_Manage.Viewer
         public UserControl_QuanLy_TiepNhan()
         {
             InitializeComponent();
-            Select();
         }
 
         private void btnXNhan_Click(object sender, EventArgs e)

@@ -41,9 +41,27 @@
             this.tabQL_PT = new System.Windows.Forms.TabPage();
             this.tabQL_TN = new System.Windows.Forms.TabPage();
             this.tabQL_HX = new System.Windows.Forms.TabPage();
+            this.userComtrol_TiepNhan1 = new Gara_Manage.Viewer.UserComtrol_TiepNhan();
+            this.userControl_SuaChua1 = new Gara_Manage.Viewer.UserControl_SuaChua();
+            this.userControl_HoaDon1 = new Gara_Manage.Viewer.UserControl_HoaDon();
+            this.userControl_NhapKho1 = new Gara_Manage.Viewer.UserControl_NhapKho();
+            this.userControl_ThongKe1 = new Gara_Manage.Viewer.UserControl_ThongKe();
+            this.userControl_QuanLy_TienCong1 = new Gara_Manage.Viewer.UserControl_QuanLy_TienCong();
+            this.userControl_QuanLy_PhuTung1 = new Gara_Manage.Viewer.UserControl_QuanLy_PhuTung();
+            this.userControl_QuanLy_TiepNhan1 = new Gara_Manage.Viewer.UserControl_QuanLy_TiepNhan();
+            this.userControl_QuanLy_HieuXe1 = new Gara_Manage.Viewer.UserControl_QuanLy_HieuXe();
             this.tabControl1.SuspendLayout();
+            this.tabTNhan.SuspendLayout();
+            this.tabSChua.SuspendLayout();
+            this.tabHDon.SuspendLayout();
+            this.tabNKho.SuspendLayout();
+            this.tabTKe.SuspendLayout();
             this.tabQLy.SuspendLayout();
             this.tabControl1_Control2.SuspendLayout();
+            this.tabQL_TC.SuspendLayout();
+            this.tabQL_PT.SuspendLayout();
+            this.tabQL_TN.SuspendLayout();
+            this.tabQL_HX.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -65,8 +83,9 @@
             // 
             // tabTNhan
             // 
-            this.tabTNhan.BackColor = System.Drawing.Color.Transparent;
+            this.tabTNhan.BackColor = System.Drawing.Color.White;
             this.tabTNhan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tabTNhan.Controls.Add(this.userComtrol_TiepNhan1);
             this.tabTNhan.ForeColor = System.Drawing.Color.Black;
             this.tabTNhan.Location = new System.Drawing.Point(4, 22);
             this.tabTNhan.Name = "tabTNhan";
@@ -77,6 +96,7 @@
             // 
             // tabSChua
             // 
+            this.tabSChua.Controls.Add(this.userControl_SuaChua1);
             this.tabSChua.Location = new System.Drawing.Point(4, 22);
             this.tabSChua.Name = "tabSChua";
             this.tabSChua.Padding = new System.Windows.Forms.Padding(3);
@@ -87,8 +107,9 @@
             // 
             // tabHDon
             // 
-            this.tabHDon.BackColor = System.Drawing.Color.Transparent;
+            this.tabHDon.BackColor = System.Drawing.Color.White;
             this.tabHDon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabHDon.Controls.Add(this.userControl_HoaDon1);
             this.tabHDon.ForeColor = System.Drawing.Color.Black;
             this.tabHDon.Location = new System.Drawing.Point(4, 22);
             this.tabHDon.Name = "tabHDon";
@@ -100,6 +121,7 @@
             // 
             // tabNKho
             // 
+            this.tabNKho.Controls.Add(this.userControl_NhapKho1);
             this.tabNKho.Location = new System.Drawing.Point(4, 22);
             this.tabNKho.Name = "tabNKho";
             this.tabNKho.Size = new System.Drawing.Size(596, 413);
@@ -109,8 +131,9 @@
             // 
             // tabTKe
             // 
-            this.tabTKe.BackColor = System.Drawing.Color.Transparent;
+            this.tabTKe.BackColor = System.Drawing.Color.White;
             this.tabTKe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabTKe.Controls.Add(this.userControl_ThongKe1);
             this.tabTKe.ForeColor = System.Drawing.Color.Black;
             this.tabTKe.Location = new System.Drawing.Point(4, 22);
             this.tabTKe.Name = "tabTKe";
@@ -150,6 +173,7 @@
             // tabQL_TC
             // 
             this.tabQL_TC.BackColor = System.Drawing.Color.White;
+            this.tabQL_TC.Controls.Add(this.userControl_QuanLy_TienCong1);
             this.tabQL_TC.Location = new System.Drawing.Point(4, 4);
             this.tabQL_TC.Name = "tabQL_TC";
             this.tabQL_TC.Padding = new System.Windows.Forms.Padding(3);
@@ -160,6 +184,7 @@
             // tabQL_PT
             // 
             this.tabQL_PT.BackColor = System.Drawing.Color.White;
+            this.tabQL_PT.Controls.Add(this.userControl_QuanLy_PhuTung1);
             this.tabQL_PT.Location = new System.Drawing.Point(4, 4);
             this.tabQL_PT.Name = "tabQL_PT";
             this.tabQL_PT.Padding = new System.Windows.Forms.Padding(3);
@@ -170,6 +195,7 @@
             // tabQL_TN
             // 
             this.tabQL_TN.BackColor = System.Drawing.Color.White;
+            this.tabQL_TN.Controls.Add(this.userControl_QuanLy_TiepNhan1);
             this.tabQL_TN.ForeColor = System.Drawing.Color.Black;
             this.tabQL_TN.Location = new System.Drawing.Point(4, 4);
             this.tabQL_TN.Name = "tabQL_TN";
@@ -181,12 +207,84 @@
             // tabQL_HX
             // 
             this.tabQL_HX.BackColor = System.Drawing.Color.White;
+            this.tabQL_HX.Controls.Add(this.userControl_QuanLy_HieuXe1);
             this.tabQL_HX.Location = new System.Drawing.Point(4, 4);
             this.tabQL_HX.Name = "tabQL_HX";
             this.tabQL_HX.Padding = new System.Windows.Forms.Padding(3);
             this.tabQL_HX.Size = new System.Drawing.Size(582, 380);
             this.tabQL_HX.TabIndex = 3;
             this.tabQL_HX.Text = "Hiệu xe";
+            // 
+            // userComtrol_TiepNhan1
+            // 
+            this.userComtrol_TiepNhan1.BackColor = System.Drawing.Color.White;
+            this.userComtrol_TiepNhan1.Location = new System.Drawing.Point(0, 0);
+            this.userComtrol_TiepNhan1.Name = "userComtrol_TiepNhan1";
+            this.userComtrol_TiepNhan1.Size = new System.Drawing.Size(596, 413);
+            this.userComtrol_TiepNhan1.TabIndex = 0;
+            // 
+            // userControl_SuaChua1
+            // 
+            this.userControl_SuaChua1.BackColor = System.Drawing.Color.White;
+            this.userControl_SuaChua1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_SuaChua1.Name = "userControl_SuaChua1";
+            this.userControl_SuaChua1.Size = new System.Drawing.Size(612, 413);
+            this.userControl_SuaChua1.TabIndex = 0;
+            // 
+            // userControl_HoaDon1
+            // 
+            this.userControl_HoaDon1.BackColor = System.Drawing.Color.White;
+            this.userControl_HoaDon1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_HoaDon1.Name = "userControl_HoaDon1";
+            this.userControl_HoaDon1.Size = new System.Drawing.Size(596, 413);
+            this.userControl_HoaDon1.TabIndex = 0;
+            // 
+            // userControl_NhapKho1
+            // 
+            this.userControl_NhapKho1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_NhapKho1.Name = "userControl_NhapKho1";
+            this.userControl_NhapKho1.Size = new System.Drawing.Size(596, 413);
+            this.userControl_NhapKho1.TabIndex = 0;
+            // 
+            // userControl_ThongKe1
+            // 
+            this.userControl_ThongKe1.BackColor = System.Drawing.Color.White;
+            this.userControl_ThongKe1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_ThongKe1.Name = "userControl_ThongKe1";
+            this.userControl_ThongKe1.Size = new System.Drawing.Size(596, 413);
+            this.userControl_ThongKe1.TabIndex = 0;
+            // 
+            // userControl_QuanLy_TienCong1
+            // 
+            this.userControl_QuanLy_TienCong1.BackColor = System.Drawing.Color.White;
+            this.userControl_QuanLy_TienCong1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_QuanLy_TienCong1.Name = "userControl_QuanLy_TienCong1";
+            this.userControl_QuanLy_TienCong1.Size = new System.Drawing.Size(582, 380);
+            this.userControl_QuanLy_TienCong1.TabIndex = 0;
+            // 
+            // userControl_QuanLy_PhuTung1
+            // 
+            this.userControl_QuanLy_PhuTung1.BackColor = System.Drawing.Color.White;
+            this.userControl_QuanLy_PhuTung1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_QuanLy_PhuTung1.Name = "userControl_QuanLy_PhuTung1";
+            this.userControl_QuanLy_PhuTung1.Size = new System.Drawing.Size(582, 380);
+            this.userControl_QuanLy_PhuTung1.TabIndex = 0;
+            // 
+            // userControl_QuanLy_TiepNhan1
+            // 
+            this.userControl_QuanLy_TiepNhan1.BackColor = System.Drawing.Color.White;
+            this.userControl_QuanLy_TiepNhan1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_QuanLy_TiepNhan1.Name = "userControl_QuanLy_TiepNhan1";
+            this.userControl_QuanLy_TiepNhan1.Size = new System.Drawing.Size(582, 380);
+            this.userControl_QuanLy_TiepNhan1.TabIndex = 0;
+            // 
+            // userControl_QuanLy_HieuXe1
+            // 
+            this.userControl_QuanLy_HieuXe1.BackColor = System.Drawing.Color.White;
+            this.userControl_QuanLy_HieuXe1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_QuanLy_HieuXe1.Name = "userControl_QuanLy_HieuXe1";
+            this.userControl_QuanLy_HieuXe1.Size = new System.Drawing.Size(582, 380);
+            this.userControl_QuanLy_HieuXe1.TabIndex = 0;
             // 
             // MAIN
             // 
@@ -206,8 +304,17 @@
             this.Text = "Quản lý gara";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MAIN_FormClosing);
             this.tabControl1.ResumeLayout(false);
+            this.tabTNhan.ResumeLayout(false);
+            this.tabSChua.ResumeLayout(false);
+            this.tabHDon.ResumeLayout(false);
+            this.tabNKho.ResumeLayout(false);
+            this.tabTKe.ResumeLayout(false);
             this.tabQLy.ResumeLayout(false);
             this.tabControl1_Control2.ResumeLayout(false);
+            this.tabQL_TC.ResumeLayout(false);
+            this.tabQL_PT.ResumeLayout(false);
+            this.tabQL_TN.ResumeLayout(false);
+            this.tabQL_HX.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -226,6 +333,15 @@
         private System.Windows.Forms.TabPage tabQL_HX;
         private System.Windows.Forms.TabPage tabSChua;
         private System.Windows.Forms.TabPage tabNKho;
+        private Viewer.UserComtrol_TiepNhan userComtrol_TiepNhan1;
+        private Viewer.UserControl_SuaChua userControl_SuaChua1;
+        private Viewer.UserControl_HoaDon userControl_HoaDon1;
+        private Viewer.UserControl_NhapKho userControl_NhapKho1;
+        private Viewer.UserControl_ThongKe userControl_ThongKe1;
+        private Viewer.UserControl_QuanLy_TienCong userControl_QuanLy_TienCong1;
+        private Viewer.UserControl_QuanLy_PhuTung userControl_QuanLy_PhuTung1;
+        private Viewer.UserControl_QuanLy_TiepNhan userControl_QuanLy_TiepNhan1;
+        private Viewer.UserControl_QuanLy_HieuXe userControl_QuanLy_HieuXe1;
     }
 }
 
