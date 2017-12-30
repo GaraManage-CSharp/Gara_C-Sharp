@@ -40,8 +40,11 @@
             this.numSLuong = new System.Windows.Forms.NumericUpDown();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numDGia = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTung)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDGia)).BeginInit();
             this.SuspendLayout();
             // 
             // btnXNhan
@@ -101,7 +104,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Location = new System.Drawing.Point(9, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 9;
@@ -110,15 +113,15 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(68, 27);
+            this.comboBox1.Location = new System.Drawing.Point(65, 27);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(199, 21);
+            this.comboBox1.Size = new System.Drawing.Size(216, 21);
             this.comboBox1.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(303, 30);
+            this.label2.Location = new System.Drawing.Point(305, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 11;
@@ -126,7 +129,7 @@
             // 
             // numSLuong
             // 
-            this.numSLuong.Location = new System.Drawing.Point(358, 28);
+            this.numSLuong.Location = new System.Drawing.Point(360, 12);
             this.numSLuong.Name = "numSLuong";
             this.numSLuong.Size = new System.Drawing.Size(75, 20);
             this.numSLuong.TabIndex = 2;
@@ -150,10 +153,34 @@
             this.btnSua.Text = "Sữa";
             this.btnSua.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(310, 47);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Đơn giá";
+            // 
+            // numDGia
+            // 
+            this.numDGia.Location = new System.Drawing.Point(360, 45);
+            this.numDGia.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.numDGia.Name = "numDGia";
+            this.numDGia.Size = new System.Drawing.Size(75, 20);
+            this.numDGia.TabIndex = 13;
+            this.numDGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // UserControl_NhapKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.numDGia);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.numSLuong);
@@ -166,6 +193,7 @@
             this.Size = new System.Drawing.Size(596, 413);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDGia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +212,7 @@
         private System.Windows.Forms.NumericUpDown numSLuong;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numDGia;
     }
 }

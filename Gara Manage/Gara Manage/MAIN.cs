@@ -8,9 +8,9 @@ namespace Gara_Manage
         public MAIN()
         {
             InitializeComponent();
-            //SqlCommand comd = SQL.Connection.CreateCommand();
-            //comd.CommandText = "set dateformat dmy";
-            //comd.ExecuteNonQuery();
+            SqlCommand comd = SQL.Connection.CreateCommand();
+            comd.CommandText = "set dateformat dmy";
+            comd.ExecuteNonQuery();
 
         }
 

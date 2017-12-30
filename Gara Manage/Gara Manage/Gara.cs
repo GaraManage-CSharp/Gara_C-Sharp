@@ -13,8 +13,7 @@ namespace Gara_Manage
         {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                MAIN main = new MAIN();
-                Application.Run(main);
+                Application.Run(new MAIN());
         }
     }
 }
