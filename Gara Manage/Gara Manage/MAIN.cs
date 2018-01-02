@@ -10,8 +10,7 @@ namespace Gara_Manage
             InitializeComponent();
             SqlCommand comd = SQL.Connection.CreateCommand();
             comd.CommandText = "set dateformat dmy";
-            comd.ExecuteNonQuery();
-
+            //comd.ExecuteNonQuery();
         }
 
         private void MAIN_FormClosing(object sender, FormClosingEventArgs e)

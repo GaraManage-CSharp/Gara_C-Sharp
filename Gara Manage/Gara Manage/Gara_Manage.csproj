@@ -84,6 +84,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GARAOTODataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="jyrjyr\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="jyrjyr\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="MAIN.cs">
       <SubType>Form</SubType>
     </Compile>

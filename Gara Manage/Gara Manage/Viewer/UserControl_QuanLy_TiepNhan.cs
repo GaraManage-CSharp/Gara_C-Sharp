@@ -96,5 +96,13 @@ namespace Gara_Manage.Viewer
                 txtLoc.Enabled = true;
             }
         }
+
+        private void UserControl_QuanLy_TiepNhan_Load(object sender, EventArgs e)
+        {
+            for(int i=0;i<gARAOTODataSet.TIEPNHAN.Columns.Count;i++)
+            {
+                cmbLTheo.Items.Add(gARAOTODataSet.TIEPNHAN.Columns[i].ToString());
+            }
+        }
     }
 }
