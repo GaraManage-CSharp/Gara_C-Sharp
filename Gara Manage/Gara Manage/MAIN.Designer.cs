@@ -31,25 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MAIN));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabTNhan = new System.Windows.Forms.TabPage();
+            this.userComtrol_TiepNhan1 = new Gara_Manage.Viewer.UserComtrol_TiepNhan();
             this.tabSChua = new System.Windows.Forms.TabPage();
+            this.userControl_SuaChua1 = new Gara_Manage.Viewer.UserControl_SuaChua();
             this.tabHDon = new System.Windows.Forms.TabPage();
             this.tabNKho = new System.Windows.Forms.TabPage();
+            this.userControl_NhapKho1 = new Gara_Manage.Viewer.UserControl_NhapKho();
             this.tabTKe = new System.Windows.Forms.TabPage();
+            this.userControl_ThongKe1 = new Gara_Manage.Viewer.UserControl_ThongKe();
             this.tabQLy = new System.Windows.Forms.TabPage();
             this.tabControl1_Control2 = new System.Windows.Forms.TabControl();
             this.tabQL_TC = new System.Windows.Forms.TabPage();
-            this.tabQL_PT = new System.Windows.Forms.TabPage();
-            this.tabQL_TN = new System.Windows.Forms.TabPage();
-            this.tabQL_HX = new System.Windows.Forms.TabPage();
-            this.userComtrol_TiepNhan1 = new Gara_Manage.Viewer.UserComtrol_TiepNhan();
-            this.userControl_SuaChua1 = new Gara_Manage.Viewer.UserControl_SuaChua();
-            this.userControl_HoaDon1 = new Gara_Manage.Viewer.UserControl_HoaDon();
-            this.userControl_NhapKho1 = new Gara_Manage.Viewer.UserControl_NhapKho();
-            this.userControl_ThongKe1 = new Gara_Manage.Viewer.UserControl_ThongKe();
             this.userControl_QuanLy_TienCong1 = new Gara_Manage.Viewer.UserControl_QuanLy_TienCong();
+            this.tabQL_PT = new System.Windows.Forms.TabPage();
             this.userControl_QuanLy_PhuTung1 = new Gara_Manage.Viewer.UserControl_QuanLy_PhuTung();
+            this.tabQL_TN = new System.Windows.Forms.TabPage();
             this.userControl_QuanLy_TiepNhan1 = new Gara_Manage.Viewer.UserControl_QuanLy_TiepNhan();
+            this.tabQL_HX = new System.Windows.Forms.TabPage();
             this.userControl_QuanLy_HieuXe1 = new Gara_Manage.Viewer.UserControl_QuanLy_HieuXe();
+            this.userControl_HoaDon2 = new Gara_Manage.Viewer.UserControl_HoaDon();
             this.tabControl1.SuspendLayout();
             this.tabTNhan.SuspendLayout();
             this.tabSChua.SuspendLayout();
@@ -94,6 +94,14 @@
             this.tabTNhan.TabIndex = 0;
             this.tabTNhan.Text = "Tiếp nhận";
             // 
+            // userComtrol_TiepNhan1
+            // 
+            this.userComtrol_TiepNhan1.BackColor = System.Drawing.Color.White;
+            this.userComtrol_TiepNhan1.Location = new System.Drawing.Point(0, 0);
+            this.userComtrol_TiepNhan1.Name = "userComtrol_TiepNhan1";
+            this.userComtrol_TiepNhan1.Size = new System.Drawing.Size(596, 413);
+            this.userComtrol_TiepNhan1.TabIndex = 0;
+            // 
             // tabSChua
             // 
             this.tabSChua.Controls.Add(this.userControl_SuaChua1);
@@ -105,11 +113,19 @@
             this.tabSChua.Text = "Sửa chữa";
             this.tabSChua.UseVisualStyleBackColor = true;
             // 
+            // userControl_SuaChua1
+            // 
+            this.userControl_SuaChua1.BackColor = System.Drawing.Color.White;
+            this.userControl_SuaChua1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_SuaChua1.Name = "userControl_SuaChua1";
+            this.userControl_SuaChua1.Size = new System.Drawing.Size(612, 413);
+            this.userControl_SuaChua1.TabIndex = 0;
+            // 
             // tabHDon
             // 
             this.tabHDon.BackColor = System.Drawing.Color.White;
             this.tabHDon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabHDon.Controls.Add(this.userControl_HoaDon1);
+            this.tabHDon.Controls.Add(this.userControl_HoaDon2);
             this.tabHDon.ForeColor = System.Drawing.Color.Black;
             this.tabHDon.Location = new System.Drawing.Point(4, 22);
             this.tabHDon.Name = "tabHDon";
@@ -129,6 +145,13 @@
             this.tabNKho.Text = "Nhập kho";
             this.tabNKho.UseVisualStyleBackColor = true;
             // 
+            // userControl_NhapKho1
+            // 
+            this.userControl_NhapKho1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_NhapKho1.Name = "userControl_NhapKho1";
+            this.userControl_NhapKho1.Size = new System.Drawing.Size(596, 413);
+            this.userControl_NhapKho1.TabIndex = 0;
+            // 
             // tabTKe
             // 
             this.tabTKe.BackColor = System.Drawing.Color.White;
@@ -141,6 +164,14 @@
             this.tabTKe.Size = new System.Drawing.Size(596, 413);
             this.tabTKe.TabIndex = 3;
             this.tabTKe.Text = "Thống kê";
+            // 
+            // userControl_ThongKe1
+            // 
+            this.userControl_ThongKe1.BackColor = System.Drawing.Color.White;
+            this.userControl_ThongKe1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_ThongKe1.Name = "userControl_ThongKe1";
+            this.userControl_ThongKe1.Size = new System.Drawing.Size(596, 413);
+            this.userControl_ThongKe1.TabIndex = 0;
             // 
             // tabQLy
             // 
@@ -181,6 +212,14 @@
             this.tabQL_TC.TabIndex = 0;
             this.tabQL_TC.Text = "Tiền công";
             // 
+            // userControl_QuanLy_TienCong1
+            // 
+            this.userControl_QuanLy_TienCong1.BackColor = System.Drawing.Color.White;
+            this.userControl_QuanLy_TienCong1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_QuanLy_TienCong1.Name = "userControl_QuanLy_TienCong1";
+            this.userControl_QuanLy_TienCong1.Size = new System.Drawing.Size(582, 380);
+            this.userControl_QuanLy_TienCong1.TabIndex = 0;
+            // 
             // tabQL_PT
             // 
             this.tabQL_PT.BackColor = System.Drawing.Color.White;
@@ -191,6 +230,14 @@
             this.tabQL_PT.Size = new System.Drawing.Size(582, 380);
             this.tabQL_PT.TabIndex = 1;
             this.tabQL_PT.Text = "Phụ tùng";
+            // 
+            // userControl_QuanLy_PhuTung1
+            // 
+            this.userControl_QuanLy_PhuTung1.BackColor = System.Drawing.Color.White;
+            this.userControl_QuanLy_PhuTung1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_QuanLy_PhuTung1.Name = "userControl_QuanLy_PhuTung1";
+            this.userControl_QuanLy_PhuTung1.Size = new System.Drawing.Size(582, 380);
+            this.userControl_QuanLy_PhuTung1.TabIndex = 0;
             // 
             // tabQL_TN
             // 
@@ -204,6 +251,14 @@
             this.tabQL_TN.TabIndex = 2;
             this.tabQL_TN.Text = "Tiếp nhận";
             // 
+            // userControl_QuanLy_TiepNhan1
+            // 
+            this.userControl_QuanLy_TiepNhan1.BackColor = System.Drawing.Color.White;
+            this.userControl_QuanLy_TiepNhan1.Location = new System.Drawing.Point(0, 0);
+            this.userControl_QuanLy_TiepNhan1.Name = "userControl_QuanLy_TiepNhan1";
+            this.userControl_QuanLy_TiepNhan1.Size = new System.Drawing.Size(582, 380);
+            this.userControl_QuanLy_TiepNhan1.TabIndex = 0;
+            // 
             // tabQL_HX
             // 
             this.tabQL_HX.BackColor = System.Drawing.Color.White;
@@ -215,69 +270,6 @@
             this.tabQL_HX.TabIndex = 3;
             this.tabQL_HX.Text = "Hiệu xe";
             // 
-            // userComtrol_TiepNhan1
-            // 
-            this.userComtrol_TiepNhan1.BackColor = System.Drawing.Color.White;
-            this.userComtrol_TiepNhan1.Location = new System.Drawing.Point(0, 0);
-            this.userComtrol_TiepNhan1.Name = "userComtrol_TiepNhan1";
-            this.userComtrol_TiepNhan1.Size = new System.Drawing.Size(596, 413);
-            this.userComtrol_TiepNhan1.TabIndex = 0;
-            // 
-            // userControl_SuaChua1
-            // 
-            this.userControl_SuaChua1.BackColor = System.Drawing.Color.White;
-            this.userControl_SuaChua1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_SuaChua1.Name = "userControl_SuaChua1";
-            this.userControl_SuaChua1.Size = new System.Drawing.Size(612, 413);
-            this.userControl_SuaChua1.TabIndex = 0;
-            // 
-            // userControl_HoaDon1
-            // 
-            this.userControl_HoaDon1.BackColor = System.Drawing.Color.White;
-            this.userControl_HoaDon1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_HoaDon1.Name = "userControl_HoaDon1";
-            this.userControl_HoaDon1.Size = new System.Drawing.Size(596, 413);
-            this.userControl_HoaDon1.TabIndex = 0;
-            // 
-            // userControl_NhapKho1
-            // 
-            this.userControl_NhapKho1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_NhapKho1.Name = "userControl_NhapKho1";
-            this.userControl_NhapKho1.Size = new System.Drawing.Size(596, 413);
-            this.userControl_NhapKho1.TabIndex = 0;
-            // 
-            // userControl_ThongKe1
-            // 
-            this.userControl_ThongKe1.BackColor = System.Drawing.Color.White;
-            this.userControl_ThongKe1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_ThongKe1.Name = "userControl_ThongKe1";
-            this.userControl_ThongKe1.Size = new System.Drawing.Size(596, 413);
-            this.userControl_ThongKe1.TabIndex = 0;
-            // 
-            // userControl_QuanLy_TienCong1
-            // 
-            this.userControl_QuanLy_TienCong1.BackColor = System.Drawing.Color.White;
-            this.userControl_QuanLy_TienCong1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_QuanLy_TienCong1.Name = "userControl_QuanLy_TienCong1";
-            this.userControl_QuanLy_TienCong1.Size = new System.Drawing.Size(582, 380);
-            this.userControl_QuanLy_TienCong1.TabIndex = 0;
-            // 
-            // userControl_QuanLy_PhuTung1
-            // 
-            this.userControl_QuanLy_PhuTung1.BackColor = System.Drawing.Color.White;
-            this.userControl_QuanLy_PhuTung1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_QuanLy_PhuTung1.Name = "userControl_QuanLy_PhuTung1";
-            this.userControl_QuanLy_PhuTung1.Size = new System.Drawing.Size(582, 380);
-            this.userControl_QuanLy_PhuTung1.TabIndex = 0;
-            // 
-            // userControl_QuanLy_TiepNhan1
-            // 
-            this.userControl_QuanLy_TiepNhan1.BackColor = System.Drawing.Color.White;
-            this.userControl_QuanLy_TiepNhan1.Location = new System.Drawing.Point(0, 0);
-            this.userControl_QuanLy_TiepNhan1.Name = "userControl_QuanLy_TiepNhan1";
-            this.userControl_QuanLy_TiepNhan1.Size = new System.Drawing.Size(582, 380);
-            this.userControl_QuanLy_TiepNhan1.TabIndex = 0;
-            // 
             // userControl_QuanLy_HieuXe1
             // 
             this.userControl_QuanLy_HieuXe1.BackColor = System.Drawing.Color.White;
@@ -285,6 +277,14 @@
             this.userControl_QuanLy_HieuXe1.Name = "userControl_QuanLy_HieuXe1";
             this.userControl_QuanLy_HieuXe1.Size = new System.Drawing.Size(582, 380);
             this.userControl_QuanLy_HieuXe1.TabIndex = 0;
+            // 
+            // userControl_HoaDon2
+            // 
+            this.userControl_HoaDon2.BackColor = System.Drawing.Color.White;
+            this.userControl_HoaDon2.Location = new System.Drawing.Point(0, 0);
+            this.userControl_HoaDon2.Name = "userControl_HoaDon2";
+            this.userControl_HoaDon2.Size = new System.Drawing.Size(596, 413);
+            this.userControl_HoaDon2.TabIndex = 0;
             // 
             // MAIN
             // 
@@ -342,6 +342,7 @@
         private Viewer.UserControl_QuanLy_PhuTung userControl_QuanLy_PhuTung1;
         private Viewer.UserControl_QuanLy_TiepNhan userControl_QuanLy_TiepNhan1;
         private Viewer.UserControl_QuanLy_HieuXe userControl_QuanLy_HieuXe1;
+        private Viewer.UserControl_HoaDon userControl_HoaDon2;
     }
 }
 

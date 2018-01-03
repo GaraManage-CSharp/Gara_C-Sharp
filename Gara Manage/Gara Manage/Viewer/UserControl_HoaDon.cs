@@ -12,6 +12,7 @@ namespace Gara_Manage.Viewer
 {
     public partial class UserControl_HoaDon : UserControl
     {
+        
         public UserControl_HoaDon()
         {
             InitializeComponent();
@@ -31,7 +32,8 @@ namespace Gara_Manage.Viewer
             }
             cmbMTNhan.SelectedIndex = 0;
             txtNTNhan.Text = XuLyChuoi(cmbMTNhan.SelectedItem.ToString()).ToString();
-
+            red.Close();
+            cmd.Cancel();
         }
         
         private int XuLyChuoi(string xl)
@@ -47,7 +49,7 @@ namespace Gara_Manage.Viewer
         {
             string sql = "select h.idTN, tenkh, tongtien from TIEPNHAN t, hoadon h where t.idtn=h.idtn";
             SqlCommand sqlcomd = new SqlCommand(sql, SQL.Connection);
-            SqlDataAdapter sqldap = new SqlDataAdapter(sql,SQL.Connection);
+            SqlDataAdapter sqldap = new SqlDataAdapter(sqlcomd);
             DataTable dt = new DataTable();
             sqldap.Fill(dt);
             dgvPTung.DataSource = dt;
