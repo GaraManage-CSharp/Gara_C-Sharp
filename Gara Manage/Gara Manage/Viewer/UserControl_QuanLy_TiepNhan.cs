@@ -50,23 +50,25 @@ namespace Gara_Manage.Viewer
             //đưa câu truy vấn vào comd
             switch (cmbLTheo.SelectedIndex)
             {
+                case 0:
+                    comd = getSelectSQL("");
+                    break;
                 case 1:
-                    comd = getSelectSQL(" idtn = " + int.Parse(txtLoc.Text)); 
+                    int id;
+                    if (int.TryParse(txtLoc.Text,out id))
+                    {
+                        comd = getSelectSQL(" "+cmbLTheo.SelectedItem+" = " + id);
+                    } else
+                    {
+                        MessageBox.Show("Mã tiếp nhận không hợp lệ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        return;
+                    }
                     break;
-                case 2:
-                    comd = getSelectSQL(" tenkh like '" + txtLoc.Text + "%' ");
-                    break;
-                case 4:
-                    comd = getSelectSQL(" bienso like '" + txtLoc.Text + "' ");
-                    break;
-                case 5:
-                    comd = getSelectSQL(" tenhx like '" + txtLoc.Text + "%' ");
-                    break;
-                case 7:
-                    comd = getSelectSQL(" CONVERT(date, NGAYNHAN,103) = CONVERT(date,'" + txtLoc.Text + "',103) ");
+                case 8:
+                    comd = getSelectSQL(" " + cmbLTheo.SelectedItem + " = '" + txtLoc.Text);
                     break;
                 default:
-                    comd = getSelectSQL("");
+                    comd = getSelectSQL(" "+cmbLTheo.SelectedItem+" like '" + txtLoc.Text + "%' ");
                     break;
             }
             SqlCommand sqlcomd = new SqlCommand(comd, SQL.Connection);  // khởi tạo đối tượng truy vấn SQL
