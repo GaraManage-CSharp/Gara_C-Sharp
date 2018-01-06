@@ -74,6 +74,11 @@
             // numGTien
             // 
             this.numGTien.Location = new System.Drawing.Point(315, 41);
+            this.numGTien.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.numGTien.Name = "numGTien";
             this.numGTien.Size = new System.Drawing.Size(120, 20);
             this.numGTien.TabIndex = 2;
@@ -87,6 +92,7 @@
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -96,6 +102,7 @@
             this.btnSua.TabIndex = 10;
             this.btnSua.Text = "Sữa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // label3
             // 
@@ -109,15 +116,11 @@
             // cmbLTheo
             // 
             this.cmbLTheo.FormattingEnabled = true;
-            this.cmbLTheo.Items.AddRange(new object[] {
-            "",
-            "Mã tiền công",
-            "Tiền công",
-            "Giá tiền công"});
             this.cmbLTheo.Location = new System.Drawing.Point(83, 118);
             this.cmbLTheo.Name = "cmbLTheo";
             this.cmbLTheo.Size = new System.Drawing.Size(181, 21);
             this.cmbLTheo.TabIndex = 4;
+            this.cmbLTheo.SelectedIndexChanged += new System.EventHandler(this.cmbLTheo_SelectedIndexChanged);
             // 
             // txtLoc
             // 
@@ -134,6 +137,7 @@
             this.btnLoc.TabIndex = 7;
             this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // label4
             // 
@@ -163,13 +167,17 @@
             this.btnLMoi.TabIndex = 9;
             this.btnLMoi.Text = "Làm mới";
             this.btnLMoi.UseVisualStyleBackColor = true;
+            this.btnLMoi.Click += new System.EventHandler(this.btnLMoi_Click);
             // 
             // dgvTCong
             // 
+            this.dgvTCong.AllowUserToAddRows = false;
+            this.dgvTCong.AllowUserToDeleteRows = false;
             this.dgvTCong.BackgroundColor = System.Drawing.Color.White;
             this.dgvTCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTCong.Location = new System.Drawing.Point(49, 159);
             this.dgvTCong.Name = "dgvTCong";
+            this.dgvTCong.ReadOnly = true;
             this.dgvTCong.Size = new System.Drawing.Size(386, 209);
             this.dgvTCong.TabIndex = 8;
             // 

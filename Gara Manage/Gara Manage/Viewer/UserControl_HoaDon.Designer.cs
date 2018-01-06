@@ -41,6 +41,8 @@
             this.txtTTien = new System.Windows.Forms.TextBox();
             this.btnLMoi = new System.Windows.Forms.Button();
             this.dgvPTung = new System.Windows.Forms.DataGridView();
+            this.txtTCong = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTung)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +62,7 @@
             this.cmbMTNhan.Name = "cmbMTNhan";
             this.cmbMTNhan.Size = new System.Drawing.Size(179, 21);
             this.cmbMTNhan.TabIndex = 1;
+            this.cmbMTNhan.SelectedIndexChanged += new System.EventHandler(this.cmbMTNhan_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -121,14 +124,15 @@
             this.btnXHDon.Location = new System.Drawing.Point(422, 366);
             this.btnXHDon.Name = "btnXHDon";
             this.btnXHDon.Size = new System.Drawing.Size(94, 23);
-            this.btnXHDon.TabIndex = 8;
+            this.btnXHDon.TabIndex = 9;
             this.btnXHDon.Text = "Xuất hoá đơn";
             this.btnXHDon.UseVisualStyleBackColor = true;
+            this.btnXHDon.Click += new System.EventHandler(this.btnXHDon_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 371);
+            this.label5.Location = new System.Drawing.Point(17, 393);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 7;
@@ -137,10 +141,10 @@
             // txtTTien
             // 
             this.txtTTien.Enabled = false;
-            this.txtTTien.Location = new System.Drawing.Point(121, 368);
+            this.txtTTien.Location = new System.Drawing.Point(121, 390);
             this.txtTTien.Name = "txtTTien";
             this.txtTTien.Size = new System.Drawing.Size(179, 20);
-            this.txtTTien.TabIndex = 7;
+            this.txtTTien.TabIndex = 8;
             this.txtTTien.TabStop = false;
             // 
             // btnLMoi
@@ -151,6 +155,7 @@
             this.btnLMoi.TabIndex = 5;
             this.btnLMoi.Text = "Làm mới";
             this.btnLMoi.UseVisualStyleBackColor = true;
+            this.btnLMoi.Click += new System.EventHandler(this.btnLMoi_Click);
             // 
             // dgvPTung
             // 
@@ -163,11 +168,31 @@
             this.dgvPTung.Size = new System.Drawing.Size(564, 251);
             this.dgvPTung.TabIndex = 6;
             // 
+            // txtTCong
+            // 
+            this.txtTCong.Enabled = false;
+            this.txtTCong.Location = new System.Drawing.Point(121, 366);
+            this.txtTCong.Name = "txtTCong";
+            this.txtTCong.Size = new System.Drawing.Size(179, 20);
+            this.txtTCong.TabIndex = 7;
+            this.txtTCong.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 369);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Tiền công";
+            // 
             // UserControl_HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtTCong);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dgvPTung);
             this.Controls.Add(this.btnLMoi);
             this.Controls.Add(this.txtTTien);
@@ -183,6 +208,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UserControl_HoaDon";
             this.Size = new System.Drawing.Size(596, 413);
+            this.Load += new System.EventHandler(this.UserControl_HoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTung)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -204,5 +230,7 @@
         private System.Windows.Forms.TextBox txtTTien;
         private System.Windows.Forms.Button btnLMoi;
         private System.Windows.Forms.DataGridView dgvPTung;
+        private System.Windows.Forms.TextBox txtTCong;
+        private System.Windows.Forms.Label label6;
     }
 }
