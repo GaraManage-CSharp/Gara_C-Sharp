@@ -60,11 +60,20 @@
     <StartupObject>Gara_Manage.Gara</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -91,8 +100,26 @@
       <DependentUpon>MAIN.cs</DependentUpon>
     </Compile>
     <Compile Include="Gara.cs" />
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQL.cs" />
+    <Compile Include="TIEPNHAN.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Viewer\UserComtrol_TiepNhan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -198,6 +225,82 @@
     <None Include="GARAOTODataSet.xss">
       <DependentUpon>GARAOTODataSet.xsd</DependentUpon>
     </None>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Gara.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.BCPTtonghopDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.BCPTtonghopRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.BCPTtonghopRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.BCPTtonghopRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.bctDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.bctRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.bctRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.bctRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.chonHDDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.chonHDRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.chonHDRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.chonHDRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.CTSCDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.CTSCRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.CTSCRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.CTSCRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.dttDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.dtThangDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.dtThangRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.dtThangRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.dtThangRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.dttRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.dttRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.dttRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.HIEUXEDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.HIEUXERow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.HIEUXERowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.HIEUXERowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.HOADONDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.HOADONRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.HOADONRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.HOADONRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.loadtableHDDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.loadtableHDRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.loadtableHDRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.loadtableHDRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.NHAPPHUTUNGDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.NHAPPHUTUNGRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.NHAPPHUTUNGRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.NHAPPHUTUNGRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.PhieuSCDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.PhieuSCRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.PhieuSCRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.PhieuSCRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.PHUTUNGDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.PHUTUNGRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.PHUTUNGRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.PHUTUNGRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.select_TiepNhanDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.select_TiepNhanRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.select_TiepNhanRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.select_TiepNhanRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.TIENCONGDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.TIENCONGRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.TIENCONGRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.TIENCONGRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.TIEPNHANDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.TIEPNHANRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.TIEPNHANRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.TIEPNHANRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.tkdoanhsoDataTable.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.tkdoanhsoRow.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.tkdoanhsoRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GARAOTODataSet.tkdoanhsoRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MAIN.datasource" />
+    <None Include="Properties\DataSources\SQL.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -216,6 +319,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1.ico" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -223,6 +336,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
