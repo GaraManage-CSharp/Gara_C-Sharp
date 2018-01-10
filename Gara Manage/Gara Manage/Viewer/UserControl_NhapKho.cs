@@ -35,23 +35,27 @@ namespace Gara_Manage.Viewer
 
         private void UserControl_NhapKho_Load(object sender, EventArgs e)
         {
-            string sql = "select TENPT from PHUTUNG";
-            SqlDataAdapter da = new SqlDataAdapter(sql, SQL.Connection);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            comboBox1.DataSource = dt;
-            comboBox1.DisplayMember = "TENPT";
-            comboBox1.ValueMember = "TENPT";
-            //numSLuong.ToString();
+            
             show();
 
 
         }
-
+       
         private void btnThem_Click(object sender, EventArgs e)
 
         {
-           
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = SQL.Connection;
+            DataTable dt = (DataTable)dgvPTung.DataSource;
+            DataRow dr = dt.Rows[dgvPTung.CurrentRow.Index];
+            cm.CommandText = updatetable();
+            cm.Parameters.Add("@SLTON", SqlDbType.Int).Value = numSLuong.Value;
+            cm.Parameters.Add("@idPT", SqlDbType.Int).Value = int.Parse(dr["idPT"].ToString());
+            cm.ExecuteNonQuery();
+            dgvPTung.Refresh();
+            dgvPTung.Update();
+            show();
+            MessageBox.Show("Cập Nhật Thành Công ^_^ ");
         }
         private void show()
         {
@@ -61,38 +65,15 @@ namespace Gara_Manage.Viewer
             DataTable dt = new DataTable();
             dt.Load(dr);
             dgvPTung.DataSource = dt;
-
-
-
         }
-        private void updatetable()
+        private string updatetable()
         {
-            try
-            {
-                SQL.Connection.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter("select idPT,SLTON from PHUTUNG", SQL.Connection);
-
-                da.Fill(dt);
-                dgvPTung.DataSource = dt;
-                SQL.Connection.Close();
-                dt.Columns["idPT"].ColumnName = "STT";
-                dt.Columns["SLTON"].ColumnName = "Số lượng";
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message.ToString());
-            }
+            return " update PHUTUNG set SLTON = SLTON + @SLTON where  idPT = @idPT ";
         }
 
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void btnXNhan_Click(object sender, EventArgs e)
         {
-            string sql = "select TENPT from PHUTUNG";
-            SqlCommand cm = new SqlCommand(sql, SQL.Connection);
-            SqlDataReader dr = cm.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(dr);
-            comboBox1.DataSource = dt;
+        
         }
     }
 }
