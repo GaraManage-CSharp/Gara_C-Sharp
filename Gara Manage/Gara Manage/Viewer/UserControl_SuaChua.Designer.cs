@@ -220,6 +220,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UserControl_SuaChua";
             this.Size = new System.Drawing.Size(612, 413);
+            this.Load += new System.EventHandler(this.UserControl_SuaChua_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSChua)).EndInit();
             this.ResumeLayout(false);
