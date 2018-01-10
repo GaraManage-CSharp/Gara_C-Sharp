@@ -59,6 +59,7 @@
             // dgvPTung
             // 
             this.dgvPTung.AllowUserToAddRows = false;
+            this.dgvPTung.AllowUserToDeleteRows = false;
             this.dgvPTung.BackgroundColor = System.Drawing.Color.White;
             this.dgvPTung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPTung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -71,14 +72,13 @@
             this.dgvPTung.ReadOnly = true;
             this.dgvPTung.Size = new System.Drawing.Size(509, 314);
             this.dgvPTung.TabIndex = 4;
-            this.dgvPTung.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             // 
             // dgvPTung_clnSTTu
             // 
             this.dgvPTung_clnSTTu.HeaderText = "STT";
             this.dgvPTung_clnSTTu.Name = "dgvPTung_clnSTTu";
             this.dgvPTung_clnSTTu.ReadOnly = true;
-            this.dgvPTung_clnSTTu.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPTung_clnSTTu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPTung_clnSTTu.Width = 50;
             // 
             // dgvPTung_clnPTung
@@ -117,6 +117,8 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(216, 21);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            this.comboBox1.Click += new System.EventHandler(this.UserControl_NhapKho_Load);
             // 
             // label2
             // 
@@ -143,6 +145,7 @@
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -202,10 +205,6 @@
         #endregion
         private System.Windows.Forms.Button btnXNhan;
         private System.Windows.Forms.DataGridView dgvPTung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPTung_clnSTTu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPTung_clnPTung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPTung_clnNVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPTung_clnSLuong;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
@@ -214,5 +213,9 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numDGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPTung_clnSTTu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPTung_clnPTung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPTung_clnNVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPTung_clnSLuong;
     }
 }
