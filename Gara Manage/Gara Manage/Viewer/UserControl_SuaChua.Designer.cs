@@ -42,6 +42,8 @@
             this.txtTTien = new System.Windows.Forms.TextBox();
             this.bttnLMoi = new System.Windows.Forms.Button();
             this.dgvSChua = new System.Windows.Forms.DataGridView();
+            this.clidTN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSChua)).BeginInit();
             this.SuspendLayout();
@@ -171,12 +173,27 @@
             this.dgvSChua.AllowUserToDeleteRows = false;
             this.dgvSChua.BackgroundColor = System.Drawing.Color.White;
             this.dgvSChua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSChua.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clidTN,
+            this.clPT});
             this.dgvSChua.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.dgvSChua.Location = new System.Drawing.Point(17, 81);
             this.dgvSChua.Name = "dgvSChua";
             this.dgvSChua.ReadOnly = true;
             this.dgvSChua.Size = new System.Drawing.Size(489, 246);
             this.dgvSChua.TabIndex = 5;
+            // 
+            // clidTN
+            // 
+            this.clidTN.HeaderText = "idTN";
+            this.clidTN.Name = "clidTN";
+            this.clidTN.ReadOnly = true;
+            // 
+            // clPT
+            // 
+            this.clPT.HeaderText = "Phụ Tùng";
+            this.clPT.Name = "clPT";
+            this.clPT.ReadOnly = true;
             // 
             // UserControl_SuaChua
             // 
@@ -223,5 +240,7 @@
         private System.Windows.Forms.TextBox txtTTien;
         private System.Windows.Forms.Button bttnLMoi;
         private System.Windows.Forms.DataGridView dgvSChua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clidTN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clPT;
     }
 }

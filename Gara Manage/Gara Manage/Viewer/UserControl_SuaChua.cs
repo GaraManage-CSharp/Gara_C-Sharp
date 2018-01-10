@@ -23,7 +23,7 @@ namespace Gara_Manage.Viewer
         {
             mtn();
             Pt();
-            SChua();
+            
         }
         private void mtn()
         {
@@ -46,26 +46,24 @@ namespace Gara_Manage.Viewer
             cmbPTung.ValueMember = "TENPT";
             cmbPTung.DataSource = dt;
         }
-        private void SChua()
-        {
-
-        }
+        
         DataTable tbSC = new DataTable();
-        private void datatable()
-        {
-            // tạo cột trong dgv 
-            tbSC.Columns.Add(cmbMTNhan.Text.ToString());
-            tbSC.Columns.Add(cmbPTung.Text.ToString());
-            tbSC.Columns.Add("Số Lượng");
-            dgvSChua.DataSource = tbSC;
-        }
+        //private void datatable()
+        //{
+        //    // tạo cột trong dgv 
+        //    tbSC.Columns.Add(cmbMTNhan.Text.ToString());
+        //    tbSC.Columns.Add(cmbPTung.Text.ToString());
+        //    tbSC.Columns.Add("Số Lượng");
+        //    dgvSChua.DataSource = tbSC;
+        //}
         private void btnThem_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < tbSC.Rows.Count; i++)
             {
                 Button b = (Button)sender;
+                DataTable tbSC = (DataTable)dgvSChua.DataSource;
                 DataRow r = tbSC.Rows[i];
-                if (r[cmbMTNhan.Text].ToString().CompareTo(b.Text) == 0) // nếu món ăn trùng thì cộng dồn
+                if (r[clidTN.Name].ToString().CompareTo(cmbMTNhan.Text) == 0) // nếu món ăn trùng thì cộng dồn
                 {
                     int sl = int.Parse(r["Số lượng"].ToString());
                     sl++;
