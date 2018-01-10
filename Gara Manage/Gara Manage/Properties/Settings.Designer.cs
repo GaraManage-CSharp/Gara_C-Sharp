@@ -33,5 +33,17 @@ namespace Gara_Manage.Properties {
                 return ((string)(this["GARAOTOConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        public int l {
+            get {
+                return ((int)(this["l"]));
+            }
+            set {
+                this["l"] = value;
+            }
+        }
     }
 }

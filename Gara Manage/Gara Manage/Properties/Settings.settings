@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=127.0.0.1;Initial Catalog=GARAOTO;Persist Security Info=True;User ID=sa</Value>
     </Setting>
+    <Setting Name="l" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
