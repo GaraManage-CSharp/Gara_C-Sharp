@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
 namespace Gara_Manage.Viewer
 {
     public partial class UserControl_HoaDon : UserControl
