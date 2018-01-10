@@ -37,7 +37,7 @@ namespace Gara_Manage.Viewer
                             "raiserror(N'Lỗi', 16, 1) " +
                         "end " +
                     "end";
-        }
+        }   
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
