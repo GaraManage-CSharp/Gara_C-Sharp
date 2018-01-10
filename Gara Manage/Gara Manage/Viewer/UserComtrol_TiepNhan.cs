@@ -26,37 +26,29 @@ namespace Gara_Manage.Viewer
             txtBSXe.Enabled = true;
             txtSDThoai.Enabled = true;
             test = new GARAOTOEntities();
-            tIEPNHANBindingSource.DataSource = test.TIEPNHANs.ToList();
+            tIEPNHANBindingSource.DataSource = test.TIEPNHAN.ToList();
         }
 
         private void btnTNhan_Click(object sender, EventArgs e)
         {
-            //tIEPNHANBindingSource.EndEdit();
-            //test.SaveChangesAsync();
+            try
+            {
+                var tn = new TIEPNHAN();
+                tn.SDT = txtSDThoai.Text;
+                tn.NGAYNHAN = dteNNhan.Value;
+                tn.TENKH = txtTKHang.Text;
+                tn.EMAIL = txtEmail.Text;
+                tn.DIACHI = txtDChi.Text;
+                tn.BIENSO = txtBSXe.Text;
+                tn.idHX = int.Parse(cbxHXe.Text);
+                test.TIEPNHAN.Add(tn);
+                test.SaveChangesAsync();
+                dataGridView1.DataSource = new GARAOTOEntities().TIEPNHAN.ToList();
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-            //BindingSource bds = (BindingSource)dataGridView1.DataSource;
-            //List<TIEPNHAN> lst = (List<TIEPNHAN>)bds.DataSource;
-            
-            TIEPNHAN tn = new TIEPNHAN();
-            tn.SDT = txtSDThoai.Text;
-            tn.NGAYNHAN = dteNNhan.Value;
-            tn.TENKH = txtTKHang.Text;
-            tn.EMAIL = txtEmail.Text;
-            tn.DIACHI = txtDChi.Text;
-            tn.BIENSO = txtBSXe.Text;
-            test.TIEPNHANs.Add(tn);
-            tIEPNHANBindingSource.Add(tn);
-            tIEPNHANBindingSource.MoveLast();
-            tIEPNHANBindingSource.EndEdit();
-            test.SaveChanges();
-            txtBSXe.Focus();
-            txtDChi.Focus();
-            txtEmail.Focus();
-            txtSDThoai.Focus();
-            txtTKHang.Focus();
-            //tIEPNHANBindingSource.EndEdit();
-            //lst.Add(tn);
-            //tIEPNHANBindingSource.Add(tn);
         }
     }
 }

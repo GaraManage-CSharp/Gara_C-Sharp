@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="GARAOTOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="GARAOTOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TIEPNHAN">
           <Key>
             <PropertyRef Name="idTN" />
@@ -14,14 +14,15 @@
           <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
           <Property Name="SDT" Type="varchar" MaxLength="11" />
           <Property Name="EMAIL" Type="varchar" MaxLength="30" />
-          <Property Name="BIENSO" Type="char" MaxLength="8" />
+          <Property Name="BIENSO" Type="varchar" MaxLength="9" />
           <Property Name="idHX" Type="int" />
           <Property Name="NGAYNHAN" Type="smalldatetime" Nullable="false" />
         </EntityType>
         <EntityContainer Name="GARAOTOModelStoreContainer">
           <EntitySet Name="TIEPNHAN" EntityType="Self.TIEPNHAN" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GARAOTOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -34,12 +35,12 @@
           <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="BIENSO" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="BIENSO" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
           <Property Name="idHX" Type="Int32" />
           <Property Name="NGAYNHAN" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityContainer Name="GARAOTOEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="TIEPNHANs" EntityType="Self.TIEPNHAN" />
+          <EntitySet Name="TIEPNHAN" EntityType="Self.TIEPNHAN" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -47,7 +48,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="GARAOTOModelStoreContainer" CdmEntityContainer="GARAOTOEntities">
-          <EntitySetMapping Name="TIEPNHANs">
+          <EntitySetMapping Name="TIEPNHAN">
             <EntityTypeMapping TypeName="GARAOTOModel.TIEPNHAN">
               <MappingFragment StoreEntitySet="TIEPNHAN">
                 <ScalarProperty Name="idTN" ColumnName="idTN" />
@@ -75,7 +76,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

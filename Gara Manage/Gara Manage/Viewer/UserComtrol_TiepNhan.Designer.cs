@@ -71,7 +71,6 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tIEPNHANBindingSource, "EMAIL", true));
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtEmail.Location = new System.Drawing.Point(126, 93);
             this.txtEmail.Name = "txtEmail";
@@ -85,7 +84,6 @@
             // 
             // txtDChi
             // 
-            this.txtDChi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tIEPNHANBindingSource, "DIACHI", true));
             this.txtDChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtDChi.Location = new System.Drawing.Point(126, 67);
             this.txtDChi.Name = "txtDChi";
@@ -94,7 +92,6 @@
             // 
             // txtTKHang
             // 
-            this.txtTKHang.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tIEPNHANBindingSource, "TENKH", true));
             this.txtTKHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTKHang.Location = new System.Drawing.Point(126, 41);
             this.txtTKHang.Name = "txtTKHang";
@@ -205,7 +202,6 @@
             // 
             // txtBSXe
             // 
-            this.txtBSXe.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tIEPNHANBindingSource, "BIENSO", true));
             this.txtBSXe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtBSXe.Location = new System.Drawing.Point(126, 174);
             this.txtBSXe.Name = "txtBSXe";
@@ -224,7 +220,6 @@
             // 
             // txtSDThoai
             // 
-            this.txtSDThoai.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tIEPNHANBindingSource, "SDT", true));
             this.txtSDThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtSDThoai.Location = new System.Drawing.Point(126, 119);
             this.txtSDThoai.Name = "txtSDThoai";
@@ -233,6 +228,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -244,8 +241,9 @@
             this.bIENSODataGridViewTextBoxColumn,
             this.nGAYNHANDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.tIEPNHANBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 219);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 229);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(596, 184);
             this.dataGridView1.TabIndex = 39;
             // 
