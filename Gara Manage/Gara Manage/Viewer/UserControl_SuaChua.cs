@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+
+
 namespace Gara_Manage.Viewer
 {
     public partial class UserControl_SuaChua : UserControl
@@ -14,13 +16,14 @@ namespace Gara_Manage.Viewer
         public UserControl_SuaChua()
         {
             InitializeComponent();
-            
+
         }
 
         private void UserControl_SuaChua_Load(object sender, EventArgs e)
         {
             mtn();
             Pt();
+            SChua();
         }
         private void mtn()
         {
@@ -42,6 +45,34 @@ namespace Gara_Manage.Viewer
             cmbPTung.DisplayMember = "TENPT";
             cmbPTung.ValueMember = "TENPT";
             cmbPTung.DataSource = dt;
+        }
+        private void SChua()
+        {
+
+        }
+        DataTable tbSC = new DataTable();
+        private void datatable()
+        {
+            // tạo cột trong dgv 
+            tbSC.Columns.Add(cmbMTNhan.Text.ToString());
+            tbSC.Columns.Add(cmbPTung.Text.ToString());
+            tbSC.Columns.Add("Số Lượng");
+            dgvSChua.DataSource = tbSC;
+        }
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < tbSC.Rows.Count; i++)
+            {
+                Button b = (Button)sender;
+                DataRow r = tbSC.Rows[i];
+                if (r[cmbMTNhan.Text].ToString().CompareTo(b.Text) == 0) // nếu món ăn trùng thì cộng dồn
+                {
+                    int sl = int.Parse(r["Số lượng"].ToString());
+                    sl++;
+                    r["Số lượng"] = sl;
+                    return;
+                }
+            }
         }
     }
 }
