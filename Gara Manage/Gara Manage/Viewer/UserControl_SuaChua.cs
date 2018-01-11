@@ -63,7 +63,7 @@ namespace Gara_Manage.Viewer
                 Button b = (Button)sender;
                 DataTable tbSC = (DataTable)dgvSChua.DataSource;
                 DataRow r = tbSC.Rows[i];
-                if (r[clidTN.Name].ToString().CompareTo(cmbMTNhan.Text) == 0) // nếu món ăn trùng thì cộng dồn
+                if (r[clidTN.Name].ToString().CompareTo(cmbMTNhan.Text) == 0) 
                 {
                     int sl = int.Parse(r["Số lượng"].ToString());
                     sl++;
