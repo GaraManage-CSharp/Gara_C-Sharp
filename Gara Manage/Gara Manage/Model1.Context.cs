@@ -25,8 +25,6 @@ namespace Gara_Manage
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<HIEUXE> HIEUXE { get; set; }
-        public virtual DbSet<HOADON> HOADON { get; set; }
         public virtual DbSet<TIEPNHAN> TIEPNHAN { get; set; }
     }
 }

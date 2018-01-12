@@ -14,12 +14,6 @@ namespace Gara_Manage
     
     public partial class TIEPNHAN
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TIEPNHAN()
-        {
-            this.HOADON = new HashSet<HOADON>();
-        }
-    
         public int idTN { get; set; }
         public string TENKH { get; set; }
         public string DIACHI { get; set; }
@@ -28,8 +22,5 @@ namespace Gara_Manage
         public string BIENSO { get; set; }
         public Nullable<int> idHX { get; set; }
         public System.DateTime NGAYNHAN { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADON { get; set; }
     }
 }

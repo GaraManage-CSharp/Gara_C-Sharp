@@ -4,24 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="GARAOTOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="HIEUXE">
-          <Key>
-            <PropertyRef Name="idHX" />
-          </Key>
-          <Property Name="idHX" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TENHX" Type="varchar" MaxLength="30" Nullable="false" />
-        </EntityType>
-        <EntityType Name="HOADON">
-          <Key>
-            <PropertyRef Name="idHD" />
-          </Key>
-          <Property Name="idHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idTN" Type="int" Nullable="false" />
-          <Property Name="NGAY" Type="smalldatetime" />
-          <Property Name="TONGTIEN" Type="float" />
-          <Property Name="TinhTien" Type="bit" Nullable="false" />
-        </EntityType>
+      <Schema Namespace="GARAOTOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TIEPNHAN">
           <Key>
             <PropertyRef Name="idTN" />
@@ -35,124 +18,47 @@
           <Property Name="idHX" Type="int" />
           <Property Name="NGAYNHAN" Type="smalldatetime" Nullable="false" />
         </EntityType>
-        <Association Name="FK_HOADON_TIEPNHAN">
-          <End Role="TIEPNHAN" Type="Self.TIEPNHAN" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TIEPNHAN">
-              <PropertyRef Name="idTN" />
-            </Principal>
-            <Dependent Role="HOADON">
-              <PropertyRef Name="idTN" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="GARAOTOModelStoreContainer">
-          <EntitySet Name="HIEUXE" EntityType="Self.HIEUXE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TIEPNHAN" EntityType="Self.TIEPNHAN" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_HOADON_TIEPNHAN" Association="Self.FK_HOADON_TIEPNHAN">
-            <End Role="TIEPNHAN" EntitySet="TIEPNHAN" />
-            <End Role="HOADON" EntitySet="HOADON" />
-          </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GARAOTOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="GARAOTOEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="HIEUXE" EntityType="GARAOTOModel.HIEUXE" />
-          <EntitySet Name="HOADON" EntityType="GARAOTOModel.HOADON" />
-          <EntitySet Name="TIEPNHAN" EntityType="GARAOTOModel.TIEPNHAN" />
-          <AssociationSet Name="FK_HOADON_TIEPNHAN" Association="GARAOTOModel.FK_HOADON_TIEPNHAN">
-            <End Role="TIEPNHAN" EntitySet="TIEPNHAN" />
-            <End Role="HOADON" EntitySet="HOADON" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="HIEUXE">
-          <Key>
-            <PropertyRef Name="idHX" />
-          </Key>
-          <Property Name="idHX" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TENHX" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="HOADON">
-          <Key>
-            <PropertyRef Name="idHD" />
-          </Key>
-          <Property Name="idHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idTN" Type="Int32" Nullable="false" />
-          <Property Name="NGAY" Type="DateTime" Precision="0" />
-          <Property Name="TONGTIEN" Type="Double" />
-          <Property Name="TinhTien" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="TIEPNHAN" Relationship="GARAOTOModel.FK_HOADON_TIEPNHAN" FromRole="HOADON" ToRole="TIEPNHAN" />
-        </EntityType>
         <EntityType Name="TIEPNHAN">
           <Key>
             <PropertyRef Name="idTN" />
           </Key>
           <Property Name="idTN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TENKH" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TENKH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="BIENSO" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
           <Property Name="idHX" Type="Int32" />
           <Property Name="NGAYNHAN" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="HOADON" Relationship="GARAOTOModel.FK_HOADON_TIEPNHAN" FromRole="TIEPNHAN" ToRole="HOADON" />
         </EntityType>
-        <Association Name="FK_HOADON_TIEPNHAN">
-          <End Type="GARAOTOModel.TIEPNHAN" Role="TIEPNHAN" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="GARAOTOModel.HOADON" Role="HOADON" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TIEPNHAN">
-              <PropertyRef Name="idTN" />
-            </Principal>
-            <Dependent Role="HOADON">
-              <PropertyRef Name="idTN" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityContainer Name="GARAOTOEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TIEPNHAN" EntityType="Self.TIEPNHAN" />
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="GARAOTOModelStoreContainer" CdmEntityContainer="GARAOTOEntities">
-          <EntitySetMapping Name="HIEUXE">
-            <EntityTypeMapping TypeName="GARAOTOModel.HIEUXE">
-              <MappingFragment StoreEntitySet="HIEUXE">
-                <ScalarProperty Name="TENHX" ColumnName="TENHX" />
-                <ScalarProperty Name="idHX" ColumnName="idHX" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="HOADON">
-            <EntityTypeMapping TypeName="GARAOTOModel.HOADON">
-              <MappingFragment StoreEntitySet="HOADON">
-                <ScalarProperty Name="TinhTien" ColumnName="TinhTien" />
-                <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
-                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
-                <ScalarProperty Name="idTN" ColumnName="idTN" />
-                <ScalarProperty Name="idHD" ColumnName="idHD" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TIEPNHAN">
             <EntityTypeMapping TypeName="GARAOTOModel.TIEPNHAN">
               <MappingFragment StoreEntitySet="TIEPNHAN">
-                <ScalarProperty Name="NGAYNHAN" ColumnName="NGAYNHAN" />
-                <ScalarProperty Name="idHX" ColumnName="idHX" />
-                <ScalarProperty Name="BIENSO" ColumnName="BIENSO" />
-                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
-                <ScalarProperty Name="SDT" ColumnName="SDT" />
-                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
-                <ScalarProperty Name="TENKH" ColumnName="TENKH" />
                 <ScalarProperty Name="idTN" ColumnName="idTN" />
+                <ScalarProperty Name="TENKH" ColumnName="TENKH" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="BIENSO" ColumnName="BIENSO" />
+                <ScalarProperty Name="idHX" ColumnName="idHX" />
+                <ScalarProperty Name="NGAYNHAN" ColumnName="NGAYNHAN" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

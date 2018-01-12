@@ -12,7 +12,7 @@ namespace Gara_Manage.Viewer
 {
     public partial class UserComtrol_TiepNhan : UserControl
     {
-        private GARAOTOEntities test;
+        GARAOTOEntities test;
         public UserComtrol_TiepNhan()
         {
             InitializeComponent();
@@ -20,6 +20,12 @@ namespace Gara_Manage.Viewer
 
         private void UserComtrol_TiepNhan_Load(object sender, EventArgs e)
         {
+            txtDChi.Enabled = true;
+            txtEmail.Enabled = true;
+            dteNNhan.Enabled = true;
+            txtTKHang.Enabled = true;
+            txtBSXe.Enabled = true;
+            txtSDThoai.Enabled = true;
             test = new GARAOTOEntities();
             tIEPNHANBindingSource.DataSource = test.TIEPNHAN.ToList();
         }
@@ -30,31 +36,15 @@ namespace Gara_Manage.Viewer
             {
                 var tn = new TIEPNHAN();
                 tn.SDT = txtSDThoai.Text;
-                tn.NGAYNHAN = DateTime.Now;
+                tn.NGAYNHAN = dteNNhan.Value;
                 tn.TENKH = txtTKHang.Text;
                 tn.EMAIL = txtEmail.Text;
                 tn.DIACHI = txtDChi.Text;
                 tn.BIENSO = txtBSXe.Text;
                 tn.idHX = int.Parse(cbxHXe.Text);
                 test.TIEPNHAN.Add(tn);
-                test.SaveChanges();
-                var hd = new HOADON();
-                hd.idTN = tn.idTN;
-                hd.TONGTIEN = 0;
-                hd.TinhTien = false;
-                hd.NGAY = null;
-                test.HOADON.Add(hd);
-                test.SaveChanges();
-
-                tIEPNHANBindingSource.Add(tn);
-                tIEPNHANBindingSource.EndEdit();
-
-
-                txtBSXe.Clear();
-                txtDChi.Clear();
-                txtEmail.Clear();
-                txtSDThoai.Clear();
-                txtTKHang.Clear();
+                test.SaveChangesAsync();
+                dataGridView1.DataSource = new GARAOTOEntities().TIEPNHAN.ToList();
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

@@ -34,6 +34,7 @@
             this.tIEPNHANBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtDChi = new System.Windows.Forms.TextBox();
             this.txtTKHang = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@
             this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bIENSODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nGAYNHANDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dteNNhan = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.tIEPNHANBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -95,6 +97,16 @@
             this.txtTKHang.Name = "txtTKHang";
             this.txtTKHang.Size = new System.Drawing.Size(282, 20);
             this.txtTKHang.TabIndex = 29;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label8.Location = new System.Drawing.Point(32, 203);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Ngày nhận";
             // 
             // label6
             // 
@@ -153,7 +165,7 @@
             this.btnTNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTNhan.Location = new System.Drawing.Point(449, 14);
             this.btnTNhan.Name = "btnTNhan";
-            this.btnTNhan.Size = new System.Drawing.Size(96, 84);
+            this.btnTNhan.Size = new System.Drawing.Size(96, 96);
             this.btnTNhan.TabIndex = 36;
             this.btnTNhan.Text = "Tiếp nhận";
             this.btnTNhan.UseVisualStyleBackColor = true;
@@ -162,9 +174,9 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXoa.Location = new System.Drawing.Point(449, 112);
+            this.btnXoa.Location = new System.Drawing.Point(449, 124);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(96, 78);
+            this.btnXoa.Size = new System.Drawing.Size(96, 96);
             this.btnXoa.TabIndex = 37;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -229,10 +241,10 @@
             this.bIENSODataGridViewTextBoxColumn,
             this.nGAYNHANDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.tIEPNHANBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 200);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 229);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(596, 213);
+            this.dataGridView1.Size = new System.Drawing.Size(596, 184);
             this.dataGridView1.TabIndex = 39;
             // 
             // idTN
@@ -247,48 +259,50 @@
             this.tENKHDataGridViewTextBoxColumn.DataPropertyName = "TENKH";
             this.tENKHDataGridViewTextBoxColumn.HeaderText = "TENKH";
             this.tENKHDataGridViewTextBoxColumn.Name = "tENKHDataGridViewTextBoxColumn";
-            this.tENKHDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dIACHIDataGridViewTextBoxColumn
             // 
             this.dIACHIDataGridViewTextBoxColumn.DataPropertyName = "DIACHI";
             this.dIACHIDataGridViewTextBoxColumn.HeaderText = "DIACHI";
             this.dIACHIDataGridViewTextBoxColumn.Name = "dIACHIDataGridViewTextBoxColumn";
-            this.dIACHIDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sDTDataGridViewTextBoxColumn
             // 
             this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
             this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
             this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
-            this.sDTDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // eMAILDataGridViewTextBoxColumn
             // 
             this.eMAILDataGridViewTextBoxColumn.DataPropertyName = "EMAIL";
             this.eMAILDataGridViewTextBoxColumn.HeaderText = "EMAIL";
             this.eMAILDataGridViewTextBoxColumn.Name = "eMAILDataGridViewTextBoxColumn";
-            this.eMAILDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bIENSODataGridViewTextBoxColumn
             // 
             this.bIENSODataGridViewTextBoxColumn.DataPropertyName = "BIENSO";
             this.bIENSODataGridViewTextBoxColumn.HeaderText = "BIENSO";
             this.bIENSODataGridViewTextBoxColumn.Name = "bIENSODataGridViewTextBoxColumn";
-            this.bIENSODataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nGAYNHANDataGridViewTextBoxColumn
             // 
             this.nGAYNHANDataGridViewTextBoxColumn.DataPropertyName = "NGAYNHAN";
             this.nGAYNHANDataGridViewTextBoxColumn.HeaderText = "NGAYNHAN";
             this.nGAYNHANDataGridViewTextBoxColumn.Name = "nGAYNHANDataGridViewTextBoxColumn";
-            this.nGAYNHANDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dteNNhan
+            // 
+            this.dteNNhan.Location = new System.Drawing.Point(126, 203);
+            this.dteNNhan.Name = "dteNNhan";
+            this.dteNNhan.Size = new System.Drawing.Size(282, 20);
+            this.dteNNhan.TabIndex = 40;
             // 
             // UserComtrol_TiepNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dteNNhan);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cmbLTNhan);
             this.Controls.Add(this.btnXoa);
@@ -300,6 +314,7 @@
             this.Controls.Add(this.txtDChi);
             this.Controls.Add(this.txtTKHang);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -321,6 +336,7 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtDChi;
         private System.Windows.Forms.TextBox txtTKHang;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -341,6 +357,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn eMAILDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bIENSODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nGAYNHANDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DateTimePicker dteNNhan;
         private System.Windows.Forms.BindingSource tIEPNHANBindingSource;
     }
 }
