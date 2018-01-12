@@ -4,8 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e234ca05e71d44c7bd1beb18176bb3a5" Name="Diagram1">
-        <EntityTypeShape EntityType="GARAOTOModel.TIEPNHAN" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="e234ca05e71d44c7bd1beb18176bb3a5" Name="Diagram1" ShowGrid="false" SnapToGrid="true">
+        <EntityTypeShape EntityType="GARAOTOModel.HIEUXE" Width="1.5" PointX="1.125" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.HOADON" Width="1.5" PointX="5.625" PointY="1.25" />
+        <EntityTypeShape EntityType="GARAOTOModel.TIEPNHAN" Width="1.5" PointX="3.375" PointY="1" />
+        <AssociationConnector Association="GARAOTOModel.FK_HOADON_TIEPNHAN" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

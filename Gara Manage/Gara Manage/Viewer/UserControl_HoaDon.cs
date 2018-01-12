@@ -28,7 +28,7 @@ namespace Gara_Manage.Viewer
         }
         private void Fill_cmbMTNhan()
         {
-            string sql =  "select h.idTN, tenkh, tongtien from TIEPNHAN t, hoadon h where t.idtn=h.idtn and TinhTien = 0";
+            string sql =  "select h.idTN, tenkh, tongtien from TIEPNHAN t, HOADON h where t.idtn=h.idtn and TinhTien = 0";
             cmbMTNhan.Items.Clear();
             SqlCommand cmd = SQL.Connection.CreateCommand();
             cmd.CommandText = sql;
@@ -83,9 +83,9 @@ namespace Gara_Manage.Viewer
             if (cmbMTNhan.Text.CompareTo("") == 0)
                 return;
 
-            string comd = "select ngaynhan, tenkh, bienso, tentc, gia , tongtien" +
-                          " from TIEPNHAN t, TIENCONG ti, HOADON h, CTSC c" +
-                          " where t.idTN = h.idTN and c.idTN = h.idTN and ti.idTC = c.idTC and h.idTN = " + catID(cmbMTNhan.SelectedItem.ToString());
+            string comd = "select ngaynhan, tenkh, bienso , tongtien" +
+                          " from TIEPNHAN t, HOADON h" +
+                          " where t.idTN = h.idTN and h.idTN = " + catID(cmbMTNhan.SelectedItem.ToString());
             SqlCommand cmd = SQL.Connection.CreateCommand();
             cmd.CommandText = comd;
             SqlDataReader red = cmd.ExecuteReader();
@@ -93,8 +93,7 @@ namespace Gara_Manage.Viewer
             txtNTNhan.Text = red.GetSqlDateTime(0).Value.ToString();
             txtTKHang.Text = red.GetString(1);
             txtBSXe.Text = red.GetString(2);
-            txtTCong.Text = red.GetString(3) + ", " + red.GetInt64(4);
-            txtTTien.Text = string.Format("{0: 0 000.000} VND",red.GetDouble(5));
+            txtTTien.Text = string.Format("{0: 0 000.000} VND",red.GetDouble(3));
             red.Close();
         }
 

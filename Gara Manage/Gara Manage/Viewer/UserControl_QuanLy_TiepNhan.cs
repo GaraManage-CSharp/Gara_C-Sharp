@@ -22,20 +22,32 @@ namespace Gara_Manage.Viewer
         }
         private string setTextUpdate(int value)
         {
-            return "ALTER trigger [dbo].[update_SLTTTNhan] " +
-                    "on[dbo].[TIEPNHAN] " +
-                    "for insert " +
-                    "as " +
-                    "begin " +
-                        "declare @quantity int " +
-                        "select @quantity = count(t.idTN) " +
-                        "from TIEPNHAN t, INSERTED i " +
-                        "where convert(date, t.NGAYNHAN, 103) = convert(date, getdate(), 103) " +
-                        "if @quantity = " + value + " " +
-                        "begin " +
-                            "rollback tran " +
-                            "raiserror(N'Lỗi', 16, 1) " +
-                        "end " +
+            return "ALTER trigger[dbo].[update_SLTTTNhan] \n" +
+
+                    "on[dbo].[TIEPNHAN] \n" +
+
+                    "for insert \n" +
+                    "as \n" +
+                    "begin \n" +
+
+                    "       declare @quantity int \n" +
+
+                    "       declare @idTN int \n" +
+
+                    "       select @quantity = count(t.idTN) \n" +
+
+                    "       from TIEPNHAN t, INSERTED i \n" +
+
+                    "       where convert(date, t.NGAYNHAN, 103) = convert(date, getdate(), 103) \n" +
+
+                    "       if @quantity > " + value + " \n" +
+
+                    "       begin \n" +
+                    "               rollback tran \n" +
+
+                    "               raiserror(N'Lỗi', 16, 1) \n" +
+
+                    "       end \n" +
                     "end";
         }   
 
