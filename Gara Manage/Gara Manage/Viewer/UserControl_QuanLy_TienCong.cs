@@ -15,154 +15,164 @@ namespace Gara_Manage.Viewer
         public UserControl_QuanLy_TienCong()
         {
             InitializeComponent();
-            Fill_cmbLTheo();
-            cmbLTheo.SelectedIndex = 0;
-            Select();
+            load_tblTienCong();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if(txtTCong.Text.CompareTo("")==0)
+            // kiểm tra dữ liệu nhập
+            if(txtTienCong.Text == "" || numGTien.Value < 1)
             {
-                MessageBox.Show("Vui lòng điền tiền công.","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Dữ liệu nhập có lỗi", "Lỗi");
                 return;
-            } else
-            {
-                if (btnThem.Text.CompareTo("Thêm") == 0)
-                {
-                    try
-                    {
-                        string comd = getInsertString(txtTCong.Text, (int)numGTien.Value);
-                        SqlCommand cmd = SQL.Connection.CreateCommand();
-                        cmd.CommandText = comd;
-                        cmd.ExecuteNonQuery();
-                        txtTCong.Text = "";
-                        numGTien.Value = 0;
-                        Select();
-                        MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK);
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Tiền công này đã có.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                } else
-                {
-                    try
-                    {
-                        DataTable dt = (DataTable) dgvTCong.DataSource;
-                        DataRow dr = dt.Rows[dgvTCong.CurrentRow.Index];
-                        string comd = getUpdateString(txtTCong.Text, numGTien.Value.ToString(), dr[0].ToString());
-                        SqlCommand cmd = SQL.Connection.CreateCommand();
-                        cmd.CommandText = comd;
-                        cmd.ExecuteNonQuery();
-                        dr[1] = txtTCong.Text;
-                        dr[2] = numGTien.Value.ToString();
-                        btnThem.Text = "Thêm";
-                        txtTCong.Text = "";
-                        numGTien.Value = 0;
-                        dgvTCong.Enabled = true;
-                        btnLMoi.Enabled = true;
-                        btnLoc.Enabled = true;
-                        btnSua.Enabled = true;
-                        txtLoc.Enabled = true;
-                        cmbLTheo.Enabled = true;
-                        label4.Text = "Thêm tiền công";
-                        MessageBox.Show("Chỉnh sữa thành công.", "Thông báo", MessageBoxButtons.OK);
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Tiền công này đã có.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
             }
-        }
-        private void Fill_cmbLTheo()
-        {
-            GARAOTODataSet gARAOTODataSet = new GARAOTODataSet();
-            cmbLTheo.Items.Add("");
-            cmbLTheo.Items.Add(gARAOTODataSet.TIENCONG.idTCColumn.ToString());
-            cmbLTheo.Items.Add(gARAOTODataSet.TIENCONG.TENTCColumn.ToString());
-            cmbLTheo.Items.Add(gARAOTODataSet.TIENCONG.GIAColumn.ToString());
-        }
-        private string getInsertString(string name, int value)
-        {
-            return "insert into TIENCONG(TENTC,GIA) values (N'" + name + "'," + value + ")";
+
+            try
+            {
+                SqlCommand cmd = SQL.Connection.CreateCommand();
+                cmd.CommandText = "insert into TIENCONG values(@tenTC, @giaTC)";
+                cmd.Parameters.Add("@tenTC", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@giaTC", SqlDbType.BigInt);
+
+                cmd.Parameters["@tenTC"].Value = txtTienCong.Text;
+                cmd.Parameters["@giaTC"].Value = numGTien.Value;
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("đã thêm phụ tùng");
+
+                txtTienCong.Text = "";
+                numGTien.Value = 0;
+
+                load_tblTienCong();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
-        private void btnLoc_Click(object sender, EventArgs e)
-        {
-            Select();
-        }
-        private string getSelectTienCong(string s)
-        {
-            string comd = "select idTC, TENTC, GIA from TIENCONG";
-            return s.CompareTo("") == 0 ? comd : comd + " where " + s;
-        }
-
-        private void cmbLTheo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(cmbLTheo.SelectedIndex ==0)
-            {
-                txtLoc.Enabled = false;
-            } else
-            {
-                txtLoc.Enabled = true;
-            }
-        }
+        
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DataTable dt = (DataTable)dgvTCong.DataSource;
-            DataRow dr = dt.Rows[dgvTCong.CurrentRow.Index];
-            txtTCong.Text = dr[1].ToString();
-            numGTien.Value = int.Parse(dr[2].ToString());
-            btnThem.Text = "Xác nhận";
-            dgvTCong.Enabled = false;
-            btnLMoi.Enabled = false;
-            btnLoc.Enabled = false;
-            btnSua.Enabled = false;
-            txtLoc.Enabled = false;
-            cmbLTheo.Enabled = false;
-            label4.Text = "Sữa tiền công";
+            try
+            {
+                DataTable dt = (DataTable)dgvTCong.DataSource;
+                DataRow dr = dt.Rows[dgvTCong.CurrentRow.Index];
+                txtTienCong.Text = dr[1].ToString();
+                numGTien.Value = int.Parse(dr[2].ToString());
+
+                btnXacNhan.Visible = true;
+                btnThem.Visible = false;
+
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+            //btnThem.Text = "Xác nhận";
+            //dgvTCong.Enabled = false;
+            //btnLMoi.Enabled = false;
+            //btnLoc.Enabled = false;
+            //btnSua.Enabled = false;
+            //txtLoc.Enabled = false;
+            //cmbLTheo.Enabled = false;
+            //label4.Text = "Sữa tiền công";
         }
         private string getUpdateString(string s,string s1, string value)
         {
             return "update TIENCONG set TENTC = N'" + s + "', GIA = " +s1+ " where idTC = "+ value;
         }
-        private void Select ()
+
+        /// <summary>
+        /// load bảng tiền công
+        /// </summary>
+        private void  load_tblTienCong()
         {
-            int i;
-            string comd;
-            switch (cmbLTheo.SelectedIndex)
-            {
-                case 0:
-                    comd = getSelectTienCong("");
-                    break;
-                case 2:
-                    comd = getSelectTienCong(cmbLTheo.SelectedItem.ToString() + " like " + "N'" + txtLoc.Text + "%'");
-                    break;
-                default:
-                    if (int.TryParse(txtLoc.Text, out i))
-                    {
-                        comd = getSelectTienCong(cmbLTheo.SelectedItem.ToString() + " = " + i.ToString());
-                    }
-                    else
-                    {
-                        MessageBox.Show(cmbLTheo.SelectedItem.ToString() + " Không hợp lệ", "Thông bào.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                    break;
-            }
             DataTable dt = new DataTable();
-            SqlDataAdapter sqldap = new SqlDataAdapter(comd, SQL.Connection);
+            SqlDataAdapter sqldap = new SqlDataAdapter("select * from tiencong", SQL.Connection);
             sqldap.Fill(dt);
             dgvTCong.DataSource = dt;
+
+            txtTienCong.Text = "";
+            numGTien.Value = 0;
+            txtLoc.Text = "";
         }
 
         private void btnLMoi_Click(object sender, EventArgs e)
         {
             Select();
         }
+
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            
+
+            // kiểm tra dữ liệu nhập
+            if (txtTienCong.Text == "" || numGTien.Value < 1)
+            {
+                MessageBox.Show("Dữ liệu nhập có lỗi", "Lỗi");
+                return;
+            }
+
+            try
+            {
+                SqlCommand cmd = SQL.Connection.CreateCommand();
+
+                // nếu tiền công có idTC trong CTSC thì không xóa
+                cmd.CommandText = "UPDATE TIENCONG set tenTC=@tenTC, GIA=@giaTC where idtc= @id  and @id not in (select distinct idtc from ctsc)";
+                cmd.Parameters.Add("@tenTC", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@giaTC", SqlDbType.BigInt);
+                cmd.Parameters.Add("@id", SqlDbType.Int);
+
+                DataTable dt = (DataTable)dgvTCong.DataSource;
+                DataRow dr = dt.Rows[dgvTCong.CurrentRow.Index];
+
+                cmd.Parameters["@tenTC"].Value = txtTienCong.Text;
+                cmd.Parameters["@giaTC"].Value = numGTien.Value;
+                cmd.Parameters["@id"].Value = int.Parse(dr[0].ToString());
+
+                cmd.ExecuteNonQuery();
+
+                dgvTCong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+                //MessageBox.Show("đã sửa phụ tùng");
+
+
+
+            }
+            catch (Exception ex)
+            {
+                
+                MessageBox.Show("không thể sửa tiền công: "+"'" + txtTienCong.Text +"'");
+            }
+
+            load_tblTienCong();
+        }
+
+        private void btnLoc_Click(object sender, EventArgs e)
+        {
+           try
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter sqldap = new SqlDataAdapter("select * from tiencong where tenTC like N'%" + txtLoc.Text + "%'", SQL.Connection);
+                sqldap.Fill(dt);
+                dgvTCong.DataSource = dt;
+
+                txtTienCong.Text = "";
+                numGTien.Value = 0;
+                txtLoc.Text = "";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
     }
     
     
