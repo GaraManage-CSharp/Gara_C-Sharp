@@ -44,6 +44,7 @@
             this.dgvSChua = new System.Windows.Forms.DataGridView();
             this.clidTN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSChua)).BeginInit();
             this.SuspendLayout();
@@ -175,9 +176,10 @@
             this.dgvSChua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSChua.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clidTN,
-            this.clPT});
+            this.clPT,
+            this.clSL});
             this.dgvSChua.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dgvSChua.Location = new System.Drawing.Point(17, 81);
+            this.dgvSChua.Location = new System.Drawing.Point(3, 81);
             this.dgvSChua.Name = "dgvSChua";
             this.dgvSChua.ReadOnly = true;
             this.dgvSChua.Size = new System.Drawing.Size(489, 246);
@@ -185,15 +187,24 @@
             // 
             // clidTN
             // 
+            this.clidTN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clidTN.HeaderText = "idTN";
             this.clidTN.Name = "clidTN";
             this.clidTN.ReadOnly = true;
             // 
             // clPT
             // 
+            this.clPT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clPT.HeaderText = "Phụ Tùng";
             this.clPT.Name = "clPT";
             this.clPT.ReadOnly = true;
+            // 
+            // clSL
+            // 
+            this.clSL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clSL.HeaderText = "Số Lượng";
+            this.clSL.Name = "clSL";
+            this.clSL.ReadOnly = true;
             // 
             // UserControl_SuaChua
             // 
@@ -242,5 +253,6 @@
         private System.Windows.Forms.DataGridView dgvSChua;
         private System.Windows.Forms.DataGridViewTextBoxColumn clidTN;
         private System.Windows.Forms.DataGridViewTextBoxColumn clPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSL;
     }
 }

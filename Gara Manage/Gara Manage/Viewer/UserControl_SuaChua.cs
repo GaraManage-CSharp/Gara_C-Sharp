@@ -38,7 +38,7 @@ namespace Gara_Manage.Viewer
         }
         private void Pt()
         {
-            string sql = "select TENPT from PHUTUNG";
+            string sql = "select TENPT, idPT from PHUTUNG";
             SqlDataAdapter da = new SqlDataAdapter(sql, SQL.Connection);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -56,21 +56,33 @@ namespace Gara_Manage.Viewer
         //    tbSC.Columns.Add("Số Lượng");
         //    dgvSChua.DataSource = tbSC;
         //}
+        
         private void btnThem_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < tbSC.Rows.Count; i++)
-            {
-                Button b = (Button)sender;
-                DataTable tbSC = (DataTable)dgvSChua.DataSource;
-                DataRow r = tbSC.Rows[i];
-                if (r[clidTN.Name].ToString().CompareTo(cmbMTNhan.Text) == 0) 
-                {
-                    int sl = int.Parse(r["Số lượng"].ToString());
-                    sl++;
-                    r["Số lượng"] = sl;
-                    return;
-                }
-            }
+            
+            dgvSChua.AllowUserToAddRows = false;
+            dgvSChua.Rows.Add(1);
+            int indrow = dgvSChua.Rows.Count- 1;
+            dgvSChua[0, indrow].Value = cmbMTNhan.Text;
+            dgvSChua[1, indrow].Value = cmbPTung.Text;
+            for(int i  = 1; i < dgvSChua.Rows.Count; i++ )
+            {//đm thêm số lượng cộng dồn bằng combobox hoài ko được 
+            }            
+            //{
+            //    Button b = (Button)sender;
+            //    DataTable tbSC = (DataTable)dgvSChua.DataSource;
+            //    DataRow r = tbSC.Rows[i];
+            //    if (r[clidTN.Name].ToString().CompareTo(cmbMTNhan.Text) == 0) 
+            //    {
+                    
+            //    }
+            //}
+        }
+        
+        private void updatetable()
+        {
+            
+
         }
     }
 }
