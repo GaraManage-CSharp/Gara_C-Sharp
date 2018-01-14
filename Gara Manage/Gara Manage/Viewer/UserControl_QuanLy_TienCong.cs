@@ -125,7 +125,7 @@ namespace Gara_Manage.Viewer
                 SqlCommand cmd = SQL.Connection.CreateCommand();
 
                 // nếu tiền công có idTC trong CTSC thì không xóa
-                cmd.CommandText = "UPDATE TIENCONG set tenTC=@tenTC, GIA=@giaTC where idtc= @id  and @id not in (select distinct idtc from ctsc)";
+                cmd.CommandText = "UPDATE TIENCONG set tenTC=@tenTC, GIA=@giaTC where idtc= @id -- and @id not in (select distinct idtc from ctsc)";
                 cmd.Parameters.Add("@tenTC", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@giaTC", SqlDbType.BigInt);
                 cmd.Parameters.Add("@id", SqlDbType.Int);
@@ -140,7 +140,7 @@ namespace Gara_Manage.Viewer
                 cmd.ExecuteNonQuery();
 
                 dgvTCong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-                //MessageBox.Show("đã sửa phụ tùng");
+                MessageBox.Show("đã sửa tiền công");
 
 
 

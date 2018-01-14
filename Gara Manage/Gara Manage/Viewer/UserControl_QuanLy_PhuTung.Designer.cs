@@ -37,11 +37,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnLoc = new System.Windows.Forms.Button();
             this.txtLoc = new System.Windows.Forms.TextBox();
-            this.cmbLTheo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSua = new System.Windows.Forms.Button();
-            this.btnLMoi = new System.Windows.Forms.Button();
             this.dgvPTung = new System.Windows.Forms.DataGridView();
+            this.btnXacNhan = new System.Windows.Forms.Button();
+            this.cbxDVT = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnXoa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numGTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTung)).BeginInit();
             this.SuspendLayout();
@@ -67,32 +69,38 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(479, 40);
+            this.btnThem.Location = new System.Drawing.Point(479, 33);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // numGTien
             // 
-            this.numGTien.Location = new System.Drawing.Point(315, 41);
+            this.numGTien.Location = new System.Drawing.Point(374, 35);
+            this.numGTien.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.numGTien.Name = "numGTien";
-            this.numGTien.Size = new System.Drawing.Size(120, 20);
+            this.numGTien.Size = new System.Drawing.Size(65, 20);
             this.numGTien.TabIndex = 2;
             this.numGTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPTTung
             // 
-            this.txtPTTung.Location = new System.Drawing.Point(79, 40);
+            this.txtPTTung.Location = new System.Drawing.Point(90, 36);
             this.txtPTTung.Name = "txtPTTung";
-            this.txtPTTung.Size = new System.Drawing.Size(181, 20);
+            this.txtPTTung.Size = new System.Drawing.Size(95, 20);
             this.txtPTTung.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(266, 43);
+            this.label3.Location = new System.Drawing.Point(325, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 5;
@@ -116,6 +124,7 @@
             this.btnLoc.TabIndex = 7;
             this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // txtLoc
             // 
@@ -123,20 +132,7 @@
             this.txtLoc.Name = "txtLoc";
             this.txtLoc.Size = new System.Drawing.Size(166, 20);
             this.txtLoc.TabIndex = 5;
-            // 
-            // cmbLTheo
-            // 
-            this.cmbLTheo.CausesValidation = false;
-            this.cmbLTheo.Items.AddRange(new object[] {
-            "",
-            "Mã phụ tùng",
-            "Phụ tùng",
-            "Đơn vị tính",
-            "Giá tiền"});
-            this.cmbLTheo.Location = new System.Drawing.Point(83, 118);
-            this.cmbLTheo.Name = "cmbLTheo";
-            this.cmbLTheo.Size = new System.Drawing.Size(181, 21);
-            this.cmbLTheo.TabIndex = 4;
+            this.txtLoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoc_KeyPress);
             // 
             // label4
             // 
@@ -155,15 +151,7 @@
             this.btnSua.TabIndex = 10;
             this.btnSua.Text = "Sữa";
             this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // btnLMoi
-            // 
-            this.btnLMoi.Location = new System.Drawing.Point(479, 189);
-            this.btnLMoi.Name = "btnLMoi";
-            this.btnLMoi.Size = new System.Drawing.Size(75, 75);
-            this.btnLMoi.TabIndex = 9;
-            this.btnLMoi.Text = "Làm mới";
-            this.btnLMoi.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // dgvPTung
             // 
@@ -177,18 +165,64 @@
             this.dgvPTung.Size = new System.Drawing.Size(413, 223);
             this.dgvPTung.TabIndex = 8;
             // 
+            // btnXacNhan
+            // 
+            this.btnXacNhan.Location = new System.Drawing.Point(479, 34);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(75, 23);
+            this.btnXacNhan.TabIndex = 20;
+            this.btnXacNhan.Text = "Xác nhận";
+            this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Visible = false;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
+            // 
+            // cbxDVT
+            // 
+            this.cbxDVT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxDVT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbxDVT.FormattingEnabled = true;
+            this.cbxDVT.Items.AddRange(new object[] {
+            "Cái",
+            "Hộp",
+            "Mét"});
+            this.cbxDVT.Location = new System.Drawing.Point(233, 34);
+            this.cbxDVT.Name = "cbxDVT";
+            this.cbxDVT.Size = new System.Drawing.Size(75, 21);
+            this.cbxDVT.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(200, 40);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "DVT";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(479, 181);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 75);
+            this.btnXoa.TabIndex = 23;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // UserControl_QuanLy_PhuTung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cbxDVT);
+            this.Controls.Add(this.btnXacNhan);
             this.Controls.Add(this.dgvPTung);
-            this.Controls.Add(this.btnLMoi);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnLoc);
             this.Controls.Add(this.txtLoc);
-            this.Controls.Add(this.cmbLTheo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.numGTien);
@@ -218,8 +252,10 @@
         private System.Windows.Forms.TextBox txtLoc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.ComboBox cmbLTheo;
-        private System.Windows.Forms.Button btnLMoi;
         private System.Windows.Forms.DataGridView dgvPTung;
+        private System.Windows.Forms.Button btnXacNhan;
+        private System.Windows.Forms.ComboBox cbxDVT;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

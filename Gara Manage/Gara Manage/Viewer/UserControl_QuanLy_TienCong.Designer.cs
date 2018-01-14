@@ -148,7 +148,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(299, 24);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Tra cứu và chỉnh sữa tiền công";
+            this.label5.Text = "Tra cứu và chỉnh sửa tiền công";
             // 
             // dgvTCong
             // 
