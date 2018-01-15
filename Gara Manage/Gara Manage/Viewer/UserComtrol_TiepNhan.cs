@@ -43,13 +43,39 @@ namespace Gara_Manage.Viewer
                 tn.BIENSO = txtBSXe.Text;
                 tn.idHX = int.Parse(cbxHXe.Text);
                 test.TIEPNHAN.Add(tn);
-                test.SaveChangesAsync();
+                test.SaveChanges();
                 dataGridView1.DataSource = new GARAOTOEntities().TIEPNHAN.ToList();
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+
             }
 
+
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                test.TIEPNHAN.Remove(tIEPNHANBindingSource.Current as TIEPNHAN);
+                tIEPNHANBindingSource.RemoveCurrent();
+                test.SaveChangesAsync();
+            }
+        }
+
+        private void txtSDThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete)
+            {
+
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

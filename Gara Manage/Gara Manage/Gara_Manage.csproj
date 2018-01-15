@@ -93,6 +93,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GARAOTODataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HIEUXE.cs">
+      <DependentUpon>HIEUXEMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HIEUXEMODEL.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HIEUXEMODEL.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HIEUXEMODEL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HIEUXEMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HIEUXEMODEL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HIEUXEMODEL.edmx</DependentUpon>
+    </Compile>
     <Compile Include="MAIN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +247,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="HIEUXEMODEL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HIEUXEMODEL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="HIEUXEMODEL.edmx.diagram">
+      <DependentUpon>HIEUXEMODEL.edmx</DependentUpon>
+    </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -299,6 +324,7 @@
     <None Include="Properties\DataSources\GARAOTODataSet.tkdoanhsoRow.datasource" />
     <None Include="Properties\DataSources\GARAOTODataSet.tkdoanhsoRowChangeEvent.datasource" />
     <None Include="Properties\DataSources\GARAOTODataSet.tkdoanhsoRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\HIEUXE.datasource" />
     <None Include="Properties\DataSources\MAIN.datasource" />
     <None Include="Properties\DataSources\SQL.datasource" />
     <None Include="Properties\Settings.settings">
@@ -319,6 +345,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1.ico" />
+    <Content Include="HIEUXEMODEL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HIEUXEMODEL.edmx</DependentUpon>
+      <LastGenOutput>HIEUXEMODEL.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HIEUXEMODEL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HIEUXEMODEL.edmx</DependentUpon>
+      <LastGenOutput>HIEUXEMODEL.cs</LastGenOutput>
+    </Content>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
