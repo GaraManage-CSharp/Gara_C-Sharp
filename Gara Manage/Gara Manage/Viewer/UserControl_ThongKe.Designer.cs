@@ -75,7 +75,7 @@
             this.splitContainer1.Panel2.Click += new System.EventHandler(this.splitContainer1_Panel2_Click);
             this.splitContainer1.Panel2MinSize = 35;
             this.splitContainer1.Size = new System.Drawing.Size(596, 413);
-            this.splitContainer1.SplitterDistance = 373;
+            this.splitContainer1.SplitterDistance = 372;
             this.splitContainer1.TabIndex = 0;
             // 
             // dgvDSo
@@ -142,10 +142,10 @@
             this.dgvPTTon.AllowUserToDeleteRows = false;
             this.dgvPTTon.BackgroundColor = System.Drawing.Color.White;
             this.dgvPTTon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPTTon.Location = new System.Drawing.Point(52, 96);
+            this.dgvPTTon.Location = new System.Drawing.Point(13, 79);
             this.dgvPTTon.Name = "dgvPTTon";
             this.dgvPTTon.ReadOnly = true;
-            this.dgvPTTon.Size = new System.Drawing.Size(470, 273);
+            this.dgvPTTon.Size = new System.Drawing.Size(565, 290);
             this.dgvPTTon.TabIndex = 8;
             // 
             // cmbBCThang
@@ -170,11 +170,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(238, 10);
+            this.label4.Location = new System.Drawing.Point(254, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 24);
+            this.label4.Size = new System.Drawing.Size(94, 24);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Báo cáo tồn";
+            this.label4.Text = "Phụ tùng";
             // 
             // UserControl_ThongKe
             // 

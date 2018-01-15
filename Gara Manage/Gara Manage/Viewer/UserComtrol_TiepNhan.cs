@@ -95,6 +95,12 @@ namespace Gara_Manage.Viewer
                 test.SaveChanges();
                 tIEPNHANBindingSource.Add(tn);
                 tIEPNHANBindingSource.EndEdit();
+                txtBSXe.Clear();
+                txtDChi.Clear();
+                txtEmail.Clear();
+                txtSDThoai.Clear();
+                txtTKHang.Clear();
+                cbxHXe.SelectedIndex = 0;
                 MAIN.Flag.FlagTiepNhanSuaChua = true;
             }
             catch (Exception ex)

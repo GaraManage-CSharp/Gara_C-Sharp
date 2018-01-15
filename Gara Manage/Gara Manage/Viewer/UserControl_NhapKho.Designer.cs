@@ -41,7 +41,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(454, 192);
+            this.btnXoa.Location = new System.Drawing.Point(454, 188);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(131, 70);
             this.btnXoa.TabIndex = 6;
@@ -58,7 +58,7 @@
             this.dgvPTung.Location = new System.Drawing.Point(12, 75);
             this.dgvPTung.Name = "dgvPTung";
             this.dgvPTung.ReadOnly = true;
-            this.dgvPTung.Size = new System.Drawing.Size(433, 277);
+            this.dgvPTung.Size = new System.Drawing.Size(433, 322);
             this.dgvPTung.TabIndex = 4;
             // 
             // label2
@@ -117,7 +117,7 @@
             this.Controls.Add(this.dgvPTung);
             this.Controls.Add(this.btnXoa);
             this.Name = "UserControl_NhapKho";
-            this.Size = new System.Drawing.Size(596, 369);
+            this.Size = new System.Drawing.Size(596, 413);
             this.Click += new System.EventHandler(this.UserControl_NhapKho_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).EndInit();
