@@ -130,6 +130,7 @@
             this.cmbMTNhan.Name = "cmbMTNhan";
             this.cmbMTNhan.Size = new System.Drawing.Size(193, 21);
             this.cmbMTNhan.TabIndex = 1;
+            this.cmbMTNhan.SelectedIndexChanged += new System.EventHandler(this.cmbMTNhan_SelectedIndexChanged);
             // 
             // label3
             // 

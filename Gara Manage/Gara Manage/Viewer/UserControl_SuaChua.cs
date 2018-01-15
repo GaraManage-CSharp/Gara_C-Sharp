@@ -69,28 +69,37 @@ namespace Gara_Manage.Viewer
         //}
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string sql = " insert into CTSC(idTN,SL,idPT, idTC) values (@idTN,@SL,@idPT,@idTC)  exec thanhtien";
-            SqlCommand cm = new SqlCommand();
-            cm.Connection = SQL.Connection;
-            DataTable dt = (DataTable)dgvSChua.DataSource;
-            DataRow dr = dt.Rows[dgvSChua.CurrentRow.Index];
-            cm.Parameters.Add("@idTN", SqlDbType.Int).Value = int.Parse(cmbMTNhan.SelectedValue.ToString());
-            cm.Parameters.Add("@SL", SqlDbType.BigInt).Value = numSLuong.Value;
-            cm.Parameters.Add("@idPT", SqlDbType.Int).Value = int.Parse(cmbPTung.SelectedValue.ToString());
-            cm.Parameters.Add("@idTC", SqlDbType.Int).Value = int.Parse(cmbTC.SelectedValue.ToString());
-            cm.CommandText = sql;
-            cm.ExecuteNonQuery();
-            dgvSChua.Refresh();
-            dgvSChua.Update();
-            show();
+            try
+            {
+                string sql = " insert into CTSC(idTN,SL,idPT, idTC) values (@idTN,@SL,@idPT,@idTC)  exec thanhtien";
+                SqlCommand cm = new SqlCommand();
+                cm.Connection = SQL.Connection;
+                DataTable dt = (DataTable)dgvSChua.DataSource;
+                DataRow dr = dt.Rows[dgvSChua.CurrentRow.Index];
+                cm.Parameters.Add("@idTN", SqlDbType.Int).Value = int.Parse(cmbMTNhan.SelectedValue.ToString());
+                cm.Parameters.Add("@SL", SqlDbType.BigInt).Value = numSLuong.Value;
+                cm.Parameters.Add("@idPT", SqlDbType.Int).Value = int.Parse(cmbPTung.SelectedValue.ToString());
+                cm.Parameters.Add("@idTC", SqlDbType.Int).Value = int.Parse(cmbTC.SelectedValue.ToString());
+                cm.CommandText = sql;
+                cm.ExecuteNonQuery();
+                dgvSChua.Refresh();
+                dgvSChua.Update();
+                show();
+                TinhTien();
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi Nhé ^^");
+            }
         }
         private void show()
         {
             string sql = "select c.idCTSC,c.idTN,p.idPT, p.TENPT, p.GIAPT, c.SL, ti.TENTC,ti.GIA,c.THANHTIEN" +
                 " from PHUTUNG p, CTSC c, TIEPNHAN t , TIENCONG ti" +
 
-                " where p.idPT = c.idPT and c.idTN = t.idTN and ti.idTC = c.idTC";
+                " where p.idPT = c.idPT and c.idTN = t.idTN and ti.idTC = c.idTC and t.idTN = @idTN";
             SqlCommand cm = new SqlCommand(sql, SQL.Connection);
+            cm.Parameters.Add("@idTN", SqlDbType.Int).Value = int.Parse(cmbMTNhan.SelectedValue.ToString());
             SqlDataReader dr = cm.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(dr);
@@ -111,11 +120,29 @@ namespace Gara_Manage.Viewer
             dgvSChua.Refresh();
             dgvSChua.Update();
             show();
+            TinhTien();
         }
 
         private void btnXNhan_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Xuất Hóa Đơn Thành Công");
+        }
+
+        private void cmbMTNhan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            show();
+            TinhTien();
+        }
+        private void TinhTien()
+        {
+            DataTable dt = (DataTable)dgvSChua.DataSource;
+            int tongtien = 0;
+            DataRowCollection rows = dt.Rows;
+            foreach (DataRow dr in rows)
+            {
+                tongtien += int.Parse(dr["THANHTIEN"].ToString());
+            }
+            txtTTien.Text = tongtien.ToString();
         }
     }
     
