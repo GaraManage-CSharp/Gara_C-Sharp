@@ -44,12 +44,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtSDThoai = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.selectTiepNhanDataTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dteNNhan = new System.Windows.Forms.DateTimePicker();
-            this.selectTiepNhanDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bCPTtonghopRowChangeEventBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtTKHang = new System.Windows.Forms.TextBox();
-            this.idTNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tENKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dIACHIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,9 +55,6 @@
             this.nGAYNHANDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tIEPNHANBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.selectTiepNhanDataTableBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.selectTiepNhanDataTableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bCPTtonghopRowChangeEventBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxHXe
@@ -204,7 +198,7 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idTNDataGridViewTextBoxColumn,
+            this.idTN,
             this.tENKHDataGridViewTextBoxColumn,
             this.dIACHIDataGridViewTextBoxColumn,
             this.sDTDataGridViewTextBoxColumn,
@@ -219,24 +213,12 @@
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
-            // selectTiepNhanDataTableBindingSource1
-            // 
-            this.selectTiepNhanDataTableBindingSource1.DataSource = typeof(Gara_Manage.GARAOTODataSet.select_TiepNhanDataTable);
-            // 
             // dteNNhan
             // 
             this.dteNNhan.Location = new System.Drawing.Point(126, 167);
             this.dteNNhan.Name = "dteNNhan";
             this.dteNNhan.Size = new System.Drawing.Size(282, 20);
             this.dteNNhan.TabIndex = 40;
-            // 
-            // selectTiepNhanDataTableBindingSource
-            // 
-            this.selectTiepNhanDataTableBindingSource.DataSource = typeof(Gara_Manage.GARAOTODataSet.select_TiepNhanDataTable);
-            // 
-            // bCPTtonghopRowChangeEventBindingSource
-            // 
-            this.bCPTtonghopRowChangeEventBindingSource.DataSource = typeof(Gara_Manage.GARAOTODataSet.BCPTtonghopRowChangeEvent);
             // 
             // txtTKHang
             // 
@@ -247,12 +229,12 @@
             this.txtTKHang.Size = new System.Drawing.Size(282, 20);
             this.txtTKHang.TabIndex = 29;
             // 
-            // idTNDataGridViewTextBoxColumn
+            // idTN
             // 
-            this.idTNDataGridViewTextBoxColumn.DataPropertyName = "idTN";
-            this.idTNDataGridViewTextBoxColumn.HeaderText = "idTN";
-            this.idTNDataGridViewTextBoxColumn.Name = "idTNDataGridViewTextBoxColumn";
-            this.idTNDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idTN.DataPropertyName = "idTN";
+            this.idTN.HeaderText = "idTN";
+            this.idTN.Name = "idTN";
+            this.idTN.ReadOnly = true;
             // 
             // tENKHDataGridViewTextBoxColumn
             // 
@@ -322,9 +304,6 @@
             this.Load += new System.EventHandler(this.UserComtrol_TiepNhan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tIEPNHANBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.selectTiepNhanDataTableBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.selectTiepNhanDataTableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bCPTtonghopRowChangeEventBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,16 +326,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dteNNhan;
         private System.Windows.Forms.BindingSource tIEPNHANBindingSource;
-        private System.Windows.Forms.BindingSource selectTiepNhanDataTableBindingSource;
-        private System.Windows.Forms.BindingSource selectTiepNhanDataTableBindingSource1;
-        private System.Windows.Forms.BindingSource bCPTtonghopRowChangeEventBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idTNDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox txtTKHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTN;
         private System.Windows.Forms.DataGridViewTextBoxColumn tENKHDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dIACHIDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eMAILDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bIENSODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nGAYNHANDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox txtTKHang;
     }
 }

@@ -28,6 +28,7 @@ namespace Gara_Manage.Viewer
             txtSDThoai.Enabled = true;
             test = new GARAOTOEntities();
             tIEPNHANBindingSource.DataSource = test.TIEPNHAN.ToList();
+
         }
 
         private void btnTNhan_Click(object sender, EventArgs e)
@@ -67,7 +68,6 @@ namespace Gara_Manage.Viewer
 
         private void txtSDThoai_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete)
             {
 
