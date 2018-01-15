@@ -80,7 +80,7 @@ namespace Gara_Manage.Viewer
         //hàm getSelectSQL dùng để lấy câu truy vấn SQL (chưa xài được)
         private string getSelectSQL(string item) //item là chuỗi điều kiện truyền vào
         {
-            string initem = "select idTN as [Mã tiếp nhận],TENKH as [Khách hàng],N'Loại tiếp nhận' as [Loại tiếp nhận],BIENSO as [Biển số],TENHX as [Hiệu xe],N'Nhân viên' as [Nhân viên],NGAYNHAN as [Ngày nhận],N'Ngày sữa' as [Ngày sữa] " +
+            string initem = "select idTN as [Mã tiếp nhận],TENKH as [Khách hàng],BIENSO as [Biển số],TENHX as [Hiệu xe],NGAYNHAN as [Ngày nhận] " +
                     "from tiepnhan t, HIEUXE h " +
                     "where t.idHX=h.idHX ";
             return item.CompareTo("") == 0 ? initem : initem + " and " + item; //nếu chuỗi truyền vào là trống thì không cần thêm điều kiện
@@ -104,6 +104,11 @@ namespace Gara_Manage.Viewer
             for(int i=0;i<gARAOTODataSet.TIEPNHAN.Columns.Count;i++)
             {
                 cmbLTheo.Items.Add(gARAOTODataSet.TIEPNHAN.Columns[i].ToString());
+            }
+            if(cmbLTheo.Items.Count != 0)
+            {
+                cmbLTheo.SelectedIndex = 0;
+                Select();
             }
         }
     }
