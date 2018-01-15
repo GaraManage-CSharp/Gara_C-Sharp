@@ -75,7 +75,7 @@
             this.splitContainer1.Panel2.Click += new System.EventHandler(this.splitContainer1_Panel2_Click);
             this.splitContainer1.Panel2MinSize = 35;
             this.splitContainer1.Size = new System.Drawing.Size(596, 413);
-            this.splitContainer1.SplitterDistance = 321;
+            this.splitContainer1.SplitterDistance = 373;
             this.splitContainer1.TabIndex = 0;
             // 
             // dgvDSo
@@ -93,6 +93,7 @@
             // txtTDTThang
             // 
             this.txtTDTThang.Enabled = false;
+            this.txtTDTThang.ForeColor = System.Drawing.Color.Black;
             this.txtTDTThang.Location = new System.Drawing.Point(226, 75);
             this.txtTDTThang.Name = "txtTDTThang";
             this.txtTDTThang.Size = new System.Drawing.Size(157, 20);

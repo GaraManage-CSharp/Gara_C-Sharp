@@ -35,6 +35,7 @@ namespace Gara_Manage.Viewer
         }
         private void mtn()
         {
+            cmbMTNhan.Text = "";
             string sql = "select t.idTN, t.tenkh from TIEPNHAN t where t.idTN not in (select idTN from HOADON)";
             SqlDataAdapter da = new SqlDataAdapter(sql, SQL.Connection);
             DataTable dt = new DataTable();
@@ -42,7 +43,10 @@ namespace Gara_Manage.Viewer
             cmbMTNhan.DisplayMember = "idTN";
             cmbMTNhan.ValueMember = "idTN";
             cmbMTNhan.DataSource = dt;
-
+            if (cmbMTNhan.Items.Count != 0)
+            {
+                cmbMTNhan.SelectedIndex = 0;
+            }
         }
         private void Pt()
         {
@@ -81,13 +85,17 @@ namespace Gara_Manage.Viewer
                 TinhTien();
                 MAIN.Flag.FlagSuaChua = true;
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi.");
+                MessageBox.Show(ex.Message);
             }
         }
         private void show()
         {
+            if (cmbMTNhan.Items.Count == 0)
+            {
+                return;
+            }
             string sql = "select c.idCTSC,c.idTN,p.idPT, p.TENPT, p.GIABAN, c.SL, ti.TENTC,ti.GIA,c.THANHTIEN" +
                 " from PHUTUNG p, CTSC c, TIEPNHAN t , TIENCONG ti" +
 
@@ -136,9 +144,18 @@ namespace Gara_Manage.Viewer
 
         private void UserControl_SuaChua_MouseClick(object sender, MouseEventArgs e)
         {
-            if (MAIN.Flag.FlagTiepNhanSuaChua)
-            {
+            
+        }
+
+        private void UserControl_SuaChua_Click(object sender, EventArgs e)
+        {
+            if (MAIN.Flag.FlagHoaDonSuaChua || MAIN.Flag.FlagTiepNhanSuaChua) {
+                if(dgvSChua.DataSource != null)
+                {
+                    ((DataTable)dgvSChua.DataSource).Clear();
+                }
                 mtn();
+                MAIN.Flag.FlagHoaDonSuaChua = false;
                 MAIN.Flag.FlagTiepNhanSuaChua = false;
             }
             if (MAIN.Flag.FlagQuanLyPhuTungSuaChua)
@@ -150,15 +167,6 @@ namespace Gara_Manage.Viewer
             {
                 TC();
                 MAIN.Flag.FlagQuanLyTiencong = false;
-            }
-        }
-
-        private void UserControl_SuaChua_Click(object sender, EventArgs e)
-        {
-            if (MAIN.Flag.FlagHoaDonSuaChua)
-            {
-                mtn();
-                MAIN.Flag.FlagHoaDonSuaChua = false;
             }
         }
     }

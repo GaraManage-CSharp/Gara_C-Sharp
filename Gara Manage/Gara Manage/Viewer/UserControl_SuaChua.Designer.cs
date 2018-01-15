@@ -104,7 +104,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(522, 81);
+            this.btnXoa.Location = new System.Drawing.Point(512, 112);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 75);
             this.btnXoa.TabIndex = 7;
@@ -192,7 +192,7 @@
             this.Controls.Add(this.lblPTung);
             this.Controls.Add(this.label1);
             this.Name = "UserControl_SuaChua";
-            this.Size = new System.Drawing.Size(600, 376);
+            this.Size = new System.Drawing.Size(590, 376);
             this.Click += new System.EventHandler(this.UserControl_SuaChua_Click);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UserControl_SuaChua_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).EndInit();
