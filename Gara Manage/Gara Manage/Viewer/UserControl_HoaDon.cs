@@ -39,7 +39,7 @@ namespace Gara_Manage.Viewer
             DataTable dt = new DataTable();
             SqlDataAdapter sqldap = new SqlDataAdapter("exec loadtableHD", SQL.Connection);
             sqldap.Fill(dt);
-            dgvKhHang.DataSource = dt;
+            dgvHoaDon.DataSource = dt;
         }
         
 

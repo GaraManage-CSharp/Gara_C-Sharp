@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btn_DThu_Tim = new System.Windows.Forms.Button();
+            this.dgvDSo = new System.Windows.Forms.DataGridView();
             this.txtTDTThang = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbDSThang = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_BCao_Tim = new System.Windows.Forms.Button();
+            this.dgvPTTon = new System.Windows.Forms.DataGridView();
             this.cmbBCThang = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dgvDSo = new System.Windows.Forms.DataGridView();
-            this.dgvPTTon = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -59,7 +58,6 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.dgvDSo);
-            this.splitContainer1.Panel1.Controls.Add(this.btn_DThu_Tim);
             this.splitContainer1.Panel1.Controls.Add(this.txtTDTThang);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.cmbDSThang);
@@ -70,7 +68,6 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvPTTon);
-            this.splitContainer1.Panel2.Controls.Add(this.btn_BCao_Tim);
             this.splitContainer1.Panel2.Controls.Add(this.cmbBCThang);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
@@ -79,14 +76,14 @@
             this.splitContainer1.SplitterDistance = 366;
             this.splitContainer1.TabIndex = 0;
             // 
-            // btn_DThu_Tim
+            // dgvDSo
             // 
-            this.btn_DThu_Tim.Location = new System.Drawing.Point(389, 45);
-            this.btn_DThu_Tim.Name = "btn_DThu_Tim";
-            this.btn_DThu_Tim.Size = new System.Drawing.Size(75, 23);
-            this.btn_DThu_Tim.TabIndex = 6;
-            this.btn_DThu_Tim.Text = "Tìm";
-            this.btn_DThu_Tim.UseVisualStyleBackColor = true;
+            this.dgvDSo.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDSo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSo.Location = new System.Drawing.Point(65, 110);
+            this.dgvDSo.Name = "dgvDSo";
+            this.dgvDSo.Size = new System.Drawing.Size(470, 249);
+            this.dgvDSo.TabIndex = 5;
             // 
             // txtTDTThang
             // 
@@ -112,6 +109,7 @@
             this.cmbDSThang.Name = "cmbDSThang";
             this.cmbDSThang.Size = new System.Drawing.Size(156, 21);
             this.cmbDSThang.TabIndex = 2;
+            this.cmbDSThang.SelectedIndexChanged += new System.EventHandler(this.cmbDSThang_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -132,14 +130,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Doanh số";
             // 
-            // btn_BCao_Tim
+            // dgvPTTon
             // 
-            this.btn_BCao_Tim.Location = new System.Drawing.Point(389, 50);
-            this.btn_BCao_Tim.Name = "btn_BCao_Tim";
-            this.btn_BCao_Tim.Size = new System.Drawing.Size(75, 23);
-            this.btn_BCao_Tim.TabIndex = 7;
-            this.btn_BCao_Tim.Text = "Tìm";
-            this.btn_BCao_Tim.UseVisualStyleBackColor = true;
+            this.dgvPTTon.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPTTon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPTTon.Location = new System.Drawing.Point(52, 96);
+            this.dgvPTTon.Name = "dgvPTTon";
+            this.dgvPTTon.Size = new System.Drawing.Size(470, 273);
+            this.dgvPTTon.TabIndex = 8;
             // 
             // cmbBCThang
             // 
@@ -148,6 +146,7 @@
             this.cmbBCThang.Name = "cmbBCThang";
             this.cmbBCThang.Size = new System.Drawing.Size(145, 21);
             this.cmbBCThang.TabIndex = 2;
+            this.cmbBCThang.SelectedIndexChanged += new System.EventHandler(this.cmbBCThang_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -168,24 +167,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Báo cáo tồn";
             // 
-            // dgvDSo
-            // 
-            this.dgvDSo.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDSo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSo.Location = new System.Drawing.Point(65, 110);
-            this.dgvDSo.Name = "dgvDSo";
-            this.dgvDSo.Size = new System.Drawing.Size(470, 249);
-            this.dgvDSo.TabIndex = 5;
-            // 
-            // dgvPTTon
-            // 
-            this.dgvPTTon.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPTTon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPTTon.Location = new System.Drawing.Point(52, 96);
-            this.dgvPTTon.Name = "dgvPTTon";
-            this.dgvPTTon.Size = new System.Drawing.Size(470, 273);
-            this.dgvPTTon.TabIndex = 8;
-            // 
             // UserControl_ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,6 +179,7 @@
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTTon)).EndInit();
@@ -216,8 +198,6 @@
         private System.Windows.Forms.ComboBox cmbBCThang;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btn_DThu_Tim;
-        private System.Windows.Forms.Button btn_BCao_Tim;
         private System.Windows.Forms.DataGridView dgvDSo;
         private System.Windows.Forms.DataGridView dgvPTTon;
     }

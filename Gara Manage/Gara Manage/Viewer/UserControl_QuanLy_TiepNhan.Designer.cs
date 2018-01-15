@@ -39,14 +39,6 @@
             this.cmbLTheo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvDLTNhan = new System.Windows.Forms.DataGridView();
-            this.mãTiếpNhậnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tênKháchHàngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.địaChỉDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sốĐiệnThoạiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hiệuXeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.biểnSốXeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngàyNhậnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select_TiepNhanTableAdapter = new Gara_Manage.GARAOTODataSetTableAdapters.select_TiepNhanTableAdapter();
             this.selectTiepNhanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gARAOTODataSet = new Gara_Manage.GARAOTODataSet();
@@ -159,77 +151,12 @@
             this.dgvDLTNhan.AllowUserToDeleteRows = false;
             this.dgvDLTNhan.BackgroundColor = System.Drawing.Color.White;
             this.dgvDLTNhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDLTNhan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mãTiếpNhậnDataGridViewTextBoxColumn,
-            this.tênKháchHàngDataGridViewTextBoxColumn,
-            this.địaChỉDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn17,
-            this.sốĐiệnThoạiDataGridViewTextBoxColumn,
-            this.hiệuXeDataGridViewTextBoxColumn,
-            this.biểnSốXeDataGridViewTextBoxColumn,
-            this.ngàyNhậnDataGridViewTextBoxColumn});
             this.dgvDLTNhan.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvDLTNhan.Location = new System.Drawing.Point(20, 145);
             this.dgvDLTNhan.Name = "dgvDLTNhan";
             this.dgvDLTNhan.ReadOnly = true;
             this.dgvDLTNhan.Size = new System.Drawing.Size(537, 217);
             this.dgvDLTNhan.TabIndex = 7;
-            // 
-            // mãTiếpNhậnDataGridViewTextBoxColumn
-            // 
-            this.mãTiếpNhậnDataGridViewTextBoxColumn.DataPropertyName = "Mã tiếp nhận";
-            this.mãTiếpNhậnDataGridViewTextBoxColumn.HeaderText = "Mã tiếp nhận";
-            this.mãTiếpNhậnDataGridViewTextBoxColumn.Name = "mãTiếpNhậnDataGridViewTextBoxColumn";
-            this.mãTiếpNhậnDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tênKháchHàngDataGridViewTextBoxColumn
-            // 
-            this.tênKháchHàngDataGridViewTextBoxColumn.DataPropertyName = "Tên khách hàng";
-            this.tênKháchHàngDataGridViewTextBoxColumn.HeaderText = "Tên khách hàng";
-            this.tênKháchHàngDataGridViewTextBoxColumn.Name = "tênKháchHàngDataGridViewTextBoxColumn";
-            this.tênKháchHàngDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // địaChỉDataGridViewTextBoxColumn
-            // 
-            this.địaChỉDataGridViewTextBoxColumn.DataPropertyName = "Địa chỉ";
-            this.địaChỉDataGridViewTextBoxColumn.HeaderText = "Địa chỉ";
-            this.địaChỉDataGridViewTextBoxColumn.Name = "địaChỉDataGridViewTextBoxColumn";
-            this.địaChỉDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            // 
-            // sốĐiệnThoạiDataGridViewTextBoxColumn
-            // 
-            this.sốĐiệnThoạiDataGridViewTextBoxColumn.DataPropertyName = "Số điện thoại";
-            this.sốĐiệnThoạiDataGridViewTextBoxColumn.HeaderText = "Số điện thoại";
-            this.sốĐiệnThoạiDataGridViewTextBoxColumn.Name = "sốĐiệnThoạiDataGridViewTextBoxColumn";
-            this.sốĐiệnThoạiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hiệuXeDataGridViewTextBoxColumn
-            // 
-            this.hiệuXeDataGridViewTextBoxColumn.DataPropertyName = "Hiệu xe";
-            this.hiệuXeDataGridViewTextBoxColumn.HeaderText = "Hiệu xe";
-            this.hiệuXeDataGridViewTextBoxColumn.Name = "hiệuXeDataGridViewTextBoxColumn";
-            this.hiệuXeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // biểnSốXeDataGridViewTextBoxColumn
-            // 
-            this.biểnSốXeDataGridViewTextBoxColumn.DataPropertyName = "Biển số xe";
-            this.biểnSốXeDataGridViewTextBoxColumn.HeaderText = "Biển số xe";
-            this.biểnSốXeDataGridViewTextBoxColumn.Name = "biểnSốXeDataGridViewTextBoxColumn";
-            this.biểnSốXeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ngàyNhậnDataGridViewTextBoxColumn
-            // 
-            this.ngàyNhậnDataGridViewTextBoxColumn.DataPropertyName = "Ngày nhận";
-            this.ngàyNhậnDataGridViewTextBoxColumn.HeaderText = "Ngày nhận";
-            this.ngàyNhậnDataGridViewTextBoxColumn.Name = "ngàyNhậnDataGridViewTextBoxColumn";
-            this.ngàyNhậnDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // select_TiepNhanTableAdapter
             // 
@@ -316,14 +243,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private GARAOTODataSetTableAdapters.select_TiepNhanTableAdapter select_TiepNhanTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mãTiếpNhậnDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tênKháchHàngDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn địaChỉDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sốĐiệnThoạiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hiệuXeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn biểnSốXeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngàyNhậnDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource selectTiepNhanBindingSource;
         private System.Windows.Forms.BindingSource bindingSource1;
         private GARAOTODataSet gARAOTODataSet;
