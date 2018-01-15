@@ -168,10 +168,10 @@
     <Compile Include="Viewer\UserControl_SuaChua.Designer.cs">
       <DependentUpon>UserControl_SuaChua.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl_ThongKe.cs">
+    <Compile Include="Viewer\UserControl_ThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl_ThongKe.Designer.cs">
+    <Compile Include="Viewer\UserControl_ThongKe.Designer.cs">
       <DependentUpon>UserControl_ThongKe.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MAIN.resx">
@@ -211,7 +211,7 @@
     <EmbeddedResource Include="Viewer\UserControl_SuaChua.resx">
       <DependentUpon>UserControl_SuaChua.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl_ThongKe.resx">
+    <EmbeddedResource Include="Viewer\UserControl_ThongKe.resx">
       <DependentUpon>UserControl_ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="GARAOTODataSet.xsc">

@@ -16,29 +16,18 @@ namespace Gara_Manage.Viewer
         public UserControl_SuaChua()
         {
             InitializeComponent();
+
         }
 
         private void UserControl_SuaChua_Load(object sender, EventArgs e)
         {
             mtn();
             Pt();
-            TC();
-            show();
-        }
-        private void TC()
-        {
-            string sql = "select TENTC,idTC from TIENCONG ";
-            SqlDataAdapter da = new SqlDataAdapter(sql, SQL.Connection);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            cmbTC.DisplayMember = "idTC";
-            cmbTC.ValueMember = "idTC";
-            cmbTC.DataSource = dt;
-
+            
         }
         private void mtn()
         {
-            string sql = "select idTN, tenkh from TIEPNHAN ";
+            string sql = "select idTN from TIEPNHAN ";
             SqlDataAdapter da = new SqlDataAdapter(sql, SQL.Connection);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -49,15 +38,15 @@ namespace Gara_Manage.Viewer
         }
         private void Pt()
         {
-            string sql = "select TENPT,idPT from PHUTUNG";
+            string sql = "select TENPT from PHUTUNG";
             SqlDataAdapter da = new SqlDataAdapter(sql, SQL.Connection);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            cmbPTung.DisplayMember = "idPT";
-            cmbPTung.ValueMember = "idPT";
+            cmbPTung.DisplayMember = "TENPT";
+            cmbPTung.ValueMember = "TENPT";
             cmbPTung.DataSource = dt;
         }
-
+        
         DataTable tbSC = new DataTable();
         //private void datatable()
         //{
@@ -65,57 +54,23 @@ namespace Gara_Manage.Viewer
         //    tbSC.Columns.Add(cmbMTNhan.Text.ToString());
         //    tbSC.Columns.Add(cmbPTung.Text.ToString());
         //    tbSC.Columns.Add("Số Lượng");
-        //    dgvSChua.DataSource   = tbSC;
+        //    dgvSChua.DataSource = tbSC;
         //}
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string sql = " insert into CTSC(idTN,SL,idPT, idTC) values (@idTN,@SL,@idPT,@idTC)  ";
-            SqlCommand cm = new SqlCommand();
-            cm.Connection = SQL.Connection;
-            DataTable dt = (DataTable)dgvSChua.DataSource;
-            DataRow dr = dt.Rows[dgvSChua.CurrentRow.Index];
-            cm.Parameters.Add("@idTN", SqlDbType.Int).Value = int.Parse(cmbMTNhan.SelectedValue.ToString());
-            cm.Parameters.Add("@SL", SqlDbType.BigInt).Value = numSLuong.Value;
-            cm.Parameters.Add("@idPT", SqlDbType.Int).Value = int.Parse(cmbPTung.SelectedValue.ToString());
-            cm.Parameters.Add("@idTC", SqlDbType.Int).Value = int.Parse(cmbTC.SelectedValue.ToString());
-            cm.CommandText = sql;
-            cm.ExecuteNonQuery();
-            dgvSChua.Refresh();
-            dgvSChua.Update();
-            show();
+            for (int i = 0; i < tbSC.Rows.Count; i++)
+            {
+                Button b = (Button)sender;
+                DataTable tbSC = (DataTable)dgvSChua.DataSource;
+                DataRow r = tbSC.Rows[i];
+                if (r[clidTN.Name].ToString().CompareTo(cmbMTNhan.Text) == 0) // nếu món ăn trùng thì cộng dồn
+                {
+                    int sl = int.Parse(r["Số lượng"].ToString());
+                    sl++;
+                    r["Số lượng"] = sl;
+                    return;
+                }
+            }
         }
-        private void show()
-        {
-            string sql = "select c.idCTSC,c.idTN,p.idPT, p.TENPT, p.GIAPT, c.SL, ti.TENTC,ti.GIA,c.THANHTIEN" +
-                " from PHUTUNG p, CTSC c, TIEPNHAN t , TIENCONG ti" +
-
-                " where p.idPT = c.idPT and c.idTN = t.idTN and ti.idTC = c.idTC";
-            SqlCommand cm = new SqlCommand(sql, SQL.Connection);
-            SqlDataReader dr = cm.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(dr);
-            dgvSChua.DataSource = dt;
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            string sql = " delete from CTSC where idCTSC = @idCTCS";
-
-            SqlCommand cm = new SqlCommand();
-            cm.Connection = SQL.Connection;
-            DataTable dt = (DataTable)dgvSChua.DataSource;
-            DataRow dr = dt.Rows[dgvSChua.CurrentRow.Index];
-            cm.CommandText = sql;
-            cm.Parameters.Add("@idCTSC", SqlDbType.Int).Value = int.Parse(dr["idCTSC"].ToString());
-            cm.ExecuteNonQuery();
-            dgvSChua.Refresh();
-            dgvSChua.Update();
-            show();
-        }
-
-        
     }
-    
 }
-    
-

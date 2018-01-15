@@ -42,9 +42,8 @@
             this.txtTTien = new System.Windows.Forms.TextBox();
             this.bttnLMoi = new System.Windows.Forms.Button();
             this.dgvSChua = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbTC = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.clidTN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSChua)).BeginInit();
             this.SuspendLayout();
@@ -114,7 +113,6 @@
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xoá";
             this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -175,6 +173,9 @@
             this.dgvSChua.AllowUserToDeleteRows = false;
             this.dgvSChua.BackgroundColor = System.Drawing.Color.White;
             this.dgvSChua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSChua.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clidTN,
+            this.clPT});
             this.dgvSChua.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.dgvSChua.Location = new System.Drawing.Point(17, 81);
             this.dgvSChua.Name = "dgvSChua";
@@ -182,41 +183,23 @@
             this.dgvSChua.Size = new System.Drawing.Size(489, 246);
             this.dgvSChua.TabIndex = 5;
             // 
-            // label2
+            // clidTN
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(289, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Tiền Công";
+            this.clidTN.HeaderText = "idTN";
+            this.clidTN.Name = "clidTN";
+            this.clidTN.ReadOnly = true;
             // 
-            // cmbTC
+            // clPT
             // 
-            this.cmbTC.FormattingEnabled = true;
-            this.cmbTC.Location = new System.Drawing.Point(344, 7);
-            this.cmbTC.Name = "cmbTC";
-            this.cmbTC.Size = new System.Drawing.Size(121, 21);
-            this.cmbTC.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 65);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Phụ tùng";
+            this.clPT.HeaderText = "Phụ Tùng";
+            this.clPT.Name = "clPT";
+            this.clPT.ReadOnly = true;
             // 
             // UserControl_SuaChua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.cmbTC);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvSChua);
             this.Controls.Add(this.bttnLMoi);
             this.Controls.Add(this.txtTTien);
@@ -257,8 +240,7 @@
         private System.Windows.Forms.TextBox txtTTien;
         private System.Windows.Forms.Button bttnLMoi;
         private System.Windows.Forms.DataGridView dgvSChua;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbTC;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clidTN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clPT;
     }
 }
