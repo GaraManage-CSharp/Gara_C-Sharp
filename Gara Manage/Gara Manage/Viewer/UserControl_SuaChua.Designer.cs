@@ -154,6 +154,8 @@
             // 
             this.dgvSChua.AllowUserToAddRows = false;
             this.dgvSChua.AllowUserToDeleteRows = false;
+            this.dgvSChua.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvSChua.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSChua.BackgroundColor = System.Drawing.Color.White;
             this.dgvSChua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSChua.GridColor = System.Drawing.SystemColors.AppWorkspace;
@@ -184,6 +186,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.cmbTC);
             this.Controls.Add(this.label2);
@@ -200,7 +204,7 @@
             this.Controls.Add(this.lblPTung);
             this.Controls.Add(this.label1);
             this.Name = "UserControl_SuaChua";
-            this.Size = new System.Drawing.Size(612, 413);
+            this.Size = new System.Drawing.Size(600, 377);
             this.Load += new System.EventHandler(this.UserControl_SuaChua_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSChua)).EndInit();

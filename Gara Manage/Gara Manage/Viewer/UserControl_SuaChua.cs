@@ -71,11 +71,9 @@ namespace Gara_Manage.Viewer
         {
             try
             {
-                string sql = " insert into CTSC(idTN,SL,idPT, idTC) values (@idTN,@SL,@idPT,@idTC)  exec thanhtien";
+                string sql = " insert into CTSC(idTN,SL,idPT, idTC,Ngay) values (@idTN,@SL,@idPT,@idTC,GETDATE())  exec thanhtien";
                 SqlCommand cm = new SqlCommand();
                 cm.Connection = SQL.Connection;
-                DataTable dt = (DataTable)dgvSChua.DataSource;
-                DataRow dr = dt.Rows[dgvSChua.CurrentRow.Index];
                 cm.Parameters.Add("@idTN", SqlDbType.Int).Value = int.Parse(cmbMTNhan.SelectedValue.ToString());
                 cm.Parameters.Add("@SL", SqlDbType.BigInt).Value = numSLuong.Value;
                 cm.Parameters.Add("@idPT", SqlDbType.Int).Value = int.Parse(cmbPTung.SelectedValue.ToString());
@@ -94,7 +92,7 @@ namespace Gara_Manage.Viewer
         }
         private void show()
         {
-            string sql = "select c.idCTSC,c.idTN,p.idPT, p.TENPT, p.GIAPT, c.SL, ti.TENTC,ti.GIA,c.THANHTIEN" +
+            string sql = "select c.idCTSC,c.idTN,p.idPT, p.TENPT, p.GIABAN, c.SL, ti.TENTC,ti.GIA,c.THANHTIEN" +
                 " from PHUTUNG p, CTSC c, TIEPNHAN t , TIENCONG ti" +
 
                 " where p.idPT = c.idPT and c.idTN = t.idTN and ti.idTC = c.idTC and t.idTN = @idTN";
