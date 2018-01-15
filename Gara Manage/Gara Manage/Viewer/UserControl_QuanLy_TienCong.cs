@@ -172,8 +172,42 @@ namespace Gara_Manage.Viewer
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = SQL.Connection.CreateCommand();
+                cmd.CommandText = "DELETE TIENCONG where idTC= @id ";
+
+                cmd.Parameters.Add("@id", SqlDbType.Int);
+
+                DataTable dt = (DataTable)dgvTCong.DataSource;
+                DataRow dr = dt.Rows[dgvTCong.CurrentRow.Index];
+
+                cmd.Parameters["@id"].Value = int.Parse(dr[0].ToString());
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("đã xóa tiền công");
+
+                txtTienCong.Text = "";
+                numGTien.Value = 0;
+                btnThem.Visible = true;
+                btnXacNhan.Visible = false;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("không thể xóa tiền công");
+            }
+
+            load_tblTienCong();
+        }
+
     }
-    
-    
 }
+    
+    
+
