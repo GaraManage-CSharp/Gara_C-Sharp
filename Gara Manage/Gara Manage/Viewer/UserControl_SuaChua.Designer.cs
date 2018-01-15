@@ -35,12 +35,10 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.cmbPTung = new System.Windows.Forms.ComboBox();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnXNhan = new System.Windows.Forms.Button();
             this.cmbMTNhan = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTTien = new System.Windows.Forms.TextBox();
-            this.bttnLMoi = new System.Windows.Forms.Button();
             this.dgvSChua = new System.Windows.Forms.DataGridView();
             this.cmbTC = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -107,21 +105,13 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(522, 166);
+            this.btnXoa.Location = new System.Drawing.Point(522, 81);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 75);
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xoá";
             this.btnXoa.UseVisualStyleBackColor = true;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(522, 252);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 75);
-            this.btnSua.TabIndex = 8;
-            this.btnSua.Text = "Sữa";
-            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnXNhan
             // 
@@ -131,6 +121,7 @@
             this.btnXNhan.TabIndex = 11;
             this.btnXNhan.Text = "Xác nhận";
             this.btnXNhan.UseVisualStyleBackColor = true;
+            this.btnXNhan.Click += new System.EventHandler(this.btnXNhan_Click);
             // 
             // cmbMTNhan
             // 
@@ -157,15 +148,6 @@
             this.txtTTien.Size = new System.Drawing.Size(177, 20);
             this.txtTTien.TabIndex = 10;
             this.txtTTien.TabStop = false;
-            // 
-            // bttnLMoi
-            // 
-            this.bttnLMoi.Location = new System.Drawing.Point(522, 81);
-            this.bttnLMoi.Name = "bttnLMoi";
-            this.bttnLMoi.Size = new System.Drawing.Size(75, 75);
-            this.bttnLMoi.TabIndex = 6;
-            this.bttnLMoi.Text = "Làm mới";
-            this.bttnLMoi.UseVisualStyleBackColor = true;
             // 
             // dgvSChua
             // 
@@ -205,12 +187,10 @@
             this.Controls.Add(this.cmbTC);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvSChua);
-            this.Controls.Add(this.bttnLMoi);
             this.Controls.Add(this.txtTTien);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbMTNhan);
             this.Controls.Add(this.btnXNhan);
-            this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.cmbPTung);
             this.Controls.Add(this.btnThem);
@@ -237,12 +217,10 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.ComboBox cmbPTung;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXNhan;
         private System.Windows.Forms.ComboBox cmbMTNhan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTTien;
-        private System.Windows.Forms.Button bttnLMoi;
         private System.Windows.Forms.DataGridView dgvSChua;
         private System.Windows.Forms.ComboBox cmbTC;
         private System.Windows.Forms.Label label2;

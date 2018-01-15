@@ -55,14 +55,12 @@ namespace Gara_Manage.Viewer
         private void btnThem_Click(object sender, EventArgs e)
 
         {
-            string sql = "insert into NHAPPHUTUNG(SLNHAP,idPT,NGAYNHAP) values (@SL,@idPT,@GETDATE)";
+            string sql = "insert into NHAPPHUTUNG(SLNHAP,idPT,NGAYNHAP) values (@SL,@idPT,GETDATE())";
             SqlCommand cm = new SqlCommand();
             cm.Connection = SQL.Connection;
-            DataTable dt = (DataTable)dgvPTung.DataSource;
-            DataRow dr = dt.Rows[dgvPTung.CurrentRow.Index];
             cm.CommandText = sql;
             cm.Parameters.Add("@SL", SqlDbType.Int).Value = numSLuong.Value;
-            cm.Parameters.Add("@idPT", SqlDbType.Int).Value = int.Parse(dr["idPT"].ToString());
+            cm.Parameters.Add("@idPT", SqlDbType.Int).Value = int.Parse(cmbPT.SelectedValue.ToString());
             
             cm.ExecuteNonQuery();
             dgvPTung.Refresh();
@@ -72,7 +70,7 @@ namespace Gara_Manage.Viewer
         }
         private void show()
         {
-            string sql = "select * from NHAPPHUTUNG";
+            string sql = "select a.idPT,a.NGAYNHAP,SLNHAP,b.SLTON from NHAPPHUTUNG a,PHUTUNG b where a.idPT = b.idPt";
             SqlCommand cm = new SqlCommand(sql, SQL.Connection);
             SqlDataReader dr = cm.ExecuteReader();
             DataTable dt = new DataTable();

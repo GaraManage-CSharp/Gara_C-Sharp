@@ -69,7 +69,7 @@ namespace Gara_Manage.Viewer
         //}
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string sql = " insert into CTSC(idTN,SL,idPT, idTC) values (@idTN,@SL,@idPT,@idTC)  ";
+            string sql = " insert into CTSC(idTN,SL,idPT, idTC) values (@idTN,@SL,@idPT,@idTC)  exec thanhtien";
             SqlCommand cm = new SqlCommand();
             cm.Connection = SQL.Connection;
             DataTable dt = (DataTable)dgvSChua.DataSource;
@@ -99,7 +99,7 @@ namespace Gara_Manage.Viewer
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string sql = " delete from CTSC where idCTSC = @idCTCS";
+            string sql = "delete CTSC where idCTSC = @idCTSC";
 
             SqlCommand cm = new SqlCommand();
             cm.Connection = SQL.Connection;
@@ -113,7 +113,10 @@ namespace Gara_Manage.Viewer
             show();
         }
 
-        
+        private void btnXNhan_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Xuất Hóa Đơn Thành Công");
+        }
     }
     
 }
