@@ -41,16 +41,29 @@ namespace Gara_Manage.Viewer
 
         }
        
+        private void PT()
+        {
+            string sql = "select TENPT,idPT from PHUTUNG";
+            SqlDataAdapter da = new SqlDataAdapter(sql, SQL.Connection);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cmbPT.DisplayMember = "idPT";
+            cmbPT.ValueMember = "idPT";
+            cmbPT.DataSource = dt;
+
+        }
         private void btnThem_Click(object sender, EventArgs e)
 
         {
+            string sql = "insert into NHAPPHUTUNG(SLNHAP,idPT,NGAYNHAP) values (@SL,@idPT,@GETDATE)";
             SqlCommand cm = new SqlCommand();
             cm.Connection = SQL.Connection;
             DataTable dt = (DataTable)dgvPTung.DataSource;
             DataRow dr = dt.Rows[dgvPTung.CurrentRow.Index];
-            cm.CommandText = updatetable();
-            cm.Parameters.Add("@SLTON", SqlDbType.Int).Value = numSLuong.Value;
+            cm.CommandText = sql;
+            cm.Parameters.Add("@SL", SqlDbType.Int).Value = numSLuong.Value;
             cm.Parameters.Add("@idPT", SqlDbType.Int).Value = int.Parse(dr["idPT"].ToString());
+            
             cm.ExecuteNonQuery();
             dgvPTung.Refresh();
             dgvPTung.Update();
@@ -59,12 +72,13 @@ namespace Gara_Manage.Viewer
         }
         private void show()
         {
-            string sql = "select * from PHUTUNG";
+            string sql = "select * from NHAPPHUTUNG";
             SqlCommand cm = new SqlCommand(sql, SQL.Connection);
             SqlDataReader dr = cm.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(dr);
             dgvPTung.DataSource = dt;
+            PT();
         }
         private string updatetable()
         {

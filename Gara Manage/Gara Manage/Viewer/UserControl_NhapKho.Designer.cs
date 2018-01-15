@@ -33,6 +33,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.numSLuong = new System.Windows.Forms.NumericUpDown();
             this.btnThem = new System.Windows.Forms.Button();
+            this.lblPT = new System.Windows.Forms.Label();
+            this.cmbPT = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTung)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).BeginInit();
             this.SuspendLayout();
@@ -53,10 +55,10 @@
             this.dgvPTung.AllowUserToDeleteRows = false;
             this.dgvPTung.BackgroundColor = System.Drawing.Color.White;
             this.dgvPTung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPTung.Location = new System.Drawing.Point(12, 14);
+            this.dgvPTung.Location = new System.Drawing.Point(12, 75);
             this.dgvPTung.Name = "dgvPTung";
             this.dgvPTung.ReadOnly = true;
-            this.dgvPTung.Size = new System.Drawing.Size(433, 338);
+            this.dgvPTung.Size = new System.Drawing.Size(433, 277);
             this.dgvPTung.TabIndex = 4;
             // 
             // label2
@@ -86,10 +88,29 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // lblPT
+            // 
+            this.lblPT.AutoSize = true;
+            this.lblPT.Location = new System.Drawing.Point(24, 21);
+            this.lblPT.Name = "lblPT";
+            this.lblPT.Size = new System.Drawing.Size(54, 13);
+            this.lblPT.TabIndex = 12;
+            this.lblPT.Text = "Phụ Tùng";
+            // 
+            // cmbPT
+            // 
+            this.cmbPT.FormattingEnabled = true;
+            this.cmbPT.Location = new System.Drawing.Point(91, 18);
+            this.cmbPT.Name = "cmbPT";
+            this.cmbPT.Size = new System.Drawing.Size(276, 21);
+            this.cmbPT.TabIndex = 13;
+            // 
             // UserControl_NhapKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmbPT);
+            this.Controls.Add(this.lblPT);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.numSLuong);
             this.Controls.Add(this.label2);
@@ -110,5 +131,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numSLuong;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Label lblPT;
+        private System.Windows.Forms.ComboBox cmbPT;
     }
 }
