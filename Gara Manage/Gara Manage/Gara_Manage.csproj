@@ -88,13 +88,14 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FlagFrom.cs" />
     <Compile Include="GARAOTODataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GARAOTODataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="HIEUXE.cs">
-      <DependentUpon>HIEUXEMODEL.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="HIEUXEMODEL.Context.cs">
       <AutoGen>True</AutoGen>

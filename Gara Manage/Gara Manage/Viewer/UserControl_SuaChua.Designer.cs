@@ -35,7 +35,6 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.cmbPTung = new System.Windows.Forms.ComboBox();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.btnXNhan = new System.Windows.Forms.Button();
             this.cmbMTNhan = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTTien = new System.Windows.Forms.TextBox();
@@ -113,16 +112,6 @@
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnXNhan
-            // 
-            this.btnXNhan.Location = new System.Drawing.Point(375, 351);
-            this.btnXNhan.Name = "btnXNhan";
-            this.btnXNhan.Size = new System.Drawing.Size(75, 23);
-            this.btnXNhan.TabIndex = 11;
-            this.btnXNhan.Text = "Xác nhận";
-            this.btnXNhan.UseVisualStyleBackColor = true;
-            this.btnXNhan.Click += new System.EventHandler(this.btnXNhan_Click);
-            // 
             // cmbMTNhan
             // 
             this.cmbMTNhan.FormattingEnabled = true;
@@ -195,7 +184,6 @@
             this.Controls.Add(this.txtTTien);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbMTNhan);
-            this.Controls.Add(this.btnXNhan);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.cmbPTung);
             this.Controls.Add(this.btnThem);
@@ -204,8 +192,9 @@
             this.Controls.Add(this.lblPTung);
             this.Controls.Add(this.label1);
             this.Name = "UserControl_SuaChua";
-            this.Size = new System.Drawing.Size(600, 377);
-            this.Load += new System.EventHandler(this.UserControl_SuaChua_Load);
+            this.Size = new System.Drawing.Size(600, 376);
+            this.Click += new System.EventHandler(this.UserControl_SuaChua_Click);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UserControl_SuaChua_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSChua)).EndInit();
             this.ResumeLayout(false);
@@ -222,7 +211,6 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.ComboBox cmbPTung;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnXNhan;
         private System.Windows.Forms.ComboBox cmbMTNhan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTTien;

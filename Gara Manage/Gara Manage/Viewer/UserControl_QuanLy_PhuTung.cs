@@ -81,6 +81,9 @@ namespace Gara_Manage.Viewer
 
                 load_tblPhuTung();
 
+                MAIN.Flag.FlagQuanLyPhuTungSuaChua = true;
+                MAIN.Flag.FlagQuanLyPhuTungNhapKho = true;
+                MAIN.Flag.FlagQuanLyPhuTungBaoCao = true;
             }
             catch (Exception ex)
             {
@@ -124,6 +127,9 @@ namespace Gara_Manage.Viewer
                 btnThem.Visible = true;
                 btnXacNhan.Visible = false;
 
+                MAIN.Flag.FlagQuanLyPhuTungSuaChua = true;
+                MAIN.Flag.FlagQuanLyPhuTungNhapKho = true;
+                MAIN.Flag.FlagQuanLyPhuTungBaoCao = true;
 
             }
             catch (Exception ex)
@@ -199,6 +205,9 @@ namespace Gara_Manage.Viewer
                 btnThem.Visible = true;
                 btnXacNhan.Visible = false;
 
+                MAIN.Flag.FlagQuanLyPhuTungSuaChua = true;
+                MAIN.Flag.FlagQuanLyPhuTungNhapKho = true;
+                MAIN.Flag.FlagQuanLyPhuTungBaoCao = true;
 
             }
             catch (Exception ex)

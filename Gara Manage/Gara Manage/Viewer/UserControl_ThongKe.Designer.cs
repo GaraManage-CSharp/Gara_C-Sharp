@@ -63,6 +63,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.cmbDSThang);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Click += new System.EventHandler(this.splitContainer1_Panel1_Click);
             this.splitContainer1.Panel1MinSize = 35;
             // 
             // splitContainer1.Panel2
@@ -71,17 +72,21 @@
             this.splitContainer1.Panel2.Controls.Add(this.cmbBCThang);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
+            this.splitContainer1.Panel2.Click += new System.EventHandler(this.splitContainer1_Panel2_Click);
             this.splitContainer1.Panel2MinSize = 35;
             this.splitContainer1.Size = new System.Drawing.Size(596, 413);
-            this.splitContainer1.SplitterDistance = 366;
+            this.splitContainer1.SplitterDistance = 321;
             this.splitContainer1.TabIndex = 0;
             // 
             // dgvDSo
             // 
+            this.dgvDSo.AllowUserToAddRows = false;
+            this.dgvDSo.AllowUserToDeleteRows = false;
             this.dgvDSo.BackgroundColor = System.Drawing.Color.White;
             this.dgvDSo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSo.Location = new System.Drawing.Point(65, 110);
             this.dgvDSo.Name = "dgvDSo";
+            this.dgvDSo.ReadOnly = true;
             this.dgvDSo.Size = new System.Drawing.Size(470, 249);
             this.dgvDSo.TabIndex = 5;
             // 
@@ -132,10 +137,13 @@
             // 
             // dgvPTTon
             // 
+            this.dgvPTTon.AllowUserToAddRows = false;
+            this.dgvPTTon.AllowUserToDeleteRows = false;
             this.dgvPTTon.BackgroundColor = System.Drawing.Color.White;
             this.dgvPTTon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPTTon.Location = new System.Drawing.Point(52, 96);
             this.dgvPTTon.Name = "dgvPTTon";
+            this.dgvPTTon.ReadOnly = true;
             this.dgvPTTon.Size = new System.Drawing.Size(470, 273);
             this.dgvPTTon.TabIndex = 8;
             // 

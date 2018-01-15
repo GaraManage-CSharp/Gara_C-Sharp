@@ -13,17 +13,9 @@ namespace Gara_Manage.Viewer
     {
 
         GARAOTOEntities5 test;
-        private bool fl;
         public UserControl_QuanLy_HieuXe()
         {
             InitializeComponent();
-            fl = false;
-        }
-
-        private void UserControl_QuanLy_HieuXe_Load(object sender, EventArgs e)
-        {
-            txtHXe.Enabled = true;
-            txtTim.Enabled = true;
             test = new GARAOTOEntities5();
             hIEUXEBindingSource.DataSource = test.HIEUXEs.ToList();
         }
@@ -37,7 +29,10 @@ namespace Gara_Manage.Viewer
                 hx.TENHX = txtHXe.Text;
                 test.HIEUXEs.Add(hx);
                 test.SaveChangesAsync();
-                dataGridView1.DataSource = new GARAOTOEntities5().HIEUXEs.ToList();
+                hIEUXEBindingSource.Add(hx);
+                hIEUXEBindingSource.EndEdit();
+                txtHXe.Clear();
+                MAIN.Flag.FlagQuanLyHieuXe = true;
             }
             catch (Exception ex)
             {

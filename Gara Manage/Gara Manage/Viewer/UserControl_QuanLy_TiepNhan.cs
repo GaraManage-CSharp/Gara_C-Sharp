@@ -11,6 +11,15 @@ namespace Gara_Manage.Viewer
         public UserControl_QuanLy_TiepNhan()
         {
             InitializeComponent();
+            for (int i = 0; i < gARAOTODataSet.TIEPNHAN.Columns.Count; i++)
+            {
+                cmbLTheo.Items.Add(gARAOTODataSet.TIEPNHAN.Columns[i].ToString());
+            }
+            if (cmbLTheo.Items.Count != 0)
+            {
+                cmbLTheo.SelectedIndex = 0;
+                Select();
+            }
         }
 
         private void btnXNhan_Click(object sender, EventArgs e)
@@ -22,20 +31,20 @@ namespace Gara_Manage.Viewer
         }
         private string setTextUpdate(int value)
         {
-            return "ALTER trigger [dbo].[update_SLTTTNhan] " +
-                    "on[dbo].[TIEPNHAN] " +
-                    "for insert " +
-                    "as " +
-                    "begin " +
-                        "declare @quantity int " +
-                        "select @quantity = count(t.idTN) " +
-                        "from TIEPNHAN t, INSERTED i " +
-                        "where convert(date, t.NGAYNHAN, 103) = convert(date, getdate(), 103) " +
-                        "if @quantity = " + value + " " +
-                        "begin " +
-                            "rollback tran " +
-                            "raiserror(N'Lỗi', 16, 1) " +
-                        "end " +
+            return "ALTER trigger [dbo].[update_SLTTTNhan] \n" +
+                    "on[dbo].[TIEPNHAN] \n" +
+                    "for insert \n" +
+                    "as \n" +
+                    "begin \n" +
+                    "   declare @quantity int \n" +
+                    "   select @quantity = count(t.idTN) \n" +
+                    "   from TIEPNHAN t, INSERTED i \n" +
+                    "   where convert(date, t.NGAYNHAN, 103) = convert(date, getdate(), 103) \n" +
+                    "   if @quantity = " + value + " \n" +
+                    "   begin \n" +
+                    "       rollback tran \n" +
+                    "       raiserror(N'Lỗi', 16, 1) \n" +
+                    "   end \n" +
                     "end";
         }   
 
@@ -65,10 +74,10 @@ namespace Gara_Manage.Viewer
                     }
                     break;
                 case 8:
-                    comd = getSelectSQL(" " + cmbLTheo.SelectedItem + " = '" + txtLoc.Text);
+                    comd = getSelectSQL(" day(NGAYNHAN) = day('" + txtLoc.Text + "') and MONTH(NGAYNHAN) = MONTH('" + txtLoc.Text + "') and year(NGAYNHAN) = YEAR('" + txtLoc.Text + "')");
                     break;
                 default:
-                    comd = getSelectSQL(" "+cmbLTheo.SelectedItem+" like '" + txtLoc.Text + "%' ");
+                    comd = getSelectSQL(" "+cmbLTheo.SelectedItem.ToString()+" like N'%" + txtLoc.Text + "%' ");
                     break;
             }
             SqlCommand sqlcomd = new SqlCommand(comd, SQL.Connection);  // khởi tạo đối tượng truy vấn SQL
@@ -80,7 +89,7 @@ namespace Gara_Manage.Viewer
         //hàm getSelectSQL dùng để lấy câu truy vấn SQL (chưa xài được)
         private string getSelectSQL(string item) //item là chuỗi điều kiện truyền vào
         {
-            string initem = "select idTN as [Mã tiếp nhận],TENKH as [Khách hàng],BIENSO as [Biển số],TENHX as [Hiệu xe],NGAYNHAN as [Ngày nhận] " +
+            string initem = "select idTN as [Mã tiếp nhận],TENKH as [Khách hàng],t.DIACHI as [Địa chỉ], t.EMAIL as [Email],t.SDT as [Số điện thoại],BIENSO as [Biển số],TENHX as [Hiệu xe],NGAYNHAN as [Ngày nhận] " +
                     "from tiepnhan t, HIEUXE h " +
                     "where t.idHX=h.idHX ";
             return item.CompareTo("") == 0 ? initem : initem + " and " + item; //nếu chuỗi truyền vào là trống thì không cần thêm điều kiện
@@ -96,19 +105,6 @@ namespace Gara_Manage.Viewer
             else
             {
                 txtLoc.Enabled = true;
-            }
-        }
-
-        private void UserControl_QuanLy_TiepNhan_Load(object sender, EventArgs e)
-        {
-            for(int i=0;i<gARAOTODataSet.TIEPNHAN.Columns.Count;i++)
-            {
-                cmbLTheo.Items.Add(gARAOTODataSet.TIEPNHAN.Columns[i].ToString());
-            }
-            if(cmbLTheo.Items.Count != 0)
-            {
-                cmbLTheo.SelectedIndex = 0;
-                Select();
             }
         }
     }

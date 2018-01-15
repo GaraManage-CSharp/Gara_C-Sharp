@@ -194,7 +194,6 @@
             this.Controls.Add(this.label1);
             this.Name = "UserControl_QuanLy_TiepNhan";
             this.Size = new System.Drawing.Size(582, 380);
-            this.Load += new System.EventHandler(this.UserControl_QuanLy_TiepNhan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDLTNhan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectTiepNhanBindingSource)).EndInit();

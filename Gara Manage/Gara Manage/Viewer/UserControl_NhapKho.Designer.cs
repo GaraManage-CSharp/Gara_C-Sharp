@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnXNhan = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.dgvPTung = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.numSLuong = new System.Windows.Forms.NumericUpDown();
@@ -39,15 +39,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnXNhan
+            // btnXoa
             // 
-            this.btnXNhan.Location = new System.Drawing.Point(454, 138);
-            this.btnXNhan.Name = "btnXNhan";
-            this.btnXNhan.Size = new System.Drawing.Size(131, 70);
-            this.btnXNhan.TabIndex = 6;
-            this.btnXNhan.Text = "Xác nhận";
-            this.btnXNhan.UseVisualStyleBackColor = true;
-            this.btnXNhan.Click += new System.EventHandler(this.btnXNhan_Click);
+            this.btnXoa.Location = new System.Drawing.Point(454, 192);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(131, 70);
+            this.btnXoa.TabIndex = 6;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // dgvPTung
             // 
@@ -80,7 +80,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(454, 53);
+            this.btnThem.Location = new System.Drawing.Point(454, 75);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(131, 66);
             this.btnThem.TabIndex = 3;
@@ -115,9 +115,10 @@
             this.Controls.Add(this.numSLuong);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvPTung);
-            this.Controls.Add(this.btnXNhan);
+            this.Controls.Add(this.btnXoa);
             this.Name = "UserControl_NhapKho";
             this.Size = new System.Drawing.Size(596, 369);
+            this.Click += new System.EventHandler(this.UserControl_NhapKho_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSLuong)).EndInit();
             this.ResumeLayout(false);
@@ -126,7 +127,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnXNhan;
+        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.DataGridView dgvPTung;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numSLuong;

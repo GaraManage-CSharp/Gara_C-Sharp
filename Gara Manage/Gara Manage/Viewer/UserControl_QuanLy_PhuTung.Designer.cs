@@ -69,7 +69,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(479, 33);
+            this.btnThem.Location = new System.Drawing.Point(479, 38);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 3;
@@ -128,20 +128,20 @@
             // 
             // txtLoc
             // 
-            this.txtLoc.Location = new System.Drawing.Point(273, 118);
+            this.txtLoc.Location = new System.Drawing.Point(90, 118);
             this.txtLoc.Name = "txtLoc";
-            this.txtLoc.Size = new System.Drawing.Size(166, 20);
+            this.txtLoc.Size = new System.Drawing.Size(349, 20);
             this.txtLoc.TabIndex = 5;
             this.txtLoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoc_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 121);
+            this.label4.Location = new System.Drawing.Point(13, 121);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 14;
-            this.label4.Text = "Lọc theo";
+            this.label4.Text = "Tên phụ tùng";
             // 
             // btnSua
             // 
@@ -167,7 +167,7 @@
             // 
             // btnXacNhan
             // 
-            this.btnXacNhan.Location = new System.Drawing.Point(479, 34);
+            this.btnXacNhan.Location = new System.Drawing.Point(479, 38);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(75, 23);
             this.btnXacNhan.TabIndex = 20;

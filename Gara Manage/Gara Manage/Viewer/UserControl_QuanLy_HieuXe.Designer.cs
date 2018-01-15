@@ -37,9 +37,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.hIEUXEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idHXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tENHXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hIEUXEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hIEUXEBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +66,6 @@
             // 
             // txtHXe
             // 
-            this.txtHXe.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hIEUXEBindingSource, "TENHX", true));
             this.txtHXe.Location = new System.Drawing.Point(79, 40);
             this.txtHXe.Name = "txtHXe";
             this.txtHXe.Size = new System.Drawing.Size(181, 20);
@@ -102,7 +101,6 @@
             // 
             // txtTim
             // 
-            this.txtTim.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hIEUXEBindingSource, "TENHX", true));
             this.txtTim.Location = new System.Drawing.Point(79, 117);
             this.txtTim.Name = "txtTim";
             this.txtTim.Size = new System.Drawing.Size(338, 20);
@@ -127,10 +125,6 @@
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
-            // hIEUXEBindingSource
-            // 
-            this.hIEUXEBindingSource.DataSource = typeof(Gara_Manage.HIEUXE);
-            // 
             // idHXDataGridViewTextBoxColumn
             // 
             this.idHXDataGridViewTextBoxColumn.DataPropertyName = "idHX";
@@ -144,6 +138,10 @@
             this.tENHXDataGridViewTextBoxColumn.HeaderText = "TENHX";
             this.tENHXDataGridViewTextBoxColumn.Name = "tENHXDataGridViewTextBoxColumn";
             this.tENHXDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hIEUXEBindingSource
+            // 
+            this.hIEUXEBindingSource.DataSource = typeof(Gara_Manage.HIEUXE);
             // 
             // UserControl_QuanLy_HieuXe
             // 
@@ -160,7 +158,6 @@
             this.Controls.Add(this.label1);
             this.Name = "UserControl_QuanLy_HieuXe";
             this.Size = new System.Drawing.Size(582, 380);
-            this.Load += new System.EventHandler(this.UserControl_QuanLy_HieuXe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hIEUXEBindingSource)).EndInit();
             this.ResumeLayout(false);

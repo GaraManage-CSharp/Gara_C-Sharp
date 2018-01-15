@@ -46,6 +46,8 @@ namespace Gara_Manage.Viewer
 
                 load_tblTienCong();
 
+                MAIN.Flag.FlagQuanLyTiencong = true;
+
             }
             catch(Exception ex)
             {
@@ -142,7 +144,10 @@ namespace Gara_Manage.Viewer
                 dgvTCong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
                 MessageBox.Show("đã sửa tiền công");
 
+                btnThem.Visible = true;
+                btnXacNhan.Visible = false;
 
+                MAIN.Flag.FlagQuanLyTiencong = true;
 
             }
             catch (Exception ex)
@@ -196,6 +201,7 @@ namespace Gara_Manage.Viewer
                 btnThem.Visible = true;
                 btnXacNhan.Visible = false;
 
+                MAIN.Flag.FlagQuanLyTiencong = true;
 
             }
             catch (Exception ex)

@@ -4,7 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GARAOTOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GARAOTOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="HIEUXE">
+          <Key>
+            <PropertyRef Name="idHX" />
+          </Key>
+          <Property Name="idHX" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENHX" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
         <EntityType Name="TIEPNHAN">
           <Key>
             <PropertyRef Name="idTN" />
@@ -19,10 +26,10 @@
           <Property Name="NGAYNHAN" Type="smalldatetime" Nullable="false" />
         </EntityType>
         <EntityContainer Name="GARAOTOModelStoreContainer">
+          <EntitySet Name="HIEUXE" EntityType="Self.HIEUXE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TIEPNHAN" EntityType="Self.TIEPNHAN" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GARAOTOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -41,7 +48,15 @@
         </EntityType>
         <EntityContainer Name="GARAOTOEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TIEPNHAN" EntityType="Self.TIEPNHAN" />
+          <EntitySet Name="HIEUXE" EntityType="GARAOTOModel.HIEUXE" />
         </EntityContainer>
+        <EntityType Name="HIEUXE">
+          <Key>
+            <PropertyRef Name="idHX" />
+          </Key>
+          <Property Name="idHX" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENHX" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -59,6 +74,14 @@
                 <ScalarProperty Name="BIENSO" ColumnName="BIENSO" />
                 <ScalarProperty Name="idHX" ColumnName="idHX" />
                 <ScalarProperty Name="NGAYNHAN" ColumnName="NGAYNHAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HIEUXE">
+            <EntityTypeMapping TypeName="GARAOTOModel.HIEUXE">
+              <MappingFragment StoreEntitySet="HIEUXE">
+                <ScalarProperty Name="TENHX" ColumnName="TENHX" />
+                <ScalarProperty Name="idHX" ColumnName="idHX" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -26,5 +26,6 @@ namespace Gara_Manage
         }
     
         public virtual DbSet<TIEPNHAN> TIEPNHAN { get; set; }
+        public virtual DbSet<HIEUXE> HIEUXE { get; set; }
     }
 }

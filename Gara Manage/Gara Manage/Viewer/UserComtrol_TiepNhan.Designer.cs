@@ -44,8 +44,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtSDThoai = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dteNNhan = new System.Windows.Forms.DateTimePicker();
-            this.txtTKHang = new System.Windows.Forms.TextBox();
             this.idTN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tENKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dIACHIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +51,8 @@
             this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bIENSODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nGAYNHANDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dteNNhan = new System.Windows.Forms.DateTimePicker();
+            this.txtTKHang = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tIEPNHANBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -65,10 +65,10 @@
             this.cbxHXe.Name = "cbxHXe";
             this.cbxHXe.Size = new System.Drawing.Size(282, 21);
             this.cbxHXe.TabIndex = 33;
+            this.cbxHXe.SelectedIndexChanged += new System.EventHandler(this.cbxHXe_SelectedIndexChanged);
             // 
             // txtEmail
             // 
-            this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tIEPNHANBindingSource, "EMAIL", true));
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtEmail.Location = new System.Drawing.Point(126, 63);
             this.txtEmail.Name = "txtEmail";
@@ -82,7 +82,6 @@
             // 
             // txtDChi
             // 
-            this.txtDChi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tIEPNHANBindingSource, "DIACHI", true));
             this.txtDChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtDChi.Location = new System.Drawing.Point(126, 37);
             this.txtDChi.Name = "txtDChi";
@@ -164,7 +163,6 @@
             // 
             // txtBSXe
             // 
-            this.txtBSXe.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tIEPNHANBindingSource, "BIENSO", true));
             this.txtBSXe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtBSXe.Location = new System.Drawing.Point(126, 141);
             this.txtBSXe.Name = "txtBSXe";
@@ -183,7 +181,6 @@
             // 
             // txtSDThoai
             // 
-            this.txtSDThoai.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tIEPNHANBindingSource, "SDT", true));
             this.txtSDThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtSDThoai.Location = new System.Drawing.Point(126, 89);
             this.txtSDThoai.Name = "txtSDThoai";
@@ -212,22 +209,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(596, 220);
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
-            // 
-            // dteNNhan
-            // 
-            this.dteNNhan.Location = new System.Drawing.Point(126, 167);
-            this.dteNNhan.Name = "dteNNhan";
-            this.dteNNhan.Size = new System.Drawing.Size(282, 20);
-            this.dteNNhan.TabIndex = 40;
-            // 
-            // txtTKHang
-            // 
-            this.txtTKHang.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tIEPNHANBindingSource, "TENKH", true));
-            this.txtTKHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTKHang.Location = new System.Drawing.Point(126, 11);
-            this.txtTKHang.Name = "txtTKHang";
-            this.txtTKHang.Size = new System.Drawing.Size(282, 20);
-            this.txtTKHang.TabIndex = 29;
             // 
             // idTN
             // 
@@ -278,6 +259,22 @@
             this.nGAYNHANDataGridViewTextBoxColumn.Name = "nGAYNHANDataGridViewTextBoxColumn";
             this.nGAYNHANDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // dteNNhan
+            // 
+            this.dteNNhan.Enabled = false;
+            this.dteNNhan.Location = new System.Drawing.Point(126, 167);
+            this.dteNNhan.Name = "dteNNhan";
+            this.dteNNhan.Size = new System.Drawing.Size(282, 20);
+            this.dteNNhan.TabIndex = 40;
+            // 
+            // txtTKHang
+            // 
+            this.txtTKHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTKHang.Location = new System.Drawing.Point(126, 11);
+            this.txtTKHang.Name = "txtTKHang";
+            this.txtTKHang.Size = new System.Drawing.Size(282, 20);
+            this.txtTKHang.TabIndex = 29;
+            // 
             // UserComtrol_TiepNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,7 +298,7 @@
             this.Controls.Add(this.label2);
             this.Name = "UserComtrol_TiepNhan";
             this.Size = new System.Drawing.Size(596, 413);
-            this.Load += new System.EventHandler(this.UserComtrol_TiepNhan_Load);
+            this.Click += new System.EventHandler(this.UserComtrol_TiepNhan_Click);
             ((System.ComponentModel.ISupportInitialize)(this.tIEPNHANBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

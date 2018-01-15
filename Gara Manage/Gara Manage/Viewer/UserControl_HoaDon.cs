@@ -48,7 +48,7 @@ namespace Gara_Manage.Viewer
             try
             {
                 SqlCommand cmd = SQL.Connection.CreateCommand();
-                cmd.CommandText = "insert into HOADON (@idTN, getdate(), null)  exec tongtien";
+                cmd.CommandText = "insert into HOADON values (@idTN, getdate(), null)  exec tongtien";
                 
                 cmd.Parameters.Add("@idTN", SqlDbType.Int);
 
@@ -59,23 +59,59 @@ namespace Gara_Manage.Viewer
                 cmd.Parameters["@idTN"].Value = int.Parse(dr[0].ToString());
 
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("đã thêm HD");
 
-                MessageBox.Show("đã sửa thêm HD");
+                Load_HoaDon();
+                Load_KhHang();
 
-                
-
+                MAIN.Flag.FlagHoaDonSuaChua = true;
+                MAIN.Flag.FlagHoaDonBaoCao = true;
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("không thê sửa phụ tùng");
+                MessageBox.Show("không thể thêm hóa đơn");
             }
 
-            Load_HoaDon();
-            Load_KhHang();
-
+           
         }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                SqlCommand cmd = SQL.Connection.CreateCommand();
+                string comd = "delete HOADON where idHD = @idHD";
+
+                cmd.CommandText = comd;
+
+                DataTable dt = (DataTable)dgvHoaDon.DataSource;
+                DataRow dr = dt.Rows[dgvHoaDon.CurrentRow.Index];
+
+                cmd.Parameters.Add("@idHD", SqlDbType.Int).Value = int.Parse(dr[0].ToString());
+                cmd.ExecuteNonQuery();
+
+
+                Load_HoaDon();
+                Load_KhHang();
+
+                MAIN.Flag.FlagHoaDonBaoCao = true;
+                MAIN.Flag.FlagHoaDonSuaChua = true;
+            } catch
+            {
+
+            }
+        }
+
+        private void UserControl_HoaDon_Click(object sender, EventArgs e)
+        {
+            if (MAIN.Flag.FlagSuaChua)
+            {
+                Load_KhHang();
+                MAIN.Flag.FlagSuaChua = false;
+            }
+        }
     }
 }
 

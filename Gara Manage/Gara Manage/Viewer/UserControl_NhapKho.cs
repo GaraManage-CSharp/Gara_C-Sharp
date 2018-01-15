@@ -13,7 +13,6 @@ namespace Gara_Manage.Viewer
 {
     public partial class UserControl_NhapKho : UserControl
     {
-        int i = 0;
         public UserControl_NhapKho()
         {
             InitializeComponent();
@@ -47,7 +46,7 @@ namespace Gara_Manage.Viewer
             SqlDataAdapter da = new SqlDataAdapter(sql, SQL.Connection);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            cmbPT.DisplayMember = "idPT";
+            cmbPT.DisplayMember = "TENPT";
             cmbPT.ValueMember = "idPT";
             cmbPT.DataSource = dt;
 
@@ -67,10 +66,12 @@ namespace Gara_Manage.Viewer
             dgvPTung.Update();
             show();
             MessageBox.Show("Cập Nhật Thành Công ^_^ ");
+
+            MAIN.Flag.FlagNhapKho = true;
         }
         private void show()
         {
-            string sql = "select a.idPT,a.NGAYNHAP,SLNHAP,b.SLTON from NHAPPHUTUNG a,PHUTUNG b where a.idPT = b.idPt";
+            string sql = "select a.idPT,b.TenPT,a.NGAYNHAP,SLNHAP from NHAPPHUTUNG a,PHUTUNG b where a.idPT = b.idPt and day(a.NGAYNHAP) = day(getdate()) and month(a.NGAYNHAP) = month(getdate()) and year(a.NGAYNHAP) = year(getdate())";
             SqlCommand cm = new SqlCommand(sql, SQL.Connection);
             SqlDataReader dr = cm.ExecuteReader();
             DataTable dt = new DataTable();
@@ -83,9 +84,27 @@ namespace Gara_Manage.Viewer
             return " update PHUTUNG set SLTON = SLTON + @SLTON where  idPT = @idPT ";
         }
 
-        private void btnXNhan_Click(object sender, EventArgs e)
+        private void UserControl_NhapKho_Click(object sender, EventArgs e)
         {
-        
+            if (MAIN.Flag.FlagQuanLyPhuTungNhapKho)
+            {
+                PT();
+                MAIN.Flag.FlagQuanLyPhuTungNhapKho = false;
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string comd = "delete NHAPPHUTUNG where idPT = @idPT and NGAYNHAP = @NGAYNHAP";
+            DataTable dt = (DataTable)dgvPTung.DataSource;
+            DataRow dr = dt.Rows[dgvPTung.CurrentRow.Index];
+            SqlCommand cmd = SQL.Connection.CreateCommand();
+            cmd.CommandText = comd;
+            cmd.Parameters.Add("@idPT", SqlDbType.Int).Value = int.Parse(dr[0].ToString());
+            cmd.Parameters.Add("@NGAYNHAP", SqlDbType.SmallDateTime).Value = DateTime.Parse(dr["NGAYNHAP"].ToString());
+            cmd.ExecuteNonQuery();
+            dt.Rows.RemoveAt(dgvPTung.CurrentRow.Index);
+            MAIN.Flag.FlagNhapKho = true;
         }
     }
 }

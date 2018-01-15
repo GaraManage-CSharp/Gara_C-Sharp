@@ -16,29 +16,26 @@ namespace Gara_Manage.Viewer
         public UserControl_SuaChua()
         {
             InitializeComponent();
-        }
-
-        private void UserControl_SuaChua_Load(object sender, EventArgs e)
-        {
             mtn();
             Pt();
             TC();
             show();
         }
+
         private void TC()
         {
             string sql = "select TENTC,idTC from TIENCONG ";
             SqlDataAdapter da = new SqlDataAdapter(sql, SQL.Connection);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            cmbTC.DisplayMember = "idTC";
+            cmbTC.DisplayMember = "TENTC";
             cmbTC.ValueMember = "idTC";
             cmbTC.DataSource = dt;
 
         }
         private void mtn()
         {
-            string sql = "select idTN, tenkh from TIEPNHAN ";
+            string sql = "select t.idTN, t.tenkh from TIEPNHAN t where t.idTN not in (select idTN from HOADON)";
             SqlDataAdapter da = new SqlDataAdapter(sql, SQL.Connection);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -53,7 +50,7 @@ namespace Gara_Manage.Viewer
             SqlDataAdapter da = new SqlDataAdapter(sql, SQL.Connection);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            cmbPTung.DisplayMember = "idPT";
+            cmbPTung.DisplayMember = "TENPT";
             cmbPTung.ValueMember = "idPT";
             cmbPTung.DataSource = dt;
         }
@@ -80,14 +77,13 @@ namespace Gara_Manage.Viewer
                 cm.Parameters.Add("@idTC", SqlDbType.Int).Value = int.Parse(cmbTC.SelectedValue.ToString());
                 cm.CommandText = sql;
                 cm.ExecuteNonQuery();
-                dgvSChua.Refresh();
-                dgvSChua.Update();
                 show();
                 TinhTien();
+                MAIN.Flag.FlagSuaChua = true;
             }
             catch
             {
-                MessageBox.Show("Lỗi Nhé ^^");
+                MessageBox.Show("Lỗi.");
             }
         }
         private void show()
@@ -121,11 +117,6 @@ namespace Gara_Manage.Viewer
             TinhTien();
         }
 
-        private void btnXNhan_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Xuất Hóa Đơn Thành Công");
-        }
-
         private void cmbMTNhan_SelectedIndexChanged(object sender, EventArgs e)
         {
             show();
@@ -141,6 +132,34 @@ namespace Gara_Manage.Viewer
                 tongtien += int.Parse(dr["THANHTIEN"].ToString());
             }
             txtTTien.Text = tongtien.ToString();
+        }
+
+        private void UserControl_SuaChua_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (MAIN.Flag.FlagTiepNhanSuaChua)
+            {
+                mtn();
+                MAIN.Flag.FlagTiepNhanSuaChua = false;
+            }
+            if (MAIN.Flag.FlagQuanLyPhuTungSuaChua)
+            {
+                Pt();
+                MAIN.Flag.FlagQuanLyPhuTungSuaChua = false;
+            }
+            if (MAIN.Flag.FlagQuanLyTiencong)
+            {
+                TC();
+                MAIN.Flag.FlagQuanLyTiencong = false;
+            }
+        }
+
+        private void UserControl_SuaChua_Click(object sender, EventArgs e)
+        {
+            if (MAIN.Flag.FlagHoaDonSuaChua)
+            {
+                mtn();
+                MAIN.Flag.FlagHoaDonSuaChua = false;
+            }
         }
     }
     
